@@ -15,6 +15,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string ReligiiPath = "/api/religie";
         public static readonly string ConcesionarPath = "/api/concesionar";
         public static readonly string InmormantarePath = "/api/inmormantare";
+        public static readonly string RaportInmormantariPath = "/api/inmormantare";
 
         public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
 
@@ -25,6 +26,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
             public static readonly string INVALID_DEAD_PERSON_PERSONAL_DATA = "Introduceti datele personale ale mortului";
             public static readonly string NO_RELIGION_SELECTED = "Va rugam alegeti o religie valida";
             public static readonly string NO_MORMANT_SELECTED = "Alegeti un mormant concesionat";
+            public static readonly string LISTA_VIDA = "Nu a fost gasit nici un rezultat.";
         }
 
 

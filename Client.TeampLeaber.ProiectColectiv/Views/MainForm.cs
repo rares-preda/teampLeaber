@@ -16,6 +16,7 @@ namespace Client.TeampLeaber.ProiectColectiv
 
         private ConcesionariController concesionariController;
         private MainController _mainController;
+        private RaportController raportController;
 
         public MainForm()
         {
@@ -87,6 +88,14 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        public int AnPickerTabRapoarte
+        {
+            get
+            {
+                return anPickerTabRapoarte.Value.Year;
+            }
+        }
+
         private void btnActe_Click(object sender, EventArgs e)
         {
             DocumentForm documentForm = new DocumentForm();
@@ -103,6 +112,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             this.concesionariController = concesionariController;
         }
 
+        internal void SetRaportController(Controller.RaportController raportController)
+        {
+            this.raportController = raportController;
+        }
+
         private void btnCautaConcesionar_Click(object sender, EventArgs e)
         {
             this._mainController.CautaConcesionarCommand();
@@ -115,8 +129,8 @@ namespace Client.TeampLeaber.ProiectColectiv
                 cmbReligie.Items.Add(item);
             if (_religii != null && _religii.Count() > 0)
                 cmbReligie.SelectedIndex = 0;
-       
         }
+
         public Models.ReligieModel GetSelectedReligionTab1()
         {
             return cmbReligie.SelectedItem as Models.ReligieModel;
@@ -181,6 +195,18 @@ namespace Client.TeampLeaber.ProiectColectiv
             {
                 return domiciliuRichTextBoxConcesionari.Text;
             }
+        }
+
+        private void btnCautaTabRapoarte_Click(object sender, EventArgs e)
+        {
+            this.raportController.AfiseazaRegistruInmormantari();
+        }
+
+        internal void SetRapoarteInmormantareList(List<Models.RaportInmormantareModel> _inmormantari)
+        {
+            lstInmormantariTabRapoarte.Items.Clear();
+            foreach (Models.RaportInmormantareModel raport in _inmormantari)
+                lstInmormantariTabRapoarte.Items.Add(raport);
         }
     }
 }
