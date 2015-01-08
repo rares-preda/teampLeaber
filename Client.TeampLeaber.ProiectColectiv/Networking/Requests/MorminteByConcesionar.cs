@@ -21,7 +21,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.GetAsync(Constants.ConcesionarPath + "?cnp=" + _cnp);
+
+                response = await this.GetAsync(Constants.ConcesionarPath + "?cnp=" + _cnp + "&quid=" + Guid.NewGuid());
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
