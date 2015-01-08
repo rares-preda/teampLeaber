@@ -62,10 +62,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             var request = new Networking.Requests.ProgramareInmormantareRequest(model);
             bool ok = await request.Run();
             if (!ok)
-            {
-                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.Unknown_error);
                 return;
-            }
             MessageBox.Show(Utils.Constants.SUCCESS_MESSAGE);
         }
     }
