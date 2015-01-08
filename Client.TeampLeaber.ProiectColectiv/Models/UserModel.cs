@@ -8,6 +8,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 {
     public class UserModel
     {
+        public static UserModel Instance { get; set; }
+
         public int Id { get; set; }
 
         public string Username { get; set; }

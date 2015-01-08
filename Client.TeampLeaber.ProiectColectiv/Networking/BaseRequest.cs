@@ -16,7 +16,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking
             this.DefaultRequestHeaders.Accept.Clear();
             this.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             this.BaseAddress = new Uri(Utils.Constants.HOST);
+
+         
         }
- 
     }
 }
