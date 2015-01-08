@@ -27,6 +27,8 @@ namespace Client.TeampLeaber.ProiectColectiv.ErrorHandling
 
         public void HandleErrors(List<string> errors)
         {
+            if (errors == null || errors.Count() == 0)
+                return;
             string message = string.Join("\n", errors.ToArray());
             MessageBox.Show(message);
         }

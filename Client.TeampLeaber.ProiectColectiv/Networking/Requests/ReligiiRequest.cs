@@ -16,7 +16,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.GetAsync(Constants.GetReligiiPath);
+                response = await this.GetAsync(Constants.ReligiiPath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {

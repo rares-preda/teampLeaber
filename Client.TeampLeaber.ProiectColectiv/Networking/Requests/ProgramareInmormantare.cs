@@ -20,24 +20,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
             this.model = model;
         }
 
-        public ProgramareInmormantareRequest(string nume, string prenume, string cnp, int religionId, int mormantId, DateTime date, List<ActeModel> acte)
-        {
-            this.model = new InmormantareModel();
-            model.Data = date;
-            model.Decedat = new DecedatModel();
-            model.Decedat.Cnp = cnp;
-            model.Decedat.Nume = nume;
-            model.Decedat.Prenume = prenume;
-            model.Decedat.Acte = acte;
-            model.MormantId = mormantId;
-            model.ReligieId = religionId;
-        }
-
         public async Task<bool> Run()
         {
             try
             { 
-                response = await this.PutAsJsonAsync(Constants.ProgramareInmormantarePath, model);
+                response = await this.PutAsJsonAsync(Constants.InmormantarePath, model);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                     return true;
