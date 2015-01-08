@@ -21,7 +21,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.GetAsync(Constants.GetMorminteByConcesionarPath + "?cnp=" + _cnp);
+                response = await this.GetAsync(Constants.ConcesionarPath + "?cnp=" + _cnp);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {

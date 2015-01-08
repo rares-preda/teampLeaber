@@ -61,6 +61,16 @@
             this.lblNume = new System.Windows.Forms.Label();
             this.lblCnp = new System.Windows.Forms.Label();
             this.tabConcesionari = new System.Windows.Forms.TabPage();
+            this.concesionarGroupBoxConcesionari = new System.Windows.Forms.GroupBox();
+            this.adaugaButtonConcesionari = new System.Windows.Forms.Button();
+            this.prenumeTextBoxConcesionari = new System.Windows.Forms.TextBox();
+            this.numeTextBoxConcesionari = new System.Windows.Forms.TextBox();
+            this.domiciliuRichTextBoxConcesionari = new System.Windows.Forms.RichTextBox();
+            this.cnpTextBoxConcesionari = new System.Windows.Forms.TextBox();
+            this.DomiciliuLabelConcesionari = new System.Windows.Forms.Label();
+            this.prenumeLabelConcesionari = new System.Windows.Forms.Label();
+            this.numeLabelConcesionari = new System.Windows.Forms.Label();
+            this.CNPLabelConcesionari = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
@@ -68,6 +78,8 @@
             this.grpConcesionar1.SuspendLayout();
             this.grpDecedat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabConcesionari.SuspendLayout();
+            this.concesionarGroupBoxConcesionari.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab
@@ -78,7 +90,7 @@
             this.tab.Location = new System.Drawing.Point(0, 0);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(667, 443);
+            this.tab.Size = new System.Drawing.Size(1145, 644);
             this.tab.TabIndex = 0;
             // 
             // tabInmormantari
@@ -90,7 +102,7 @@
             this.tabInmormantari.Location = new System.Drawing.Point(4, 22);
             this.tabInmormantari.Name = "tabInmormantari";
             this.tabInmormantari.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInmormantari.Size = new System.Drawing.Size(659, 417);
+            this.tabInmormantari.Size = new System.Drawing.Size(1137, 618);
             this.tabInmormantari.TabIndex = 0;
             this.tabInmormantari.Text = "Inmormantari";
             this.tabInmormantari.UseVisualStyleBackColor = true;
@@ -395,19 +407,115 @@
             // 
             // tabConcesionari
             // 
+            this.tabConcesionari.Controls.Add(this.concesionarGroupBoxConcesionari);
             this.tabConcesionari.Location = new System.Drawing.Point(4, 22);
             this.tabConcesionari.Name = "tabConcesionari";
             this.tabConcesionari.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConcesionari.Size = new System.Drawing.Size(659, 417);
+            this.tabConcesionari.Size = new System.Drawing.Size(1137, 618);
             this.tabConcesionari.TabIndex = 1;
             this.tabConcesionari.Text = "Concesionari";
             this.tabConcesionari.UseVisualStyleBackColor = true;
+            // 
+            // concesionarGroupBoxConcesionari
+            // 
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.adaugaButtonConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.prenumeTextBoxConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.numeTextBoxConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.domiciliuRichTextBoxConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.cnpTextBoxConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.DomiciliuLabelConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.prenumeLabelConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.numeLabelConcesionari);
+            this.concesionarGroupBoxConcesionari.Controls.Add(this.CNPLabelConcesionari);
+            this.concesionarGroupBoxConcesionari.Location = new System.Drawing.Point(21, 25);
+            this.concesionarGroupBoxConcesionari.Name = "concesionarGroupBoxConcesionari";
+            this.concesionarGroupBoxConcesionari.Size = new System.Drawing.Size(323, 323);
+            this.concesionarGroupBoxConcesionari.TabIndex = 0;
+            this.concesionarGroupBoxConcesionari.TabStop = false;
+            this.concesionarGroupBoxConcesionari.Text = "Date concesionar";
+            // 
+            // adaugaButtonConcesionari
+            // 
+            this.adaugaButtonConcesionari.Location = new System.Drawing.Point(228, 280);
+            this.adaugaButtonConcesionari.Name = "adaugaButtonConcesionari";
+            this.adaugaButtonConcesionari.Size = new System.Drawing.Size(76, 23);
+            this.adaugaButtonConcesionari.TabIndex = 8;
+            this.adaugaButtonConcesionari.Text = "Adauga";
+            this.adaugaButtonConcesionari.UseVisualStyleBackColor = true;
+            this.adaugaButtonConcesionari.Click += new System.EventHandler(this.adaugaButtonConcesionari_Click);
+            // 
+            // prenumeTextBoxConcesionari
+            // 
+            this.prenumeTextBoxConcesionari.Location = new System.Drawing.Point(105, 101);
+            this.prenumeTextBoxConcesionari.Name = "prenumeTextBoxConcesionari";
+            this.prenumeTextBoxConcesionari.Size = new System.Drawing.Size(199, 20);
+            this.prenumeTextBoxConcesionari.TabIndex = 7;
+            // 
+            // numeTextBoxConcesionari
+            // 
+            this.numeTextBoxConcesionari.Location = new System.Drawing.Point(105, 64);
+            this.numeTextBoxConcesionari.Name = "numeTextBoxConcesionari";
+            this.numeTextBoxConcesionari.Size = new System.Drawing.Size(199, 20);
+            this.numeTextBoxConcesionari.TabIndex = 6;
+            // 
+            // domiciliuRichTextBoxConcesionari
+            // 
+            this.domiciliuRichTextBoxConcesionari.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.domiciliuRichTextBoxConcesionari.Location = new System.Drawing.Point(105, 144);
+            this.domiciliuRichTextBoxConcesionari.Name = "domiciliuRichTextBoxConcesionari";
+            this.domiciliuRichTextBoxConcesionari.Size = new System.Drawing.Size(199, 119);
+            this.domiciliuRichTextBoxConcesionari.TabIndex = 5;
+            this.domiciliuRichTextBoxConcesionari.Text = "";
+            // 
+            // cnpTextBoxConcesionari
+            // 
+            this.cnpTextBoxConcesionari.Location = new System.Drawing.Point(105, 26);
+            this.cnpTextBoxConcesionari.Name = "cnpTextBoxConcesionari";
+            this.cnpTextBoxConcesionari.Size = new System.Drawing.Size(199, 20);
+            this.cnpTextBoxConcesionari.TabIndex = 4;
+            // 
+            // DomiciliuLabelConcesionari
+            // 
+            this.DomiciliuLabelConcesionari.AutoSize = true;
+            this.DomiciliuLabelConcesionari.Location = new System.Drawing.Point(23, 144);
+            this.DomiciliuLabelConcesionari.Name = "DomiciliuLabelConcesionari";
+            this.DomiciliuLabelConcesionari.Size = new System.Drawing.Size(49, 13);
+            this.DomiciliuLabelConcesionari.TabIndex = 3;
+            this.DomiciliuLabelConcesionari.Text = "Domiciliu";
+            // 
+            // prenumeLabelConcesionari
+            // 
+            this.prenumeLabelConcesionari.AutoSize = true;
+            this.prenumeLabelConcesionari.Location = new System.Drawing.Point(23, 104);
+            this.prenumeLabelConcesionari.Name = "prenumeLabelConcesionari";
+            this.prenumeLabelConcesionari.Size = new System.Drawing.Size(49, 13);
+            this.prenumeLabelConcesionari.TabIndex = 2;
+            this.prenumeLabelConcesionari.Text = "Prenume";
+            // 
+            // numeLabelConcesionari
+            // 
+            this.numeLabelConcesionari.AutoSize = true;
+            this.numeLabelConcesionari.Location = new System.Drawing.Point(23, 67);
+            this.numeLabelConcesionari.Name = "numeLabelConcesionari";
+            this.numeLabelConcesionari.Size = new System.Drawing.Size(35, 13);
+            this.numeLabelConcesionari.TabIndex = 1;
+            this.numeLabelConcesionari.Text = "Nume";
+            // 
+            // CNPLabelConcesionari
+            // 
+            this.CNPLabelConcesionari.AutoSize = true;
+            this.CNPLabelConcesionari.Location = new System.Drawing.Point(23, 29);
+            this.CNPLabelConcesionari.Name = "CNPLabelConcesionari";
+            this.CNPLabelConcesionari.Size = new System.Drawing.Size(29, 13);
+            this.CNPLabelConcesionari.TabIndex = 0;
+            this.CNPLabelConcesionari.Text = "CNP";
+            this.CNPLabelConcesionari.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 443);
+            this.ClientSize = new System.Drawing.Size(1145, 644);
             this.Controls.Add(this.tab);
             this.Name = "MainForm";
             this.Text = "TeampLeaber";
@@ -421,6 +529,9 @@
             this.grpDecedat.ResumeLayout(false);
             this.grpDecedat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabConcesionari.ResumeLayout(false);
+            this.concesionarGroupBoxConcesionari.ResumeLayout(false);
+            this.concesionarGroupBoxConcesionari.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -460,6 +571,16 @@
         private System.Windows.Forms.CheckBox chkApartinator;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label lblActeAnexate;
+        private System.Windows.Forms.GroupBox concesionarGroupBoxConcesionari;
+        private System.Windows.Forms.Label DomiciliuLabelConcesionari;
+        private System.Windows.Forms.Label prenumeLabelConcesionari;
+        private System.Windows.Forms.Label numeLabelConcesionari;
+        private System.Windows.Forms.Label CNPLabelConcesionari;
+        private System.Windows.Forms.Button adaugaButtonConcesionari;
+        private System.Windows.Forms.TextBox prenumeTextBoxConcesionari;
+        private System.Windows.Forms.TextBox numeTextBoxConcesionari;
+        private System.Windows.Forms.RichTextBox domiciliuRichTextBoxConcesionari;
+        private System.Windows.Forms.TextBox cnpTextBoxConcesionari;
     }
 }
 

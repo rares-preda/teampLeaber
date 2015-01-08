@@ -12,9 +12,12 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string PORT = "1132";
         public static readonly string HOST = IP + ":" + PORT;
         public static readonly string LogInPath = "/api/utilizator";
-        public static readonly string GetReligiiPath = "/api/religie";
-        public static readonly string GetMorminteByConcesionarPath = "/api/concesionar";
-        public static readonly string ProgramareInmormantarePath = "/api/inmormantare";
+        public static readonly string ReligiiPath = "/api/religie";
+        public static readonly string ConcesionarPath = "/api/concesionar";
+        public static readonly string InmormantarePath = "/api/inmormantare";
+
+        public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
+
         public static class ErrorMessages
         {
             public static readonly string Unknown_error = "A aparut o eroare!";

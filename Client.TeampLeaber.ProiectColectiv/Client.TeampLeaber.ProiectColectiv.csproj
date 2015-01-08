@@ -47,10 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ConcesionariController.cs" />
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Controller\LogInController.cs" />
     <Compile Include="ErrorHandling\ErrorHandling.cs" />
     <Compile Include="Models\ActeModel.cs" />
+    <Compile Include="Models\ConcesionarModel.cs" />
     <Compile Include="Models\DecedatModel.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\InmormantareModel.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Models\MorminteConcesionar.cs" />
     <Compile Include="Models\ReligieModel.cs" />
     <Compile Include="Networking\BaseRequest.cs" />
+    <Compile Include="Networking\Requests\AdaugareConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\LogInRequest.cs" />
     <Compile Include="Networking\Requests\MorminteByConcesionar.cs" />
     <Compile Include="Networking\Requests\ProgramareInmormantare.cs" />

@@ -37,7 +37,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             { 
-                response = await this.PutAsJsonAsync(Constants.ProgramareInmormantarePath, model);
+                response = await this.PutAsJsonAsync(Constants.InmormantarePath, model);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                     return true;
