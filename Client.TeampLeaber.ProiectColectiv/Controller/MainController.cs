@@ -14,12 +14,12 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         private string _selectedMormantId;
         private List<ReligieModel> _religii;
 
-        public MainController()
+        public MainController(MainForm mainForm)
         {
-            _view = new MainForm();
+            _view = mainForm;
             _view.SetController(this);
             GetReligions();
-             
+        
         }
 
         private async void GetReligions()
@@ -29,10 +29,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             _view.SetReligionsTab1(_religii);
         }
 
-        public void DisplayView()
-        {
-            _view.Show();
-        }
 
         internal async void CautaConcesionarCommand()
         {

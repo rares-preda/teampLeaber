@@ -13,7 +13,10 @@ namespace Client.TeampLeaber.ProiectColectiv
 {
     public partial class MainForm : Form
     {
+
+        private ConcesionariController concesionariController;
         private MainController _mainController;
+
         public MainForm()
         {
             InitializeComponent();
@@ -95,6 +98,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             this._mainController = mainController;
         }
 
+        internal void SetConcesionariController(Controller.ConcesionariController concesionariController)
+        {
+            this.concesionariController = concesionariController;
+        }
+
         private void btnCautaConcesionar_Click(object sender, EventArgs e)
         {
             this._mainController.CautaConcesionarCommand();
@@ -134,6 +142,45 @@ namespace Client.TeampLeaber.ProiectColectiv
         private void btnProgramare_Click(object sender, EventArgs e)
         {
             this._mainController.ProgrameazaInmormantare();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adaugaButtonConcesionari_Click(object sender, EventArgs e)
+        {
+            this.concesionariController.AdaugaConcesionar();
+        }
+
+        public string CnpConcesionarTab2
+        {
+            get
+            {
+                return cnpTextBoxConcesionari.Text;
+            }
+        }
+        public string NumeConcesionarTab2
+        {
+            get
+            {
+                return numeTextBoxConcesionari.Text;
+            }
+        }
+        public string PrenumeConcesionarTab2
+        {
+            get
+            {
+                return prenumeTextBoxConcesionari.Text;
+            }
+        }
+        public string DomiciliuConcesionarTab2
+        {
+            get
+            {
+                return domiciliuRichTextBoxConcesionari.Text;
+            }
         }
     }
 }

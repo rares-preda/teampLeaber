@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    class LogInRequest : BaseRequest
+    public class LogInRequest : BaseRequest
     {
         private string email;
         private string password;
@@ -51,8 +51,5 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                 return null;
             }
         }
-
-        
-
     }
 }

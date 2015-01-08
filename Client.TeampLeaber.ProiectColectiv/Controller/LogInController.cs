@@ -28,11 +28,19 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
                 View.TextPassword = String.Empty;
             else
             {
-                MainController contr = new MainController();
-                contr.DisplayView();
-                View.Hide();
+                InitiateMainForm();
             }
 
+        }
+
+        private void InitiateMainForm()
+        {
+            MainForm mainForm = new MainForm();
+
+            MainController contr = new MainController(mainForm);
+            ConcesionariController concesionarController = new ConcesionariController(mainForm);
+            mainForm.Show();
+            View.Hide();
         }
 
     }

@@ -16,6 +16,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string ConcesionarPath = "/api/concesionar";
         public static readonly string InmormantarePath = "/api/inmormantare";
 
+        public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
+
         public static class ErrorMessages
         {
             public static readonly string Unknown_error = "A aparut o eroare!";
