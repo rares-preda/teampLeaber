@@ -31,7 +31,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
             try
             {
                 response = await this.PostAsJsonAsync(Constants.LogInPath, user);
-
+                
                 if (response.StatusCode == HttpStatusCode.OK) // 200
                 {
                     UserModel loggedUser = await response.Content.ReadAsAsync<UserModel>();
@@ -44,8 +44,9 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {
+                Console.Write(ex.Message);
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;
             }

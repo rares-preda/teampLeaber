@@ -26,7 +26,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         {
             Networking.Requests.ReligiiRequest req = new Networking.Requests.ReligiiRequest();
             _religii = await req.Run();
-            _view.SetReligions(_religii);
+            _view.SetReligionsTab1(_religii);
         }
 
         public void DisplayView()
@@ -36,48 +36,34 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         internal async void CautaConcesionarCommand()
         {
-            if (String.IsNullOrEmpty(_view.ConcsCnp))
+            if (String.IsNullOrEmpty(_view.ConcsCnpTab1))
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.NO_CNP_CONCESIONAR);
                 return;
             }
 
-            var request = new Networking.Requests.MorminteByConcesionar(_view.ConcsCnp);
+            var request = new Networking.Requests.MorminteByConcesionar(_view.ConcsCnpTab1);
             var value = await request.Run();
             if (value == null)
                 return;
-            _view.ConcsNume = value.Nume;
-            _view.ConcsPrenume = value.Prenume;
-            _view.UpdateMorminte(value.Morminte);
+            _view.ConcsNumeTab1 = value.Nume;
+            _view.ConcsPrenumeTab1 = value.Prenume;
+            _view.UpdateMorminteTab1(value.Morminte);
              
         }
 
         internal async void ProgrameazaInmormantare()
         {
-            if (String.IsNullOrEmpty(_view.DecedatNume) || String.IsNullOrEmpty(_view.DecedatPrenume) || String.IsNullOrEmpty(_view.DecedatCNP))
-            {
-                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.INVALID_DEAD_PERSON_PERSONAL_DATA);
-                return;
-            }
-            if (_view.GetSelectedReligion() == null)
-            {
-                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.NO_RELIGION_SELECTED);
-                return;
-            }
-            if (_view.GetSelectedMormant() == null)
-            {
-                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.NO_MORMANT_SELECTED);
-                return;
-            }
 
-            var request = new Networking.Requests.ProgramareInmormantareRequest(_view.DecedatNume, _view.DecedatPrenume, _view.DecedatCNP, _view.GetSelectedReligion().Id,
-                _view.GetSelectedMormant().Id, _view.SelectedDate, null);
+            InmormantareModel model = new InmormantareModel(_view.DecedatNumeTab1, _view.DecedatPrenumeTab1, _view.DecedatCNPTab1, _view.GetSelectedReligionTab1().Id,
+                _view.GetSelectedMormantTab1() == null ? 0 : _view.GetSelectedMormantTab1().Id, _view.SelectedDateTab1);
+            if (!model.IsValid())
+                return;
+            var request = new Networking.Requests.ProgramareInmormantareRequest(model);
             bool ok = await request.Run();
-            if (ok)
-            {
-                MessageBox.Show("Merge!");
-            }
-
+            if (!ok)
+                return;
+            MessageBox.Show(Utils.Constants.SUCCESS_MESSAGE);
         }
     }
 }

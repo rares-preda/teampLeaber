@@ -23,9 +23,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         public async Task LogInCommand()
         {
             var loginRequest = new Networking.Requests.LogInRequest(View.UserName, View.TextPassword);
-            UserModel user = await loginRequest.Run();
-
-            if (user == null)
+            UserModel.Instance = await loginRequest.Run();
+            if (UserModel.Instance == null)
                 View.TextPassword = String.Empty;
             else
             {
