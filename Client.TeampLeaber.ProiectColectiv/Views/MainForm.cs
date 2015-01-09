@@ -182,5 +182,12 @@ namespace Client.TeampLeaber.ProiectColectiv
                 return domiciliuRichTextBoxConcesionari.Text;
             }
         }
+
+        internal void ClearDateConcesionarDataTab1()
+        {
+            txtNumeConcesionar1.Visible = lblConcesionarNume.Visible = false;
+            txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = false;
+            lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
+        }
     }
 }

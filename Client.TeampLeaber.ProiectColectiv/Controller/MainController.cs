@@ -1,4 +1,5 @@
 ﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,11 +38,15 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
                 ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.NO_CNP_CONCESIONAR);
                 return;
             }
+            _view.ClearDateConcesionarDataTab1();
 
             var request = new Networking.Requests.MorminteByConcesionar(_view.ConcsCnpTab1);
             var value = await request.Run();
             if (value == null)
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.NO_INSTANCES_MORMINTE_CONCESIONAR);
                 return;
+            }
             _view.ConcsNumeTab1 = value.Nume;
             _view.ConcsPrenumeTab1 = value.Prenume;
             _view.UpdateMorminteTab1(value.Morminte);
@@ -50,7 +55,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         internal async void ProgrameazaInmormantare()
         {
-
             InmormantareModel model = new InmormantareModel(_view.DecedatNumeTab1, _view.DecedatPrenumeTab1, _view.DecedatCNPTab1, _view.GetSelectedReligionTab1().Id,
                 _view.GetSelectedMormantTab1() == null ? 0 : _view.GetSelectedMormantTab1().Id, _view.SelectedDateTab1);
             if (!model.IsValid())
