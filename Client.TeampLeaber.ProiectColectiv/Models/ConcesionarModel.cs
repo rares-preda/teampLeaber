@@ -46,7 +46,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
             }
             else
             {
-                errorMessages.Add("Model invalid");
+                errorMessages.Add("ConcesionarModel invalid");
             }
 
             if (errorMessages.Count() == 0)

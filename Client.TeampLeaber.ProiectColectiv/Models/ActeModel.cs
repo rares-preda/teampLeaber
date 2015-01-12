@@ -10,5 +10,12 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public int Id { get; set; }
         public int Numar { get; set; }
         public int TipActId { get; set; }
+
+        public ActeModel(int id, int numar, int tipActId)
+        {
+            this.Id = id;
+            this.Numar = numar;
+            this.TipActId = tipActId;
+        }
     }
 }

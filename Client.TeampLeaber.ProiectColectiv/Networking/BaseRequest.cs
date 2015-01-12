@@ -16,9 +16,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking
             this.DefaultRequestHeaders.Accept.Clear();
             this.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             this.BaseAddress = new Uri(Utils.Constants.HOST);
-        
+
             if (Models.UserModel.Instance != null)
+            {
                 this.DefaultRequestHeaders.Add("AuthorizationToken", Models.UserModel.Instance.Id.ToString());
+            }
         }
     }
 }

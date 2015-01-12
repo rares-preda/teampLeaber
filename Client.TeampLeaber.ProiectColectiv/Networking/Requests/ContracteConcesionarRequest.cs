@@ -1,32 +1,33 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class MorminteByConcesionar : BaseRequest
+    public class ContracteConcesionarRequest : BaseRequest
     {
-        private string _cnp;
-        public MorminteByConcesionar(string Cnp)
+        private string cnp;
+
+        public ContracteConcesionarRequest(string cnp)
         {
-            _cnp = Cnp;
+            this.cnp = cnp;
         }
-        public async Task<Models.MorminteConcesionarModel> Run()
+
+        internal async Task<List<ContractModel>> Run()
         {
             try
             {
+                response = await this.GetAsync(Constants.ContracteConcesionarPath + "?cnp=" + cnp);
 
-                response = await this.GetAsync(Constants.ConcesionarPath + "?cnp=" + _cnp + "&quid=" + Guid.NewGuid());
-
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
+                if (response.StatusCode == HttpStatusCode.OK) // 200
                 {
-                    Models.MorminteConcesionarModel value = await response.Content.ReadAsAsync<Models.MorminteConcesionarModel>();
+                    List<ContractModel> value = await response.Content.ReadAsAsync<List<ContractModel>>();
                     return value;
                 }
                 else
@@ -36,7 +37,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;
