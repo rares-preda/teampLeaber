@@ -200,5 +200,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             prelungireComboBoxTab1.Visible = true;
             modificaDurataContractButtonTab1.Visible = true;
         }
+        internal void ClearDateConcesionarDataTab1()
+        {
+            txtNumeConcesionar1.Visible = lblConcesionarNume.Visible = false;
+            txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = false;
+            lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
+        }
     }
 }

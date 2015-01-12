@@ -62,6 +62,7 @@
     <Compile Include="Models\MormantModel.cs" />
     <Compile Include="Models\MorminteConcesionarModel.cs" />
     <Compile Include="Models\ParcelaModel.cs" />
+    <Compile Include="Models\PrelungireContractModel.cs" />
     <Compile Include="Models\ReligieModel.cs" />
     <Compile Include="Networking\BaseRequest.cs" />
     <Compile Include="Networking\Requests\AdaugareConcesionarRequest.cs" />
