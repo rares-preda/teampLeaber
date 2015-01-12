@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ReligiiRequest : BaseRequest
+    public class GetTipActeRequest : BaseRequest
     {
-        public async Task<List<ReligieModel>> Run()
+        public async Task<List<TipActModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.ReligiiPath);
+                response = await this.GetAsync(Constants.TipActePath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
-                    return religii;
+                    List<TipActModel> _tipActe = await response.Content.ReadAsAsync<List<TipActModel>>();
+                    return _tipActe;
                 }
                 else
                 {
@@ -30,7 +30,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;

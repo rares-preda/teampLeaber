@@ -16,9 +16,10 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string ConcesionarPath = "/api/concesionar";
         public static readonly string ContracteConcesionarPath = "/api/contractConcesiune";
         public static readonly string InmormantarePath = "/api/inmormantare";
+        public static readonly string TipActePath = "/api/tipAct";
         public static readonly string PrelungireContractConcesiune = "/api/ContractConcesiune/Prelungire";
-
         public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
+        public static readonly string ActePath = "/api/act";
 
         public static class ErrorMessages
         {
@@ -34,5 +35,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
 
 
         public static string SUCCESS_MESSAGE = "Operatia a fost realizata cu suces!";
+
+        
     }
 }
