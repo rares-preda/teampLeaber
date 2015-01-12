@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv
 {
@@ -182,6 +183,22 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        private void cautaContracteButtonTab2_Click(object sender, EventArgs e)
+        {
+            this.concesionariController.GetContracteByCNP(this.cautaCNPConcesionarTextBoxTab2.Text);
+        }
+
+        public void AddContracteGridView(List<ContractModel> contracte)
+        {
+            contracteConcesionariGridViewTab2.DataSource = contracte;
+        }
+
+        private void contracteConcesionariGridViewTab2_SelectionChanged(object sender, EventArgs e)
+        {
+            prelungireLabelTab1.Visible = true;
+            prelungireComboBoxTab1.Visible = true;
+            modificaDurataContractButtonTab1.Visible = true;
+        }
         internal void ClearDateConcesionarDataTab1()
         {
             txtNumeConcesionar1.Visible = lblConcesionarNume.Visible = false;

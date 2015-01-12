@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabInmormantari = new System.Windows.Forms.TabPage();
             this.btnProgramare = new System.Windows.Forms.Button();
@@ -60,6 +63,11 @@
             this.lblNume = new System.Windows.Forms.Label();
             this.lblCnp = new System.Windows.Forms.Label();
             this.tabConcesionari = new System.Windows.Forms.TabPage();
+            this.dateConcesionarGroupBoxTab1 = new System.Windows.Forms.GroupBox();
+            this.contracteConcesionariGridViewTab2 = new System.Windows.Forms.DataGridView();
+            this.cautaContracteButtonTab2 = new System.Windows.Forms.Button();
+            this.cautaCNPConcesionarTextBoxTab2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.concesionarGroupBoxConcesionari = new System.Windows.Forms.GroupBox();
             this.adaugaButtonConcesionari = new System.Windows.Forms.Button();
             this.prenumeTextBoxConcesionari = new System.Windows.Forms.TextBox();
@@ -71,6 +79,9 @@
             this.numeLabelConcesionari = new System.Windows.Forms.Label();
             this.CNPLabelConcesionari = new System.Windows.Forms.Label();
             this.lbActeTab1 = new System.Windows.Forms.ListBox();
+            this.prelungireLabelTab1 = new System.Windows.Forms.Label();
+            this.prelungireComboBoxTab1 = new System.Windows.Forms.ComboBox();
+            this.modificaDurataContractButtonTab1 = new System.Windows.Forms.Button();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
@@ -78,6 +89,8 @@
             this.grpConcesionar1.SuspendLayout();
             this.grpDecedat.SuspendLayout();
             this.tabConcesionari.SuspendLayout();
+            this.dateConcesionarGroupBoxTab1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contracteConcesionariGridViewTab2)).BeginInit();
             this.concesionarGroupBoxConcesionari.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +102,7 @@
             this.tab.Location = new System.Drawing.Point(0, 0);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(1145, 644);
+            this.tab.Size = new System.Drawing.Size(931, 644);
             this.tab.TabIndex = 0;
             // 
             // tabInmormantari
@@ -101,7 +114,7 @@
             this.tabInmormantari.Location = new System.Drawing.Point(4, 22);
             this.tabInmormantari.Name = "tabInmormantari";
             this.tabInmormantari.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInmormantari.Size = new System.Drawing.Size(1137, 618);
+            this.tabInmormantari.Size = new System.Drawing.Size(923, 618);
             this.tabInmormantari.TabIndex = 0;
             this.tabInmormantari.Text = "Inmormantari";
             this.tabInmormantari.UseVisualStyleBackColor = true;
@@ -398,14 +411,83 @@
             // 
             // tabConcesionari
             // 
+            this.tabConcesionari.Controls.Add(this.dateConcesionarGroupBoxTab1);
             this.tabConcesionari.Controls.Add(this.concesionarGroupBoxConcesionari);
             this.tabConcesionari.Location = new System.Drawing.Point(4, 22);
             this.tabConcesionari.Name = "tabConcesionari";
             this.tabConcesionari.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConcesionari.Size = new System.Drawing.Size(1137, 618);
+            this.tabConcesionari.Size = new System.Drawing.Size(923, 618);
             this.tabConcesionari.TabIndex = 1;
             this.tabConcesionari.Text = "Concesionari";
             this.tabConcesionari.UseVisualStyleBackColor = true;
+            // 
+            // dateConcesionarGroupBoxTab1
+            // 
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.modificaDurataContractButtonTab1);
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.prelungireComboBoxTab1);
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.prelungireLabelTab1);
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.contracteConcesionariGridViewTab2);
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.cautaContracteButtonTab2);
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.cautaCNPConcesionarTextBoxTab2);
+            this.dateConcesionarGroupBoxTab1.Controls.Add(this.label1);
+            this.dateConcesionarGroupBoxTab1.Location = new System.Drawing.Point(405, 25);
+            this.dateConcesionarGroupBoxTab1.Name = "dateConcesionarGroupBoxTab1";
+            this.dateConcesionarGroupBoxTab1.Size = new System.Drawing.Size(462, 323);
+            this.dateConcesionarGroupBoxTab1.TabIndex = 1;
+            this.dateConcesionarGroupBoxTab1.TabStop = false;
+            this.dateConcesionarGroupBoxTab1.Text = "Date contract";
+            // 
+            // contracteConcesionariGridViewTab2
+            // 
+            this.contracteConcesionariGridViewTab2.AllowUserToAddRows = false;
+            this.contracteConcesionariGridViewTab2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.contracteConcesionariGridViewTab2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.contracteConcesionariGridViewTab2.Location = new System.Drawing.Point(22, 48);
+            this.contracteConcesionariGridViewTab2.Name = "contracteConcesionariGridViewTab2";
+            this.contracteConcesionariGridViewTab2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.contracteConcesionariGridViewTab2.Size = new System.Drawing.Size(404, 215);
+            this.contracteConcesionariGridViewTab2.TabIndex = 3;
+            this.contracteConcesionariGridViewTab2.SelectionChanged += new System.EventHandler(this.contracteConcesionariGridViewTab2_SelectionChanged);
+            // 
+            // cautaContracteButtonTab2
+            // 
+            this.cautaContracteButtonTab2.Location = new System.Drawing.Point(351, 19);
+            this.cautaContracteButtonTab2.Name = "cautaContracteButtonTab2";
+            this.cautaContracteButtonTab2.Size = new System.Drawing.Size(75, 23);
+            this.cautaContracteButtonTab2.TabIndex = 2;
+            this.cautaContracteButtonTab2.Text = "Cauta";
+            this.cautaContracteButtonTab2.UseVisualStyleBackColor = true;
+            this.cautaContracteButtonTab2.Click += new System.EventHandler(this.cautaContracteButtonTab2_Click);
+            // 
+            // cautaCNPConcesionarTextBoxTab2
+            // 
+            this.cautaCNPConcesionarTextBoxTab2.Location = new System.Drawing.Point(128, 21);
+            this.cautaCNPConcesionarTextBoxTab2.Name = "cautaCNPConcesionarTextBoxTab2";
+            this.cautaCNPConcesionarTextBoxTab2.Size = new System.Drawing.Size(217, 20);
+            this.cautaCNPConcesionarTextBoxTab2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CNP Concesionar";
             // 
             // concesionarGroupBoxConcesionari
             // 
@@ -440,14 +522,14 @@
             this.prenumeTextBoxConcesionari.Location = new System.Drawing.Point(105, 101);
             this.prenumeTextBoxConcesionari.Name = "prenumeTextBoxConcesionari";
             this.prenumeTextBoxConcesionari.Size = new System.Drawing.Size(199, 20);
-            this.prenumeTextBoxConcesionari.TabIndex = 7;
+            this.prenumeTextBoxConcesionari.TabIndex = 6;
             // 
             // numeTextBoxConcesionari
             // 
             this.numeTextBoxConcesionari.Location = new System.Drawing.Point(105, 64);
             this.numeTextBoxConcesionari.Name = "numeTextBoxConcesionari";
             this.numeTextBoxConcesionari.Size = new System.Drawing.Size(199, 20);
-            this.numeTextBoxConcesionari.TabIndex = 6;
+            this.numeTextBoxConcesionari.TabIndex = 5;
             // 
             // domiciliuRichTextBoxConcesionari
             // 
@@ -455,7 +537,7 @@
             this.domiciliuRichTextBoxConcesionari.Location = new System.Drawing.Point(105, 144);
             this.domiciliuRichTextBoxConcesionari.Name = "domiciliuRichTextBoxConcesionari";
             this.domiciliuRichTextBoxConcesionari.Size = new System.Drawing.Size(199, 119);
-            this.domiciliuRichTextBoxConcesionari.TabIndex = 5;
+            this.domiciliuRichTextBoxConcesionari.TabIndex = 7;
             this.domiciliuRichTextBoxConcesionari.Text = "";
             // 
             // cnpTextBoxConcesionari
@@ -509,12 +591,92 @@
             this.lbActeTab1.Name = "lbActeTab1";
             this.lbActeTab1.Size = new System.Drawing.Size(180, 43);
             this.lbActeTab1.TabIndex = 9;
+            // prelungireLabelTab1
+            // 
+            this.prelungireLabelTab1.AutoSize = true;
+            this.prelungireLabelTab1.Location = new System.Drawing.Point(22, 289);
+            this.prelungireLabelTab1.Name = "prelungireLabelTab1";
+            this.prelungireLabelTab1.Size = new System.Drawing.Size(54, 13);
+            this.prelungireLabelTab1.TabIndex = 4;
+            this.prelungireLabelTab1.Text = "Prelungire";
+            this.prelungireLabelTab1.Visible = false;
+            // 
+            // prelungireComboBoxTab1
+            // 
+            this.prelungireComboBoxTab1.FormattingEnabled = true;
+            this.prelungireComboBoxTab1.Items.AddRange(new object[] {
+            "Renunta",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8 ",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50"});
+            this.prelungireComboBoxTab1.Location = new System.Drawing.Point(91, 286);
+            this.prelungireComboBoxTab1.Name = "prelungireComboBoxTab1";
+            this.prelungireComboBoxTab1.Size = new System.Drawing.Size(254, 21);
+            this.prelungireComboBoxTab1.TabIndex = 5;
+            this.prelungireComboBoxTab1.Visible = false;
+            // 
+            // modificaDurataContractButtonTab1
+            // 
+            this.modificaDurataContractButtonTab1.Location = new System.Drawing.Point(351, 284);
+            this.modificaDurataContractButtonTab1.Name = "modificaDurataContractButtonTab1";
+            this.modificaDurataContractButtonTab1.Size = new System.Drawing.Size(75, 23);
+            this.modificaDurataContractButtonTab1.TabIndex = 6;
+            this.modificaDurataContractButtonTab1.Text = "Modifica";
+            this.modificaDurataContractButtonTab1.UseVisualStyleBackColor = true;
+            this.modificaDurataContractButtonTab1.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 644);
+            this.ClientSize = new System.Drawing.Size(931, 644);
             this.Controls.Add(this.tab);
             this.Name = "MainForm";
             this.Text = "TeampLeaber";
@@ -528,6 +690,9 @@
             this.grpDecedat.ResumeLayout(false);
             this.grpDecedat.PerformLayout();
             this.tabConcesionari.ResumeLayout(false);
+            this.dateConcesionarGroupBoxTab1.ResumeLayout(false);
+            this.dateConcesionarGroupBoxTab1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contracteConcesionariGridViewTab2)).EndInit();
             this.concesionarGroupBoxConcesionari.ResumeLayout(false);
             this.concesionarGroupBoxConcesionari.PerformLayout();
             this.ResumeLayout(false);
@@ -579,6 +744,14 @@
         private System.Windows.Forms.RichTextBox domiciliuRichTextBoxConcesionari;
         private System.Windows.Forms.TextBox cnpTextBoxConcesionari;
         private System.Windows.Forms.ListBox lbActeTab1;
+        private System.Windows.Forms.GroupBox dateConcesionarGroupBoxTab1;
+        private System.Windows.Forms.Button cautaContracteButtonTab2;
+        private System.Windows.Forms.TextBox cautaCNPConcesionarTextBoxTab2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView contracteConcesionariGridViewTab2;
+        private System.Windows.Forms.Button modificaDurataContractButtonTab1;
+        private System.Windows.Forms.ComboBox prelungireComboBoxTab1;
+        private System.Windows.Forms.Label prelungireLabelTab1;
     }
 }
 

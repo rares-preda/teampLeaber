@@ -11,6 +11,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public int Numar { get; set; }
         public int TipActId { get; set; }
 
+
         public ActeModel(string numar, int Id)
         {
             int n;
@@ -39,6 +40,13 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public override string ToString()
         {
             return Numar + "";
+        }
+        public ActeModel(int id, int numar, int tipActId)
+        {
+            this.Id = id;
+            this.Numar = numar;
+            this.TipActId = tipActId;
+
         }
     }
 }
