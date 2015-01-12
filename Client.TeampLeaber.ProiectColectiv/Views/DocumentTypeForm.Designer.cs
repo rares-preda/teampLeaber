@@ -49,6 +49,7 @@
             this.btnAdaugaTipActe.TabIndex = 1;
             this.btnAdaugaTipActe.Text = "Adauga";
             this.btnAdaugaTipActe.UseVisualStyleBackColor = true;
+            this.btnAdaugaTipActe.Click += new System.EventHandler(this.btnAdaugaTipActe_Click);
             // 
             // btnEditeazaTipActe
             // 
@@ -58,6 +59,7 @@
             this.btnEditeazaTipActe.TabIndex = 2;
             this.btnEditeazaTipActe.Text = "Editeaza";
             this.btnEditeazaTipActe.UseVisualStyleBackColor = true;
+            this.btnEditeazaTipActe.Click += new System.EventHandler(this.btnEditeazaTipActe_Click);
             // 
             // DocumentTypeForm
             // 

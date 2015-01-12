@@ -88,6 +88,7 @@
             this.btnSalveazaAct.TabIndex = 5;
             this.btnSalveazaAct.Text = "Salveaza";
             this.btnSalveazaAct.UseVisualStyleBackColor = true;
+            this.btnSalveazaAct.Click += new System.EventHandler(this.btnSalveazaAct_Click);
             // 
             // DocumentForm
             // 

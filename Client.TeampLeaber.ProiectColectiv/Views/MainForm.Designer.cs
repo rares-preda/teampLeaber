@@ -50,7 +50,6 @@
             this.lblCNPConcesionar1 = new System.Windows.Forms.Label();
             this.txtCNPConcesionar1 = new System.Windows.Forms.TextBox();
             this.grpDecedat = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.lblActeAnexate = new System.Windows.Forms.Label();
             this.btnActe = new System.Windows.Forms.Button();
             this.chkApartinator = new System.Windows.Forms.CheckBox();
@@ -71,13 +70,13 @@
             this.prenumeLabelConcesionari = new System.Windows.Forms.Label();
             this.numeLabelConcesionari = new System.Windows.Forms.Label();
             this.CNPLabelConcesionari = new System.Windows.Forms.Label();
+            this.lbActeTab1 = new System.Windows.Forms.ListBox();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpConcesionar1.SuspendLayout();
             this.grpDecedat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabConcesionari.SuspendLayout();
             this.concesionarGroupBoxConcesionari.SuspendLayout();
             this.SuspendLayout();
@@ -300,7 +299,7 @@
             // 
             // grpDecedat
             // 
-            this.grpDecedat.Controls.Add(this.dataGridView2);
+            this.grpDecedat.Controls.Add(this.lbActeTab1);
             this.grpDecedat.Controls.Add(this.lblActeAnexate);
             this.grpDecedat.Controls.Add(this.btnActe);
             this.grpDecedat.Controls.Add(this.chkApartinator);
@@ -316,14 +315,6 @@
             this.grpDecedat.TabIndex = 0;
             this.grpDecedat.TabStop = false;
             this.grpDecedat.Text = "Decedat";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(98, 174);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(189, 49);
-            this.dataGridView2.TabIndex = 9;
             // 
             // lblActeAnexate
             // 
@@ -511,6 +502,14 @@
             this.CNPLabelConcesionari.Text = "CNP";
             this.CNPLabelConcesionari.Click += new System.EventHandler(this.label1_Click);
             // 
+            // lbActeTab1
+            // 
+            this.lbActeTab1.FormattingEnabled = true;
+            this.lbActeTab1.Location = new System.Drawing.Point(98, 174);
+            this.lbActeTab1.Name = "lbActeTab1";
+            this.lbActeTab1.Size = new System.Drawing.Size(180, 43);
+            this.lbActeTab1.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,7 +527,6 @@
             this.grpConcesionar1.PerformLayout();
             this.grpDecedat.ResumeLayout(false);
             this.grpDecedat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabConcesionari.ResumeLayout(false);
             this.concesionarGroupBoxConcesionari.ResumeLayout(false);
             this.concesionarGroupBoxConcesionari.PerformLayout();
@@ -569,7 +567,6 @@
         private System.Windows.Forms.Label lblDataInmormantare;
         private System.Windows.Forms.Button btnActe;
         private System.Windows.Forms.CheckBox chkApartinator;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label lblActeAnexate;
         private System.Windows.Forms.GroupBox concesionarGroupBoxConcesionari;
         private System.Windows.Forms.Label DomiciliuLabelConcesionari;
@@ -581,6 +578,7 @@
         private System.Windows.Forms.TextBox numeTextBoxConcesionari;
         private System.Windows.Forms.RichTextBox domiciliuRichTextBoxConcesionari;
         private System.Windows.Forms.TextBox cnpTextBoxConcesionari;
+        private System.Windows.Forms.ListBox lbActeTab1;
     }
 }
 

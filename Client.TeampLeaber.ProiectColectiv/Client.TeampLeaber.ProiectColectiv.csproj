@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Networking\Requests\AddDocumentRequest.cs" />
+    <Compile Include="Networking\Requests\AddDocumentTypeRequest.cs" />
     <Compile Include="Controller\ConcesionariController.cs" />
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Controller\LogInController.cs" />
@@ -61,10 +63,12 @@
     <Compile Include="Models\ReligieModel.cs" />
     <Compile Include="Networking\BaseRequest.cs" />
     <Compile Include="Networking\Requests\AdaugareConcesionarRequest.cs" />
+    <Compile Include="Networking\Requests\GetTipActeRequest.cs" />
     <Compile Include="Networking\Requests\LogInRequest.cs" />
     <Compile Include="Networking\Requests\MorminteByConcesionar.cs" />
     <Compile Include="Networking\Requests\ProgramareInmormantare.cs" />
     <Compile Include="Networking\Requests\ReligiiRequest.cs" />
+    <Compile Include="Networking\Requests\UpdateDocumentTypeRequest.cs" />
     <Compile Include="Views\DocumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
