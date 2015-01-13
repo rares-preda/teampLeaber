@@ -351,5 +351,19 @@ namespace Client.TeampLeaber.ProiectColectiv
         {
             raportController.UpdateMormantObservatie();
         }
+
+        public void SetDecedatiCuApartinator(List<DecedatCuApartinatorModel> decedatiCuApartinator)
+        {
+            if (decedatiCuApartinator != null)
+                foreach (var item in decedatiCuApartinator)
+                    listBoxDecedatiCuApartinator.Items.Add(item.ToString());
+        }
+
+        public void SetDecedatiFaraApartinator(List<DecedatFaraApartinatorModel> decedatiFaraApartinator)
+        {
+            if (decedatiFaraApartinator != null)
+                foreach (var item in decedatiFaraApartinator)
+                    listBoxDecedatiFaraApartinator.Items.Add(item.ToString());
+        }
     }
 }

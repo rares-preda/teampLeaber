@@ -17,11 +17,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         private List<ReligieModel> _religii;
         private List<TipActModel> tipuriActe;
         private List<ActeModel> acte;
-        
+
         private DocumentForm documentForm;
         private DocumentTypeForm documentTypeForm;
         private EditDocumentTypeForm editDocumentTypeForm;
-            
+
         public MainController(MainForm mainForm)
         {
             view = mainForm;
@@ -30,7 +30,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             documentForm = new DocumentForm();
             documentForm.SetController(this);
             GetReligions();
-        
+            GetDecedati();
         }
 
         private async void GetReligions()
@@ -60,7 +60,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             view.ConcsNumeTab1 = value.Nume;
             view.ConcsPrenumeTab1 = value.Prenume;
             view.UpdateMorminteTab1(value.Morminte);
-             
+
         }
 
         internal async void ProgrameazaInmormantare()
@@ -84,7 +84,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             documentForm.Show();
 
             await RefreshTipuriActe();
-           
+
         }
 
         private async Task RefreshTipuriActe()
@@ -104,10 +104,10 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             documentTypeForm = new DocumentTypeForm();
             documentTypeForm.SetController(this);
             documentTypeForm.Show();
-            
+
 
             documentTypeForm.AddTypeList(this.tipuriActe);
-           // var request = new 
+            // var request = new 
         }
 
         internal void AddDocumentTypeCommand()
@@ -186,7 +186,19 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
                 documentForm.Close();
             }
-                
+
         }
+
+        internal async void GetDecedati()
+        {
+            var requestDecedatiCuApartinator = new Networking.Requests.DecedatiCuApartinatorRequest();
+            List<DecedatCuApartinatorModel> decedatiCuApartinator = await requestDecedatiCuApartinator.Run();
+            view.SetDecedatiCuApartinator(decedatiCuApartinator);
+
+            var requestDecedatiFaraApartinator = new Networking.Requests.DecedatiFaraApartinatorRequest();
+            List<DecedatFaraApartinatorModel> decedatiFaraApartinator = await requestDecedatiFaraApartinator.Run();
+            view.SetDecedatiFaraApartinator(decedatiFaraApartinator);
+        }
+
     }
 }
