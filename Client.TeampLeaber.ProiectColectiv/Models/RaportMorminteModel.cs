@@ -25,7 +25,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public override string ToString()
         {
             return "Parcela: " + Parcela.Denumire + "; Mormant: " + Mormant.Numar + "; Concesionar: " 
-                + Concesionar.Nume + " " + Concesionar.Prenume + "; Data inmormantarii: " + Date.ToShortDateString(); 
+                + Concesionar.Nume + " " + Concesionar.Prenume; 
         }
     }
 }

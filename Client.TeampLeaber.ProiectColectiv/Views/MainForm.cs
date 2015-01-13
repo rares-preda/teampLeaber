@@ -244,6 +244,10 @@ namespace Client.TeampLeaber.ProiectColectiv
             lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
         }
 
+        private void modificaDurataContractButtonTab1_Click(object sender, EventArgs e)
+        {
+            var s = contracteConcesionariGridViewTab2.SelectedRows[0];
+        }
         internal void UpdateActeList(List<Models.ActeModel> acte)
         {
             lbActeTab1.Items.Clear();
