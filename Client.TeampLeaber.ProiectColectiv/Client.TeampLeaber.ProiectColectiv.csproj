@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DecedatCuApartinatorModel.cs" />
+    <Compile Include="Models\DecedatFaraApartinatorModel.cs" />
     <Compile Include="Models\RaportMorminteModel.cs" />
     <Compile Include="Networking\Requests\AddDocumentRequest.cs" />
     <Compile Include="Networking\Requests\AddDocumentTypeRequest.cs" />
@@ -72,6 +74,8 @@
     <Compile Include="Networking\Requests\CimitireRequest.cs" />
     <Compile Include="Models\MorminteConcesionarModel.cs" />
     <Compile Include="Models\PrelungireContractModel.cs" />
+    <Compile Include="Networking\Requests\DecedatCuApartinatorRequest.cs" />
+    <Compile Include="Networking\Requests\DecedatiFaraApartinatorRequest.cs" />
     <Compile Include="Networking\Requests\GetTipActeRequest.cs" />
     <Compile Include="Networking\Requests\ContracteConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\LogInRequest.cs" />
