@@ -206,5 +206,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = false;
             lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
         }
+
+        private void modificaDurataContractButtonTab1_Click(object sender, EventArgs e)
+        {
+            var s = contracteConcesionariGridViewTab2.SelectedRows[0];
+            ContractModel contractConcesiune = (ContractModel)s;
+        }
     }
 }
