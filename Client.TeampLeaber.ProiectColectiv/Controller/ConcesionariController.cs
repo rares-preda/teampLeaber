@@ -36,5 +36,19 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
                 }
             }
         }
+
+        public async void GetContracteByCNP(string cnp)
+        {
+            if (cnp.Length == 13)
+            {
+                var contracteConcesionarRequest = new Networking.Requests.ContracteConcesionarRequest(cnp);
+                List<ContractModel> contracte = await contracteConcesionarRequest.Run();
+                _view.AddContracteGridView(contracte);
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.INVALID_CNP);
+            }
+        }
     }
 }

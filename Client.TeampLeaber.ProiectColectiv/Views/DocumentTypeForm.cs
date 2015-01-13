@@ -1,4 +1,5 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
+﻿using Client.TeampLeaber.ProiectColectiv.Controller;
+using Client.TeampLeaber.ProiectColectiv.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,22 @@ namespace Client.TeampLeaber.ProiectColectiv
 {
     public partial class DocumentTypeForm : Form
     {
+        private MainController contr;
+       
         public DocumentTypeForm()
         {
             InitializeComponent();
-            loadTipuriActe();    
+            loadTipuriActe();
+
+            this.FormClosing += (sender, e) => { contr.OnClosingDocumentTypeFormEvent(); };
+        }
+
+        public TipActModel SelectedTipAct
+        {
+            get
+            {
+                return lstTipActe.SelectedItem as TipActModel;
+            }
         }
 
         private async void loadTipuriActe()
@@ -44,5 +57,32 @@ namespace Client.TeampLeaber.ProiectColectiv
             
         }
 
+        internal void AddTypeList(List<TipActModel> list)
+        {
+            lstTipActe.Items.Clear();
+            if (list == null)
+                return;
+            foreach (var item in list)
+                lstTipActe.Items.Add(item);
+        }
+
+        private void btnAdaugaTipActe_Click(object sender, EventArgs e)
+        {
+            this.contr.AddDocumentTypeCommand();
+        }
+
+
+
+        internal void SetController(Controller.MainController mainController)
+        {
+            this.contr = mainController;
+        }
+
+        private void btnEditeazaTipActe_Click(object sender, EventArgs e)
+        {
+            this.contr.UpdateActeCommand();
+        }
+
+    
     }
 }

@@ -18,7 +18,9 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking
             this.BaseAddress = new Uri(Utils.Constants.HOST);
 
             if (Models.UserModel.Instance != null)
+            {
                 this.DefaultRequestHeaders.Add("AuthorizationToken", Models.UserModel.Instance.Id.ToString());
+            }
         }
     }
 }

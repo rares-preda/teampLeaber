@@ -6,39 +6,45 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Models
 {
-    public class ParcelaModel
+    public class ChitantaModel
     {
-        public ParcelaModel(int _id, string _denumire)
-        {
-            Id = _id;
-            Denumire = _denumire;
-        }
-
         public int Id { get; set; }
-        public string Denumire { get; set; }
+        public string Numar { get; set; }
+        public double Suma { get; set; }
+
+        public ChitantaModel(int id, string numar, double suma)
+        {
+            this.Id = id;
+            this.Numar = numar;
+            this.Suma = suma;
+        }
 
         public override string ToString()
         {
-            return "Id: " + Id + " Denumire: " + Denumire;
+            return "Id: " + Id + " Numar: " + Numar + " Suma: " + Suma;
         }
 
         public bool isValid()
         {
             List<string> errorMessages = new List<string>();
-            if (this.Denumire != null)
+            if (this.Numar != null)
             {
                 if (this.Id < 0)
                 {
                     errorMessages.Add("Id-ul trebuie sa fie pozitiv");
                 }
-                if (this.Denumire.Length == 0)
+                if (this.Numar.Length == 0)
                 {
-                    errorMessages.Add("Introduceti denumirea parcelei");
+                    errorMessages.Add("Numar chitanta inexistent");
+                }
+                if (this.Suma < 0)
+                {
+                    errorMessages.Add("Suma trebuie sa fie numar pozitiv");
                 }
             }
             else
             {
-                errorMessages.Add("ParcelaModel invalid");
+                errorMessages.Add("ChitantaModel invalid");
             }
 
             if (errorMessages.Count() == 0)

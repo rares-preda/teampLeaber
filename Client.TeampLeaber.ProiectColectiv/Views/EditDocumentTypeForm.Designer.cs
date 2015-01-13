@@ -57,6 +57,7 @@
             this.btnSalveazaTipAct.TabIndex = 2;
             this.btnSalveazaTipAct.Text = "Salveaza";
             this.btnSalveazaTipAct.UseVisualStyleBackColor = true;
+            this.btnSalveazaTipAct.Click += new System.EventHandler(this.btnSalveazaTipAct_Click);
             // 
             // EditDocumentTypeForm
             // 
