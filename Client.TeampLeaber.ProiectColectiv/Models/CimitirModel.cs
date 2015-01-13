@@ -8,21 +8,16 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 {
     public class CimitirModel
     {
+        public CimitirModel(int id, string denumire)
+        {
+            Id = id;
+            Denumire = denumire;
+        }
+
         public int Id { get; set; }
         public string Denumire { get; set; }
 
-        public CimitirModel(int id, string denumire)
-        {
-            this.Id = id;
-            this.Denumire = denumire;
-        }
-
-        public override string ToString()
-        {
-            return "Id: " + Id + " Denumire: " + Denumire;
-        }
-
-        public bool isValid()
+        public bool IsValid()
         {
             List<string> errorMessages = new List<string>();
             if (Denumire != null)
@@ -50,6 +45,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
                 ErrorHandling.ErrorHandling.Instance.HandleErrors(errorMessages);
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            return this.Denumire;
         }
     }
 }

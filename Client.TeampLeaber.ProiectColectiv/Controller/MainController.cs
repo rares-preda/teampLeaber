@@ -67,6 +67,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         {
             InmormantareModel model = new InmormantareModel(view.DecedatNumeTab1, view.DecedatPrenumeTab1, view.DecedatCNPTab1, view.GetSelectedReligionTab1().Id,
                 view.GetSelectedMormantTab1() == null ? 0 : view.GetSelectedMormantTab1().Id, view.SelectedDateTab1, acte);
+
             if (!model.IsValid())
                 return;
             var request = new Networking.Requests.ProgramareInmormantareRequest(model);

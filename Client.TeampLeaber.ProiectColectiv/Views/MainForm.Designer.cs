@@ -53,6 +53,7 @@
             this.lblCNPConcesionar1 = new System.Windows.Forms.Label();
             this.txtCNPConcesionar1 = new System.Windows.Forms.TextBox();
             this.grpDecedat = new System.Windows.Forms.GroupBox();
+            this.lbActeTab1 = new System.Windows.Forms.ListBox();
             this.lblActeAnexate = new System.Windows.Forms.Label();
             this.btnActe = new System.Windows.Forms.Button();
             this.chkApartinator = new System.Windows.Forms.CheckBox();
@@ -64,6 +65,9 @@
             this.lblCnp = new System.Windows.Forms.Label();
             this.tabConcesionari = new System.Windows.Forms.TabPage();
             this.dateConcesionarGroupBoxTab1 = new System.Windows.Forms.GroupBox();
+            this.modificaDurataContractButtonTab1 = new System.Windows.Forms.Button();
+            this.prelungireComboBoxTab1 = new System.Windows.Forms.ComboBox();
+            this.prelungireLabelTab1 = new System.Windows.Forms.Label();
             this.contracteConcesionariGridViewTab2 = new System.Windows.Forms.DataGridView();
             this.cautaContracteButtonTab2 = new System.Windows.Forms.Button();
             this.cautaCNPConcesionarTextBoxTab2 = new System.Windows.Forms.TextBox();
@@ -78,10 +82,16 @@
             this.prenumeLabelConcesionari = new System.Windows.Forms.Label();
             this.numeLabelConcesionari = new System.Windows.Forms.Label();
             this.CNPLabelConcesionari = new System.Windows.Forms.Label();
-            this.lbActeTab1 = new System.Windows.Forms.ListBox();
-            this.prelungireLabelTab1 = new System.Windows.Forms.Label();
-            this.prelungireComboBoxTab1 = new System.Windows.Forms.ComboBox();
-            this.modificaDurataContractButtonTab1 = new System.Windows.Forms.Button();
+            this.tabRapoarte = new System.Windows.Forms.TabPage();
+            this.tabControlRapoarte = new System.Windows.Forms.TabControl();
+            this.tabRapoarteInmormantari = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCautaTabRapoarte = new System.Windows.Forms.Button();
+            this.btnModificaTabRapoarte = new System.Windows.Forms.Button();
+            this.anPickerTabRapoarte = new System.Windows.Forms.DateTimePicker();
+            this.lblAnTabRapoarte = new System.Windows.Forms.Label();
+            this.lstInmormantariTabRapoarte = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
@@ -92,12 +102,17 @@
             this.dateConcesionarGroupBoxTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contracteConcesionariGridViewTab2)).BeginInit();
             this.concesionarGroupBoxConcesionari.SuspendLayout();
+            this.tabRapoarte.SuspendLayout();
+            this.tabControlRapoarte.SuspendLayout();
+            this.tabRapoarteInmormantari.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab
             // 
             this.tab.Controls.Add(this.tabInmormantari);
             this.tab.Controls.Add(this.tabConcesionari);
+            this.tab.Controls.Add(this.tabRapoarte);
             this.tab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab.Location = new System.Drawing.Point(0, 0);
             this.tab.Name = "tab";
@@ -329,6 +344,14 @@
             this.grpDecedat.TabStop = false;
             this.grpDecedat.Text = "Decedat";
             // 
+            // lbActeTab1
+            // 
+            this.lbActeTab1.FormattingEnabled = true;
+            this.lbActeTab1.Location = new System.Drawing.Point(98, 174);
+            this.lbActeTab1.Name = "lbActeTab1";
+            this.lbActeTab1.Size = new System.Drawing.Size(180, 43);
+            this.lbActeTab1.TabIndex = 9;
+            // 
             // lblActeAnexate
             // 
             this.lblActeAnexate.AutoSize = true;
@@ -436,6 +459,87 @@
             this.dateConcesionarGroupBoxTab1.TabIndex = 1;
             this.dateConcesionarGroupBoxTab1.TabStop = false;
             this.dateConcesionarGroupBoxTab1.Text = "Date contract";
+            // 
+            // modificaDurataContractButtonTab1
+            // 
+            this.modificaDurataContractButtonTab1.Location = new System.Drawing.Point(351, 284);
+            this.modificaDurataContractButtonTab1.Name = "modificaDurataContractButtonTab1";
+            this.modificaDurataContractButtonTab1.Size = new System.Drawing.Size(75, 23);
+            this.modificaDurataContractButtonTab1.TabIndex = 6;
+            this.modificaDurataContractButtonTab1.Text = "Modifica";
+            this.modificaDurataContractButtonTab1.UseVisualStyleBackColor = true;
+            this.modificaDurataContractButtonTab1.Visible = false;
+            // 
+            // prelungireComboBoxTab1
+            // 
+            this.prelungireComboBoxTab1.FormattingEnabled = true;
+            this.prelungireComboBoxTab1.Items.AddRange(new object[] {
+            "Renunta",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8 ",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50"});
+            this.prelungireComboBoxTab1.Location = new System.Drawing.Point(91, 286);
+            this.prelungireComboBoxTab1.Name = "prelungireComboBoxTab1";
+            this.prelungireComboBoxTab1.Size = new System.Drawing.Size(254, 21);
+            this.prelungireComboBoxTab1.TabIndex = 5;
+            this.prelungireComboBoxTab1.Visible = false;
+            // 
+            // prelungireLabelTab1
+            // 
+            this.prelungireLabelTab1.AutoSize = true;
+            this.prelungireLabelTab1.Location = new System.Drawing.Point(22, 289);
+            this.prelungireLabelTab1.Name = "prelungireLabelTab1";
+            this.prelungireLabelTab1.Size = new System.Drawing.Size(54, 13);
+            this.prelungireLabelTab1.TabIndex = 4;
+            this.prelungireLabelTab1.Text = "Prelungire";
+            this.prelungireLabelTab1.Visible = false;
             // 
             // contracteConcesionariGridViewTab2
             // 
@@ -584,93 +688,109 @@
             this.CNPLabelConcesionari.Text = "CNP";
             this.CNPLabelConcesionari.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lbActeTab1
+            // tabRapoarte
             // 
-            this.lbActeTab1.FormattingEnabled = true;
-            this.lbActeTab1.Location = new System.Drawing.Point(98, 174);
-            this.lbActeTab1.Name = "lbActeTab1";
-            this.lbActeTab1.Size = new System.Drawing.Size(180, 43);
-            this.lbActeTab1.TabIndex = 9;
-            // prelungireLabelTab1
+            this.tabRapoarte.Controls.Add(this.tabControlRapoarte);
+            this.tabRapoarte.Location = new System.Drawing.Point(4, 22);
+            this.tabRapoarte.Name = "tabRapoarte";
+            this.tabRapoarte.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRapoarte.Size = new System.Drawing.Size(923, 618);
+            this.tabRapoarte.TabIndex = 2;
+            this.tabRapoarte.Text = "Rapoarte";
+            this.tabRapoarte.UseVisualStyleBackColor = true;
             // 
-            this.prelungireLabelTab1.AutoSize = true;
-            this.prelungireLabelTab1.Location = new System.Drawing.Point(22, 289);
-            this.prelungireLabelTab1.Name = "prelungireLabelTab1";
-            this.prelungireLabelTab1.Size = new System.Drawing.Size(54, 13);
-            this.prelungireLabelTab1.TabIndex = 4;
-            this.prelungireLabelTab1.Text = "Prelungire";
-            this.prelungireLabelTab1.Visible = false;
+            // tabControlRapoarte
             // 
-            // prelungireComboBoxTab1
+            this.tabControlRapoarte.Controls.Add(this.tabRapoarteInmormantari);
+            this.tabControlRapoarte.Controls.Add(this.tabPage2);
+            this.tabControlRapoarte.Location = new System.Drawing.Point(6, 6);
+            this.tabControlRapoarte.Name = "tabControlRapoarte";
+            this.tabControlRapoarte.SelectedIndex = 0;
+            this.tabControlRapoarte.Size = new System.Drawing.Size(769, 406);
+            this.tabControlRapoarte.TabIndex = 0;
             // 
-            this.prelungireComboBoxTab1.FormattingEnabled = true;
-            this.prelungireComboBoxTab1.Items.AddRange(new object[] {
-            "Renunta",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8 ",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50"});
-            this.prelungireComboBoxTab1.Location = new System.Drawing.Point(91, 286);
-            this.prelungireComboBoxTab1.Name = "prelungireComboBoxTab1";
-            this.prelungireComboBoxTab1.Size = new System.Drawing.Size(254, 21);
-            this.prelungireComboBoxTab1.TabIndex = 5;
-            this.prelungireComboBoxTab1.Visible = false;
+            // tabRapoarteInmormantari
             // 
-            // modificaDurataContractButtonTab1
+            this.tabRapoarteInmormantari.Controls.Add(this.groupBox1);
+            this.tabRapoarteInmormantari.Location = new System.Drawing.Point(4, 22);
+            this.tabRapoarteInmormantari.Name = "tabRapoarteInmormantari";
+            this.tabRapoarteInmormantari.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRapoarteInmormantari.Size = new System.Drawing.Size(761, 380);
+            this.tabRapoarteInmormantari.TabIndex = 0;
+            this.tabRapoarteInmormantari.Text = "Inmormantari";
+            this.tabRapoarteInmormantari.UseVisualStyleBackColor = true;
             // 
-            this.modificaDurataContractButtonTab1.Location = new System.Drawing.Point(351, 284);
-            this.modificaDurataContractButtonTab1.Name = "modificaDurataContractButtonTab1";
-            this.modificaDurataContractButtonTab1.Size = new System.Drawing.Size(75, 23);
-            this.modificaDurataContractButtonTab1.TabIndex = 6;
-            this.modificaDurataContractButtonTab1.Text = "Modifica";
-            this.modificaDurataContractButtonTab1.UseVisualStyleBackColor = true;
-            this.modificaDurataContractButtonTab1.Visible = false;
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnCautaTabRapoarte);
+            this.groupBox1.Controls.Add(this.btnModificaTabRapoarte);
+            this.groupBox1.Controls.Add(this.anPickerTabRapoarte);
+            this.groupBox1.Controls.Add(this.lblAnTabRapoarte);
+            this.groupBox1.Controls.Add(this.lstInmormantariTabRapoarte);
+            this.groupBox1.Location = new System.Drawing.Point(7, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(729, 310);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Registrul anual de programare a inmormantarilor";
+            // 
+            // btnCautaTabRapoarte
+            // 
+            this.btnCautaTabRapoarte.Location = new System.Drawing.Point(629, 72);
+            this.btnCautaTabRapoarte.Name = "btnCautaTabRapoarte";
+            this.btnCautaTabRapoarte.Size = new System.Drawing.Size(75, 23);
+            this.btnCautaTabRapoarte.TabIndex = 4;
+            this.btnCautaTabRapoarte.Text = "Cauta";
+            this.btnCautaTabRapoarte.UseVisualStyleBackColor = true;
+            this.btnCautaTabRapoarte.Click += new System.EventHandler(this.btnCautaTabRapoarte_Click);
+            // 
+            // btnModificaTabRapoarte
+            // 
+            this.btnModificaTabRapoarte.Enabled = false;
+            this.btnModificaTabRapoarte.Location = new System.Drawing.Point(631, 274);
+            this.btnModificaTabRapoarte.Name = "btnModificaTabRapoarte";
+            this.btnModificaTabRapoarte.Size = new System.Drawing.Size(75, 23);
+            this.btnModificaTabRapoarte.TabIndex = 3;
+            this.btnModificaTabRapoarte.Text = "Modifica";
+            this.btnModificaTabRapoarte.UseVisualStyleBackColor = true;
+            this.btnModificaTabRapoarte.Click += new System.EventHandler(this.btnModificaTabRapoarte_Click);
+            // 
+            // anPickerTabRapoarte
+            // 
+            this.anPickerTabRapoarte.CustomFormat = "yyyy";
+            this.anPickerTabRapoarte.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.anPickerTabRapoarte.Location = new System.Drawing.Point(629, 36);
+            this.anPickerTabRapoarte.Name = "anPickerTabRapoarte";
+            this.anPickerTabRapoarte.Size = new System.Drawing.Size(75, 20);
+            this.anPickerTabRapoarte.TabIndex = 2;
+            // 
+            // lblAnTabRapoarte
+            // 
+            this.lblAnTabRapoarte.AutoSize = true;
+            this.lblAnTabRapoarte.Location = new System.Drawing.Point(626, 20);
+            this.lblAnTabRapoarte.Name = "lblAnTabRapoarte";
+            this.lblAnTabRapoarte.Size = new System.Drawing.Size(23, 13);
+            this.lblAnTabRapoarte.TabIndex = 1;
+            this.lblAnTabRapoarte.Text = "An:";
+            // 
+            // lstInmormantariTabRapoarte
+            // 
+            this.lstInmormantariTabRapoarte.FormattingEnabled = true;
+            this.lstInmormantariTabRapoarte.Location = new System.Drawing.Point(7, 20);
+            this.lstInmormantariTabRapoarte.Name = "lstInmormantariTabRapoarte";
+            this.lstInmormantariTabRapoarte.Size = new System.Drawing.Size(613, 277);
+            this.lstInmormantariTabRapoarte.TabIndex = 0;
+            this.lstInmormantariTabRapoarte.SelectedIndexChanged += new System.EventHandler(this.lstInmormantariTabRapoarte_SelectedIndexChanged_1);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(761, 380);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -695,6 +815,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.contracteConcesionariGridViewTab2)).EndInit();
             this.concesionarGroupBoxConcesionari.ResumeLayout(false);
             this.concesionarGroupBoxConcesionari.PerformLayout();
+            this.tabRapoarte.ResumeLayout(false);
+            this.tabControlRapoarte.ResumeLayout(false);
+            this.tabRapoarteInmormantari.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -743,6 +868,16 @@
         private System.Windows.Forms.TextBox numeTextBoxConcesionari;
         private System.Windows.Forms.RichTextBox domiciliuRichTextBoxConcesionari;
         private System.Windows.Forms.TextBox cnpTextBoxConcesionari;
+        private System.Windows.Forms.TabPage tabRapoarte;
+        private System.Windows.Forms.TabControl tabControlRapoarte;
+        private System.Windows.Forms.TabPage tabRapoarteInmormantari;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnCautaTabRapoarte;
+        private System.Windows.Forms.Button btnModificaTabRapoarte;
+        private System.Windows.Forms.DateTimePicker anPickerTabRapoarte;
+        private System.Windows.Forms.Label lblAnTabRapoarte;
+        private System.Windows.Forms.ListBox lstInmormantariTabRapoarte;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox lbActeTab1;
         private System.Windows.Forms.GroupBox dateConcesionarGroupBoxTab1;
         private System.Windows.Forms.Button cautaContracteButtonTab2;
