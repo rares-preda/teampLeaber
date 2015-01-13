@@ -14,7 +14,7 @@ namespace Client.TeampLeaber.ProiectColectiv
 {
     public partial class MainForm : Form
     {
-
+        private RaportController raportController;
         private ConcesionariController concesionariController;
         private MainController _mainController;
 
@@ -88,10 +88,17 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        public int AnPickerTabRapoarte
+        {
+            get
+            {
+                return anPickerTabRapoarte.Value.Year;
+            }
+        }
+
         private void btnActe_Click(object sender, EventArgs e)
         {
-            DocumentForm documentForm = new DocumentForm();
-            documentForm.Show();
+            this._mainController.ShowActeForm();
         }
 
         internal void SetController(Controller.MainController mainController)
@@ -102,6 +109,11 @@ namespace Client.TeampLeaber.ProiectColectiv
         internal void SetConcesionariController(Controller.ConcesionariController concesionariController)
         {
             this.concesionariController = concesionariController;
+        }
+
+        internal void SetRaportController(Controller.RaportController raportController)
+        {
+            this.raportController = raportController;
         }
 
         private void btnCautaConcesionar_Click(object sender, EventArgs e)
@@ -116,8 +128,8 @@ namespace Client.TeampLeaber.ProiectColectiv
                 cmbReligie.Items.Add(item);
             if (_religii != null && _religii.Count() > 0)
                 cmbReligie.SelectedIndex = 0;
-       
         }
+
         public Models.ReligieModel GetSelectedReligionTab1()
         {
             return cmbReligie.SelectedItem as Models.ReligieModel;
@@ -184,6 +196,31 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        private void btnCautaTabRapoarte_Click(object sender, EventArgs e)
+        {
+            this.raportController.AfiseazaRegistruInmormantari();
+        }
+
+        internal void SetRapoarteInmormantareList(List<Models.RaportInmormantareModel> _inmormantari)
+        {
+            lstInmormantariTabRapoarte.Items.Clear();
+            foreach (Models.RaportInmormantareModel raport in _inmormantari)
+                lstInmormantariTabRapoarte.Items.Add(raport);
+        }
+
+        public Models.RaportInmormantareModel SelectedRaportInmormantare
+        {
+            get
+            {
+                return lstInmormantariTabRapoarte.SelectedItem as Models.RaportInmormantareModel;
+            }
+        }
+
+        private void btnModificaTabRapoarte_Click(object sender, EventArgs e)
+        {
+            this.raportController.SetEditInmormantareView();
+        }
+
         private void cautaContracteButtonTab2_Click(object sender, EventArgs e)
         {
             this.concesionariController.GetContracteByCNP(this.cautaCNPConcesionarTextBoxTab2.Text);
@@ -210,7 +247,20 @@ namespace Client.TeampLeaber.ProiectColectiv
         private void modificaDurataContractButtonTab1_Click(object sender, EventArgs e)
         {
             var s = contracteConcesionariGridViewTab2.SelectedRows[0];
-            ContractModel contractConcesiune = (ContractModel)s;
+        }
+        internal void UpdateActeList(List<Models.ActeModel> acte)
+        {
+            lbActeTab1.Items.Clear();
+            foreach (var item in acte)
+                lbActeTab1.Items.Add(item);
+        }
+
+        private void lstInmormantariTabRapoarte_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lstInmormantariTabRapoarte.SelectedIndex >= 0)
+            {
+                btnModificaTabRapoarte.Enabled = true;
+            }
         }
     }
 }

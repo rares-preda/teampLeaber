@@ -6,24 +6,18 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Models
 {
-
     public class ParcelaModel
     {
+        public ParcelaModel(int _id, string _denumire)
+        {
+            Id = _id;
+            Denumire = _denumire;
+        }
+
         public int Id { get; set; }
         public string Denumire { get; set; }
 
-        public ParcelaModel(int id, string denumire)
-        {
-            this.Id = id;
-            this.Denumire = denumire;
-        }
-
-        public override string ToString()
-        {
-            return "Id: " + Id + " Denumire: " + Denumire;
-        }
-
-        public bool isValid()
+        public bool IsValid()
         {
             List<string> errorMessages = new List<string>();
             if (this.Denumire != null)
@@ -51,6 +45,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
                 ErrorHandling.ErrorHandling.Instance.HandleErrors(errorMessages);
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            return this.Denumire;
         }
     }
 }

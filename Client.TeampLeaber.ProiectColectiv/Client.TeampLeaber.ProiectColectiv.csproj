@@ -47,9 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Networking\Requests\AddDocumentRequest.cs" />
+    <Compile Include="Networking\Requests\AddDocumentTypeRequest.cs" />
     <Compile Include="Controller\ConcesionariController.cs" />
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Controller\LogInController.cs" />
+    <Compile Include="Controller\RaportController.cs" />
     <Compile Include="ErrorHandling\ErrorHandling.cs" />
     <Compile Include="Models\ActeModel.cs" />
     <Compile Include="Models\ChitantaModel.cs" />
@@ -60,17 +63,25 @@
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\InmormantareModel.cs" />
     <Compile Include="Models\MormantModel.cs" />
-    <Compile Include="Models\MorminteConcesionarModel.cs" />
     <Compile Include="Models\ParcelaModel.cs" />
-    <Compile Include="Models\PrelungireContractModel.cs" />
+    <Compile Include="Models\RaportInmormantareModel.cs" />
     <Compile Include="Models\ReligieModel.cs" />
     <Compile Include="Networking\BaseRequest.cs" />
     <Compile Include="Networking\Requests\AdaugareConcesionarRequest.cs" />
+    <Compile Include="Networking\Requests\CimitireRequest.cs" />
+    <Compile Include="Models\MorminteConcesionarModel.cs" />
+    <Compile Include="Models\PrelungireContractModel.cs" />
+    <Compile Include="Networking\Requests\GetTipActeRequest.cs" />
     <Compile Include="Networking\Requests\ContracteConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\LogInRequest.cs" />
+    <Compile Include="Networking\Requests\ModificaInmormantareRequest.cs" />
     <Compile Include="Networking\Requests\MorminteByConcesionar.cs" />
+    <Compile Include="Networking\Requests\MorminteRequest.cs" />
+    <Compile Include="Networking\Requests\ParceleRequest.cs" />
     <Compile Include="Networking\Requests\ProgramareInmormantare.cs" />
+    <Compile Include="Networking\Requests\RaportInmormantariRequest.cs" />
     <Compile Include="Networking\Requests\ReligiiRequest.cs" />
+    <Compile Include="Networking\Requests\UpdateDocumentTypeRequest.cs" />
     <Compile Include="Views\DocumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +99,12 @@
     </Compile>
     <Compile Include="Views\EditDocumentTypeForm.Designer.cs">
       <DependentUpon>EditDocumentTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditInmormantareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditInmormantareForm.Designer.cs">
+      <DependentUpon>EditInmormantareForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\EditReligionForm.cs">
       <SubType>Form</SubType>
@@ -127,6 +144,9 @@
     <EmbeddedResource Include="Views\EditDocumentTypeForm.resx">
       <DependentUpon>EditDocumentTypeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditInmormantareForm.resx">
+      <DependentUpon>EditInmormantareForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EditReligionForm.resx">
       <DependentUpon>EditReligionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,7 +181,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

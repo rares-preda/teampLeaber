@@ -10,18 +10,25 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ReligiiRequest : BaseRequest
+    public class MorminteRequest : BaseRequest
     {
-        public async Task<List<ReligieModel>> Run()
+        private int _idParcela;
+
+        public MorminteRequest(int idParcela)
+        {
+            _idParcela = idParcela;
+        }
+
+        public async Task<List<MormantModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.ReligiiPath);
+                response = await this.GetAsync(Constants.MormintePath + "/GetByParcela?parcelaId=" + this._idParcela);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
-                    return religii;
+                    List<MormantModel> morminte = await response.Content.ReadAsAsync<List<MormantModel>>();
+                    return morminte;
                 }
                 else
                 {
@@ -30,7 +37,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;

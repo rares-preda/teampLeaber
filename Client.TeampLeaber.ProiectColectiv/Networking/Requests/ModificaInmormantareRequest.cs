@@ -10,31 +10,37 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ReligiiRequest : BaseRequest
+    public class ModificaInmormantareRequest : BaseRequest
     {
-        public async Task<List<ReligieModel>> Run()
+        private RaportInmormantareModel _inmormantare;
+
+
+        public ModificaInmormantareRequest(RaportInmormantareModel inmormantare)
+        {
+            _inmormantare = inmormantare;
+        }
+
+        public async Task<bool> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.ReligiiPath);
+                response = await this.PostAsJsonAsync(Constants.RaportInmormantariPath, _inmormantare);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
-                {
-                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
-                    return religii;
-                }
+                    return true;
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return null;
+                    return false;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return null;
+                return false;
             }
         }
+
     }
 }
