@@ -15,11 +15,12 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public int ReligieId { get; set; }
 
         public InmormantareModel(string _decedatNume, string _decedatPrenume, string  _decedatCNP, int _religieId,
-                int _mormantId, DateTime _selectedDate)
+                int _mormantId, DateTime _selectedDate, List<ActeModel> acte)
         {
             this.Decedat = new DecedatModel();
             this.Decedat.Nume = _decedatNume;
             this.Decedat.Prenume = _decedatPrenume;
+            this.Decedat.Acte = acte;
             this.Decedat.Cnp = _decedatCNP;
             this.ReligieId = _religieId;
             this.MormantId = _mormantId;

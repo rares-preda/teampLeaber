@@ -36,9 +36,5 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                 return null;
             }
         }
-    
     }
-
-
-
 }

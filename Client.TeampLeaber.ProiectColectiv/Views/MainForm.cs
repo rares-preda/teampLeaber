@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv
 {
@@ -97,8 +98,7 @@ namespace Client.TeampLeaber.ProiectColectiv
 
         private void btnActe_Click(object sender, EventArgs e)
         {
-            DocumentForm documentForm = new DocumentForm();
-            documentForm.Show();
+            this._mainController.ShowActeForm();
         }
 
         internal void SetController(Controller.MainController mainController)
@@ -128,8 +128,8 @@ namespace Client.TeampLeaber.ProiectColectiv
                 cmbReligie.Items.Add(item);
             if (_religii != null && _religii.Count() > 0)
                 cmbReligie.SelectedIndex = 0;
-       
         }
+
         public Models.ReligieModel GetSelectedReligionTab1()
         {
             return cmbReligie.SelectedItem as Models.ReligieModel;
@@ -208,11 +208,6 @@ namespace Client.TeampLeaber.ProiectColectiv
                 lstInmormantariTabRapoarte.Items.Add(raport);
         }
 
-        private void lstInmormantariTabRapoarte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            btnModificaTabRapoarte.Enabled = true;
-        }
-
         public Models.RaportInmormantareModel SelectedRaportInmormantare
         {
             get
@@ -224,6 +219,44 @@ namespace Client.TeampLeaber.ProiectColectiv
         private void btnModificaTabRapoarte_Click(object sender, EventArgs e)
         {
             this.raportController.SetEditInmormantareView();
+        }
+
+        private void cautaContracteButtonTab2_Click(object sender, EventArgs e)
+        {
+            this.concesionariController.GetContracteByCNP(this.cautaCNPConcesionarTextBoxTab2.Text);
+        }
+
+        public void AddContracteGridView(List<ContractModel> contracte)
+        {
+            contracteConcesionariGridViewTab2.DataSource = contracte;
+        }
+
+        private void contracteConcesionariGridViewTab2_SelectionChanged(object sender, EventArgs e)
+        {
+            prelungireLabelTab1.Visible = true;
+            prelungireComboBoxTab1.Visible = true;
+            modificaDurataContractButtonTab1.Visible = true;
+        }
+        internal void ClearDateConcesionarDataTab1()
+        {
+            txtNumeConcesionar1.Visible = lblConcesionarNume.Visible = false;
+            txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = false;
+            lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
+        }
+
+        internal void UpdateActeList(List<Models.ActeModel> acte)
+        {
+            lbActeTab1.Items.Clear();
+            foreach (var item in acte)
+                lbActeTab1.Items.Add(item);
+        }
+
+        private void lstInmormantariTabRapoarte_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lstInmormantariTabRapoarte.SelectedIndex >= 0)
+            {
+                btnModificaTabRapoarte.Enabled = true;
+            }
         }
     }
 }

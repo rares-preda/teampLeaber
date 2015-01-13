@@ -1,47 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Client.TeampLeaber.ProiectColectiv.Utils;
 using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class RaportInmormantariRequest : BaseRequest
+    public class AddDocumentRequest : BaseRequest
     {
-        private int an;
-
-        public RaportInmormantariRequest(int an)
+        private Models.ActeModel model;
+        public AddDocumentRequest(Models.ActeModel model)
         {
-            this.an = an;
+            this.model = model;
         }
 
-        public async Task<List<RaportInmormantareModel>> Run()
+        internal async Task<bool> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.RaportInmormantariPath + "?year=" + this.an);
+                response = await this.PutAsJsonAsync(Constants.ActePath, model);
 
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
+                if (response.StatusCode == HttpStatusCode.OK) // 200
                 {
-                    List<RaportInmormantareModel> inmormantari = await response.Content.ReadAsAsync<List<RaportInmormantareModel>>();
-                    return inmormantari;
+                    return true;
                 }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return null;
+                    return false;
                 }
             }
             catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return null;
+                return false;
             }
         }
+
     }
 }

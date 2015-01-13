@@ -19,25 +19,30 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 
         public bool IsValid()
         {
-            List<string> errors = new List<string>();
-            if (Id != null && Denumire != null)
+            List<string> errorMessages = new List<string>();
+            if (Denumire != null)
             {
+                if (Id < 0)
+                {
+                    errorMessages.Add("Id-ul trebuie sa fie pozitiv");
+                }
                 if (Denumire.Length == 0)
                 {
-                    errors.Add("Introduceti un nume valid.");
+                    errorMessages.Add("Introduceti denumirea cimitirului");
                 }
             }
             else
             {
-                errors.Add("Cimitir invalid.");
+                errorMessages.Add("CimitirModel invalid");
             }
-            if (errors.Count() == 0)
+
+            if (errorMessages.Count() == 0)
             {
                 return true;
             }
             else
             {
-                ErrorHandling.ErrorHandling.Instance.HandleErrors(errors);
+                ErrorHandling.ErrorHandling.Instance.HandleErrors(errorMessages);
                 return false;
             }
         }

@@ -19,21 +19,30 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 
         public bool IsValid()
         {
-            List<string> errors = new List<string>();
-            if (Id != null && Denumire != null)
+            List<string> errorMessages = new List<string>();
+            if (this.Denumire != null)
             {
-                if (Denumire.Length == 0)
+                if (this.Id < 0)
                 {
-                    errors.Add("Introduceti un nume valid.");
+                    errorMessages.Add("Id-ul trebuie sa fie pozitiv");
+                }
+                if (this.Denumire.Length == 0)
+                {
+                    errorMessages.Add("Introduceti denumirea parcelei");
                 }
             }
-            if (errors.Count() == 0)
+            else
+            {
+                errorMessages.Add("ParcelaModel invalid");
+            }
+
+            if (errorMessages.Count() == 0)
             {
                 return true;
             }
             else
             {
-                ErrorHandling.ErrorHandling.Instance.HandleErrors(errors);
+                ErrorHandling.ErrorHandling.Instance.HandleErrors(errorMessages);
                 return false;
             }
         }

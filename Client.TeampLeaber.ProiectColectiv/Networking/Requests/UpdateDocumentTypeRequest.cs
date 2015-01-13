@@ -10,36 +10,33 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class MorminteByConcesionar : BaseRequest
+    public class UpdateDocumentTypeRequest : BaseRequest
     {
-        private string _cnp;
-        public MorminteByConcesionar(string Cnp)
+        private Models.TipActModel documentType;
+        public UpdateDocumentTypeRequest(Models.TipActModel model)
         {
-            _cnp = Cnp;
+            this.documentType = model;
         }
-        public async Task<Models.MorminteConcesionarModel> Run()
+
+        public async Task<bool> Run()
         {
             try
             {
-
-                response = await this.GetAsync(Constants.ConcesionarPath + "?cnp=" + _cnp + "&quid=" + Guid.NewGuid());
+                response = await this.PostAsJsonAsync(Constants.TipActePath, documentType);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
-                {
-                    Models.MorminteConcesionarModel value = await response.Content.ReadAsAsync<Models.MorminteConcesionarModel>();
-                    return value;
-                }
+                    return true;
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return null;
+                    return false;
                 }
             }
             catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return null;
+                return false;
             }
         }
     }

@@ -10,24 +10,18 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class MorminteByConcesionar : BaseRequest
+    public class GetTipActeRequest : BaseRequest
     {
-        private string _cnp;
-        public MorminteByConcesionar(string Cnp)
-        {
-            _cnp = Cnp;
-        }
-        public async Task<Models.MorminteConcesionarModel> Run()
+        public async Task<List<TipActModel>> Run()
         {
             try
             {
-
-                response = await this.GetAsync(Constants.ConcesionarPath + "?cnp=" + _cnp + "&quid=" + Guid.NewGuid());
+                response = await this.GetAsync(Constants.TipActePath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    Models.MorminteConcesionarModel value = await response.Content.ReadAsAsync<Models.MorminteConcesionarModel>();
-                    return value;
+                    List<TipActModel> _tipActe = await response.Content.ReadAsAsync<List<TipActModel>>();
+                    return _tipActe;
                 }
                 else
                 {
