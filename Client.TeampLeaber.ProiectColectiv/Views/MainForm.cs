@@ -262,5 +262,94 @@ namespace Client.TeampLeaber.ProiectColectiv
                 btnModificaTabRapoarte.Enabled = true;
             }
         }
+
+        public Models.CimitirModel Raport2CimitirComboBox
+        {
+            get
+            {
+                return cmbRapoarteCimitir.SelectedItem as Models.CimitirModel;
+            }
+        }
+
+        public Models.RaportMorminteModel Raport2ListSelectedItem
+        {
+            get
+            {
+                return lstRegistruMorminte.SelectedItem as Models.RaportMorminteModel;
+            }
+        }
+
+        public bool Raport2CheckboxMonumentFunerar
+        {
+            get
+            {
+                return checkRapoarteMonument.Checked;
+            }
+        }
+
+        public void LoadRaport2ListBox(List<Models.RaportMorminteModel> registruMorminte)
+        {
+            lstRegistruMorminte.Items.Clear();
+            foreach (var item in registruMorminte)
+                lstRegistruMorminte.Items.Add(item);
+        }
+
+        public void LoadRaport2CimitirCombobox(List<Models.CimitirModel> cimitire)
+        {
+            cmbRapoarteCimitir.Items.Clear();
+            foreach (var item in cimitire)
+                cmbRapoarteCimitir.Items.Add(item);
+        }
+
+        public void LoadRaport2InhumatiListBox(List<Models.InmormantareModel> inmormantari)
+        {
+            lstRapoarteInhumati.Items.Clear();
+            foreach (var item in inmormantari)
+                lstRapoarteInhumati.Items.Add(item.Decedat.Nume + " " + item.Decedat.Prenume + " - " + item.Data);
+        }
+
+        public void SetRaport2CimitirComboBoxIndex(int index)
+        {
+            if (index >= 0 && index < cmbRapoarteCimitir.Items.Count)
+            {
+                cmbRapoarteCimitir.SelectedIndex = index;
+            }
+        }
+
+        private void tabControlRapoarte_Selected(object sender, TabControlEventArgs e)
+        {
+            raportController.UpdateRegistruCimitir();
+        }
+
+        private void btnRapoarteCauta_Click(object sender, EventArgs e)
+        {
+            raportController.LoadRegistruCimitirListBox();
+        }
+
+        private void lstRegistruMorminte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstRegistruMorminte.SelectedIndex >= 0)
+            {
+                grpRapoarteObservatii.Visible = true;
+                raportController.SetInfoMormant();
+            }
+        }
+
+        public string Raport2ObservatiiTextBox
+        {
+            get
+            {
+                return txtRapoarteObservatii.Text;
+            }
+            set
+            {
+                txtRapoarteObservatii.Text = value;
+            }
+        }
+
+        private void btnRapoarteObservatii_Click(object sender, EventArgs e)
+        {
+            raportController.UpdateMormantObservatie();
+        }
     }
 }
