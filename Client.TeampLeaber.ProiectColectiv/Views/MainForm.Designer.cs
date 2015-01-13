@@ -91,7 +91,19 @@
             this.anPickerTabRapoarte = new System.Windows.Forms.DateTimePicker();
             this.lblAnTabRapoarte = new System.Windows.Forms.Label();
             this.lstInmormantariTabRapoarte = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabMorminteSecond = new System.Windows.Forms.TabPage();
+            this.grpRegistruMorminte = new System.Windows.Forms.GroupBox();
+            this.lstRegistruMorminte = new System.Windows.Forms.ListBox();
+            this.lblRapoarteCimitir = new System.Windows.Forms.Label();
+            this.cmbRapoarteCimitir = new System.Windows.Forms.ComboBox();
+            this.checkRapoarteMonument = new System.Windows.Forms.CheckBox();
+            this.btnRapoarteCauta = new System.Windows.Forms.Button();
+            this.grpRapoarteCauta = new System.Windows.Forms.GroupBox();
+            this.grpRapoarteObservatii = new System.Windows.Forms.GroupBox();
+            this.txtRapoarteObservatii = new System.Windows.Forms.TextBox();
+            this.btnRapoarteObservatii = new System.Windows.Forms.Button();
+            this.lblRapoarteInhumati = new System.Windows.Forms.Label();
+            this.lstRapoarteInhumati = new System.Windows.Forms.ListBox();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
@@ -106,6 +118,10 @@
             this.tabControlRapoarte.SuspendLayout();
             this.tabRapoarteInmormantari.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabMorminteSecond.SuspendLayout();
+            this.grpRegistruMorminte.SuspendLayout();
+            this.grpRapoarteCauta.SuspendLayout();
+            this.grpRapoarteObservatii.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab
@@ -702,12 +718,13 @@
             // tabControlRapoarte
             // 
             this.tabControlRapoarte.Controls.Add(this.tabRapoarteInmormantari);
-            this.tabControlRapoarte.Controls.Add(this.tabPage2);
+            this.tabControlRapoarte.Controls.Add(this.tabMorminteSecond);
             this.tabControlRapoarte.Location = new System.Drawing.Point(6, 6);
             this.tabControlRapoarte.Name = "tabControlRapoarte";
             this.tabControlRapoarte.SelectedIndex = 0;
-            this.tabControlRapoarte.Size = new System.Drawing.Size(769, 406);
+            this.tabControlRapoarte.Size = new System.Drawing.Size(897, 483);
             this.tabControlRapoarte.TabIndex = 0;
+            this.tabControlRapoarte.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlRapoarte_Selected);
             // 
             // tabRapoarteInmormantari
             // 
@@ -715,7 +732,7 @@
             this.tabRapoarteInmormantari.Location = new System.Drawing.Point(4, 22);
             this.tabRapoarteInmormantari.Name = "tabRapoarteInmormantari";
             this.tabRapoarteInmormantari.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRapoarteInmormantari.Size = new System.Drawing.Size(761, 380);
+            this.tabRapoarteInmormantari.Size = new System.Drawing.Size(889, 457);
             this.tabRapoarteInmormantari.TabIndex = 0;
             this.tabRapoarteInmormantari.Text = "Inmormantari";
             this.tabRapoarteInmormantari.UseVisualStyleBackColor = true;
@@ -782,15 +799,137 @@
             this.lstInmormantariTabRapoarte.TabIndex = 0;
             this.lstInmormantariTabRapoarte.SelectedIndexChanged += new System.EventHandler(this.lstInmormantariTabRapoarte_SelectedIndexChanged_1);
             // 
-            // tabPage2
+            // tabMorminteSecond
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(761, 380);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabMorminteSecond.Controls.Add(this.grpRegistruMorminte);
+            this.tabMorminteSecond.Location = new System.Drawing.Point(4, 22);
+            this.tabMorminteSecond.Name = "tabMorminteSecond";
+            this.tabMorminteSecond.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMorminteSecond.Size = new System.Drawing.Size(889, 457);
+            this.tabMorminteSecond.TabIndex = 1;
+            this.tabMorminteSecond.Text = "Morminte";
+            this.tabMorminteSecond.UseVisualStyleBackColor = true;
+            // 
+            // grpRegistruMorminte
+            // 
+            this.grpRegistruMorminte.Controls.Add(this.lstRapoarteInhumati);
+            this.grpRegistruMorminte.Controls.Add(this.lblRapoarteInhumati);
+            this.grpRegistruMorminte.Controls.Add(this.grpRapoarteObservatii);
+            this.grpRegistruMorminte.Controls.Add(this.grpRapoarteCauta);
+            this.grpRegistruMorminte.Controls.Add(this.lstRegistruMorminte);
+            this.grpRegistruMorminte.Location = new System.Drawing.Point(7, 7);
+            this.grpRegistruMorminte.Name = "grpRegistruMorminte";
+            this.grpRegistruMorminte.Size = new System.Drawing.Size(810, 365);
+            this.grpRegistruMorminte.TabIndex = 0;
+            this.grpRegistruMorminte.TabStop = false;
+            this.grpRegistruMorminte.Text = "Registrul de morminte";
+            // 
+            // lstRegistruMorminte
+            // 
+            this.lstRegistruMorminte.FormattingEnabled = true;
+            this.lstRegistruMorminte.Location = new System.Drawing.Point(7, 20);
+            this.lstRegistruMorminte.Name = "lstRegistruMorminte";
+            this.lstRegistruMorminte.Size = new System.Drawing.Size(582, 329);
+            this.lstRegistruMorminte.TabIndex = 0;
+            this.lstRegistruMorminte.SelectedIndexChanged += new System.EventHandler(this.lstRegistruMorminte_SelectedIndexChanged);
+            // 
+            // lblRapoarteCimitir
+            // 
+            this.lblRapoarteCimitir.AutoSize = true;
+            this.lblRapoarteCimitir.Location = new System.Drawing.Point(22, 30);
+            this.lblRapoarteCimitir.Name = "lblRapoarteCimitir";
+            this.lblRapoarteCimitir.Size = new System.Drawing.Size(35, 13);
+            this.lblRapoarteCimitir.TabIndex = 1;
+            this.lblRapoarteCimitir.Text = "Cimitr:";
+            // 
+            // cmbRapoarteCimitir
+            // 
+            this.cmbRapoarteCimitir.FormattingEnabled = true;
+            this.cmbRapoarteCimitir.Location = new System.Drawing.Point(63, 27);
+            this.cmbRapoarteCimitir.Name = "cmbRapoarteCimitir";
+            this.cmbRapoarteCimitir.Size = new System.Drawing.Size(127, 21);
+            this.cmbRapoarteCimitir.TabIndex = 2;
+            // 
+            // checkRapoarteMonument
+            // 
+            this.checkRapoarteMonument.AutoSize = true;
+            this.checkRapoarteMonument.Location = new System.Drawing.Point(22, 54);
+            this.checkRapoarteMonument.Name = "checkRapoarteMonument";
+            this.checkRapoarteMonument.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkRapoarteMonument.Size = new System.Drawing.Size(112, 17);
+            this.checkRapoarteMonument.TabIndex = 4;
+            this.checkRapoarteMonument.Text = "Monument funerar";
+            this.checkRapoarteMonument.UseVisualStyleBackColor = true;
+            // 
+            // btnRapoarteCauta
+            // 
+            this.btnRapoarteCauta.Location = new System.Drawing.Point(115, 88);
+            this.btnRapoarteCauta.Name = "btnRapoarteCauta";
+            this.btnRapoarteCauta.Size = new System.Drawing.Size(75, 23);
+            this.btnRapoarteCauta.TabIndex = 5;
+            this.btnRapoarteCauta.Text = "Cauta";
+            this.btnRapoarteCauta.UseVisualStyleBackColor = true;
+            this.btnRapoarteCauta.Click += new System.EventHandler(this.btnRapoarteCauta_Click);
+            // 
+            // grpRapoarteCauta
+            // 
+            this.grpRapoarteCauta.Controls.Add(this.lblRapoarteCimitir);
+            this.grpRapoarteCauta.Controls.Add(this.btnRapoarteCauta);
+            this.grpRapoarteCauta.Controls.Add(this.cmbRapoarteCimitir);
+            this.grpRapoarteCauta.Controls.Add(this.checkRapoarteMonument);
+            this.grpRapoarteCauta.Location = new System.Drawing.Point(598, 226);
+            this.grpRapoarteCauta.Name = "grpRapoarteCauta";
+            this.grpRapoarteCauta.Size = new System.Drawing.Size(197, 123);
+            this.grpRapoarteCauta.TabIndex = 6;
+            this.grpRapoarteCauta.TabStop = false;
+            // 
+            // grpRapoarteObservatii
+            // 
+            this.grpRapoarteObservatii.Controls.Add(this.btnRapoarteObservatii);
+            this.grpRapoarteObservatii.Controls.Add(this.txtRapoarteObservatii);
+            this.grpRapoarteObservatii.Location = new System.Drawing.Point(598, 88);
+            this.grpRapoarteObservatii.Name = "grpRapoarteObservatii";
+            this.grpRapoarteObservatii.Size = new System.Drawing.Size(197, 132);
+            this.grpRapoarteObservatii.TabIndex = 7;
+            this.grpRapoarteObservatii.TabStop = false;
+            this.grpRapoarteObservatii.Text = "Observatii";
+            this.grpRapoarteObservatii.Visible = false;
+            // 
+            // txtRapoarteObservatii
+            // 
+            this.txtRapoarteObservatii.Location = new System.Drawing.Point(7, 20);
+            this.txtRapoarteObservatii.Multiline = true;
+            this.txtRapoarteObservatii.Name = "txtRapoarteObservatii";
+            this.txtRapoarteObservatii.Size = new System.Drawing.Size(184, 73);
+            this.txtRapoarteObservatii.TabIndex = 0;
+            // 
+            // btnRapoarteObservatii
+            // 
+            this.btnRapoarteObservatii.Location = new System.Drawing.Point(116, 99);
+            this.btnRapoarteObservatii.Name = "btnRapoarteObservatii";
+            this.btnRapoarteObservatii.Size = new System.Drawing.Size(75, 23);
+            this.btnRapoarteObservatii.TabIndex = 1;
+            this.btnRapoarteObservatii.Text = "Salveaza";
+            this.btnRapoarteObservatii.UseVisualStyleBackColor = true;
+            this.btnRapoarteObservatii.Click += new System.EventHandler(this.btnRapoarteObservatii_Click);
+            // 
+            // lblRapoarteInhumati
+            // 
+            this.lblRapoarteInhumati.AutoSize = true;
+            this.lblRapoarteInhumati.Location = new System.Drawing.Point(595, 20);
+            this.lblRapoarteInhumati.Name = "lblRapoarteInhumati";
+            this.lblRapoarteInhumati.Size = new System.Drawing.Size(50, 13);
+            this.lblRapoarteInhumati.TabIndex = 8;
+            this.lblRapoarteInhumati.Text = "Inhumati:";
+            // 
+            // lstRapoarteInhumati
+            // 
+            this.lstRapoarteInhumati.FormattingEnabled = true;
+            this.lstRapoarteInhumati.Location = new System.Drawing.Point(598, 37);
+            this.lstRapoarteInhumati.Name = "lstRapoarteInhumati";
+            this.lstRapoarteInhumati.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lstRapoarteInhumati.Size = new System.Drawing.Size(197, 43);
+            this.lstRapoarteInhumati.TabIndex = 9;
             // 
             // MainForm
             // 
@@ -820,6 +959,13 @@
             this.tabRapoarteInmormantari.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabMorminteSecond.ResumeLayout(false);
+            this.grpRegistruMorminte.ResumeLayout(false);
+            this.grpRegistruMorminte.PerformLayout();
+            this.grpRapoarteCauta.ResumeLayout(false);
+            this.grpRapoarteCauta.PerformLayout();
+            this.grpRapoarteObservatii.ResumeLayout(false);
+            this.grpRapoarteObservatii.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -877,7 +1023,7 @@
         private System.Windows.Forms.DateTimePicker anPickerTabRapoarte;
         private System.Windows.Forms.Label lblAnTabRapoarte;
         private System.Windows.Forms.ListBox lstInmormantariTabRapoarte;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabMorminteSecond;
         private System.Windows.Forms.ListBox lbActeTab1;
         private System.Windows.Forms.GroupBox dateConcesionarGroupBoxTab1;
         private System.Windows.Forms.Button cautaContracteButtonTab2;
@@ -887,6 +1033,18 @@
         private System.Windows.Forms.Button modificaDurataContractButtonTab1;
         private System.Windows.Forms.ComboBox prelungireComboBoxTab1;
         private System.Windows.Forms.Label prelungireLabelTab1;
+        private System.Windows.Forms.GroupBox grpRegistruMorminte;
+        private System.Windows.Forms.ComboBox cmbRapoarteCimitir;
+        private System.Windows.Forms.Label lblRapoarteCimitir;
+        private System.Windows.Forms.ListBox lstRegistruMorminte;
+        private System.Windows.Forms.Button btnRapoarteCauta;
+        private System.Windows.Forms.CheckBox checkRapoarteMonument;
+        private System.Windows.Forms.GroupBox grpRapoarteObservatii;
+        private System.Windows.Forms.Button btnRapoarteObservatii;
+        private System.Windows.Forms.TextBox txtRapoarteObservatii;
+        private System.Windows.Forms.GroupBox grpRapoarteCauta;
+        private System.Windows.Forms.Label lblRapoarteInhumati;
+        private System.Windows.Forms.ListBox lstRapoarteInhumati;
     }
 }
 

@@ -12,6 +12,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public string NumeParcela { get; set; }
         public double? Suprafata { get; set; }
         public int Numar { get; set; }
+        public bool AreValoareIstorica { get; set; }
+        public string Observatie { get; set; }
 
         public override string ToString()
         {
