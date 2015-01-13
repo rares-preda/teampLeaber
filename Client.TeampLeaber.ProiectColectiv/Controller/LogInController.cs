@@ -39,6 +39,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
             MainController contr = new MainController(mainForm);
             ConcesionariController concesionarController = new ConcesionariController(mainForm);
+            RaportController raportController = new RaportController(mainForm);
             mainForm.Show();
             View.Hide();
         }

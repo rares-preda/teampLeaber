@@ -50,7 +50,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         internal async void ProgrameazaInmormantare()
         {
-
             InmormantareModel model = new InmormantareModel(_view.DecedatNumeTab1, _view.DecedatPrenumeTab1, _view.DecedatCNPTab1, _view.GetSelectedReligionTab1().Id,
                 _view.GetSelectedMormantTab1() == null ? 0 : _view.GetSelectedMormantTab1().Id, _view.SelectedDateTab1);
             if (!model.IsValid())
@@ -61,5 +60,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
                 return;
             MessageBox.Show(Utils.Constants.SUCCESS_MESSAGE);
         }
+
+
     }
 }

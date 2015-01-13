@@ -13,7 +13,7 @@ namespace Client.TeampLeaber.ProiectColectiv
 {
     public partial class MainForm : Form
     {
-
+        private RaportController raportController;
         private ConcesionariController concesionariController;
         private MainController _mainController;
 
@@ -87,6 +87,14 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        public int AnPickerTabRapoarte
+        {
+            get
+            {
+                return anPickerTabRapoarte.Value.Year;
+            }
+        }
+
         private void btnActe_Click(object sender, EventArgs e)
         {
             DocumentForm documentForm = new DocumentForm();
@@ -101,6 +109,11 @@ namespace Client.TeampLeaber.ProiectColectiv
         internal void SetConcesionariController(Controller.ConcesionariController concesionariController)
         {
             this.concesionariController = concesionariController;
+        }
+
+        internal void SetRaportController(Controller.RaportController raportController)
+        {
+            this.raportController = raportController;
         }
 
         private void btnCautaConcesionar_Click(object sender, EventArgs e)
@@ -181,6 +194,36 @@ namespace Client.TeampLeaber.ProiectColectiv
             {
                 return domiciliuRichTextBoxConcesionari.Text;
             }
+        }
+
+        private void btnCautaTabRapoarte_Click(object sender, EventArgs e)
+        {
+            this.raportController.AfiseazaRegistruInmormantari();
+        }
+
+        internal void SetRapoarteInmormantareList(List<Models.RaportInmormantareModel> _inmormantari)
+        {
+            lstInmormantariTabRapoarte.Items.Clear();
+            foreach (Models.RaportInmormantareModel raport in _inmormantari)
+                lstInmormantariTabRapoarte.Items.Add(raport);
+        }
+
+        private void lstInmormantariTabRapoarte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnModificaTabRapoarte.Enabled = true;
+        }
+
+        public Models.RaportInmormantareModel SelectedRaportInmormantare
+        {
+            get
+            {
+                return lstInmormantariTabRapoarte.SelectedItem as Models.RaportInmormantareModel;
+            }
+        }
+
+        private void btnModificaTabRapoarte_Click(object sender, EventArgs e)
+        {
+            this.raportController.SetEditInmormantareView();
         }
     }
 }
