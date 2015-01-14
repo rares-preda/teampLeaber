@@ -155,7 +155,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         internal void SetInfoMormant()
         {
-            _view.Raport2ObservatiiTextBox = _view.Raport2ListSelectedItem.Mormant.Numar.ToString();
+            _view.Raport2ObservatiiTextBox = _view.Raport2ListSelectedItem.Mormant.Observatie;
             if (_view.Raport2ListSelectedItem.Inmormantari != null && _view.Raport2ListSelectedItem.Inmormantari.Count > 0)
                 _view.LoadRaport2InhumatiListBox(_view.Raport2ListSelectedItem.Inmormantari);
         }

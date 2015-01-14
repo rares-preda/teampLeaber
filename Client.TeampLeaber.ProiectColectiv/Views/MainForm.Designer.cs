@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabInmormantari = new System.Windows.Forms.TabPage();
             this.btnProgramare = new System.Windows.Forms.Button();
@@ -64,6 +64,22 @@
             this.lblNume = new System.Windows.Forms.Label();
             this.lblCnp = new System.Windows.Forms.Label();
             this.tabConcesionari = new System.Windows.Forms.TabPage();
+            this.adaugaContractGroupBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sumaLabelTab1 = new System.Windows.Forms.Label();
+            this.chitantaLabelTab1 = new System.Windows.Forms.Label();
+            this.mormantLabelTab1 = new System.Windows.Forms.Label();
+            this.parcelaLabelTab1 = new System.Windows.Forms.Label();
+            this.cimitirContractLabelTab1 = new System.Windows.Forms.Label();
+            this.dataExpirareContractLabelTab1 = new System.Windows.Forms.Label();
+            this.numarContractLabelTab1 = new System.Windows.Forms.Label();
             this.dateConcesionarGroupBoxTab1 = new System.Windows.Forms.GroupBox();
             this.modificaDurataContractButtonTab1 = new System.Windows.Forms.Button();
             this.prelungireComboBoxTab1 = new System.Windows.Forms.ComboBox();
@@ -82,22 +98,6 @@
             this.prenumeLabelConcesionari = new System.Windows.Forms.Label();
             this.numeLabelConcesionari = new System.Windows.Forms.Label();
             this.CNPLabelConcesionari = new System.Windows.Forms.Label();
-            this.adaugaContractGroupBox = new System.Windows.Forms.GroupBox();
-            this.numarContractLabelTab1 = new System.Windows.Forms.Label();
-            this.dataExpirareContractLabelTab1 = new System.Windows.Forms.Label();
-            this.cimitirContractLabelTab1 = new System.Windows.Forms.Label();
-            this.parcelaLabelTab1 = new System.Windows.Forms.Label();
-            this.mormantLabelTab1 = new System.Windows.Forms.Label();
-            this.chitantaLabelTab1 = new System.Windows.Forms.Label();
-            this.sumaLabelTab1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabRapoarte = new System.Windows.Forms.TabPage();
             this.tabControlRapoarte = new System.Windows.Forms.TabControl();
             this.tabRapoarteInmormantari = new System.Windows.Forms.TabPage();
@@ -109,17 +109,17 @@
             this.lstInmormantariTabRapoarte = new System.Windows.Forms.ListBox();
             this.tabMorminteSecond = new System.Windows.Forms.TabPage();
             this.grpRegistruMorminte = new System.Windows.Forms.GroupBox();
-            this.lstRegistruMorminte = new System.Windows.Forms.ListBox();
+            this.lstRapoarteInhumati = new System.Windows.Forms.ListBox();
+            this.lblRapoarteInhumati = new System.Windows.Forms.Label();
+            this.grpRapoarteObservatii = new System.Windows.Forms.GroupBox();
+            this.btnRapoarteObservatii = new System.Windows.Forms.Button();
+            this.txtRapoarteObservatii = new System.Windows.Forms.TextBox();
+            this.grpRapoarteCauta = new System.Windows.Forms.GroupBox();
             this.lblRapoarteCimitir = new System.Windows.Forms.Label();
+            this.btnRapoarteCauta = new System.Windows.Forms.Button();
             this.cmbRapoarteCimitir = new System.Windows.Forms.ComboBox();
             this.checkRapoarteMonument = new System.Windows.Forms.CheckBox();
-            this.btnRapoarteCauta = new System.Windows.Forms.Button();
-            this.grpRapoarteCauta = new System.Windows.Forms.GroupBox();
-            this.grpRapoarteObservatii = new System.Windows.Forms.GroupBox();
-            this.txtRapoarteObservatii = new System.Windows.Forms.TextBox();
-            this.btnRapoarteObservatii = new System.Windows.Forms.Button();
-            this.lblRapoarteInhumati = new System.Windows.Forms.Label();
-            this.lstRapoarteInhumati = new System.Windows.Forms.ListBox();
+            this.lstRegistruMorminte = new System.Windows.Forms.ListBox();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
@@ -127,18 +127,18 @@
             this.grpConcesionar1.SuspendLayout();
             this.grpDecedat.SuspendLayout();
             this.tabConcesionari.SuspendLayout();
+            this.adaugaContractGroupBox.SuspendLayout();
             this.dateConcesionarGroupBoxTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contracteConcesionariGridViewTab2)).BeginInit();
             this.concesionarGroupBoxConcesionari.SuspendLayout();
-            this.adaugaContractGroupBox.SuspendLayout();
             this.tabRapoarte.SuspendLayout();
             this.tabControlRapoarte.SuspendLayout();
             this.tabRapoarteInmormantari.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabMorminteSecond.SuspendLayout();
             this.grpRegistruMorminte.SuspendLayout();
-            this.grpRapoarteCauta.SuspendLayout();
             this.grpRapoarteObservatii.SuspendLayout();
+            this.grpRapoarteCauta.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab
@@ -478,6 +478,154 @@
             this.tabConcesionari.Text = "Concesionari";
             this.tabConcesionari.UseVisualStyleBackColor = true;
             // 
+            // adaugaContractGroupBox
+            // 
+            this.adaugaContractGroupBox.Controls.Add(this.button1);
+            this.adaugaContractGroupBox.Controls.Add(this.textBox3);
+            this.adaugaContractGroupBox.Controls.Add(this.textBox2);
+            this.adaugaContractGroupBox.Controls.Add(this.comboBox3);
+            this.adaugaContractGroupBox.Controls.Add(this.comboBox2);
+            this.adaugaContractGroupBox.Controls.Add(this.comboBox1);
+            this.adaugaContractGroupBox.Controls.Add(this.dateTimePicker1);
+            this.adaugaContractGroupBox.Controls.Add(this.textBox1);
+            this.adaugaContractGroupBox.Controls.Add(this.sumaLabelTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.chitantaLabelTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.mormantLabelTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.parcelaLabelTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.cimitirContractLabelTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.dataExpirareContractLabelTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.numarContractLabelTab1);
+            this.adaugaContractGroupBox.Location = new System.Drawing.Point(405, 368);
+            this.adaugaContractGroupBox.Name = "adaugaContractGroupBox";
+            this.adaugaContractGroupBox.Size = new System.Drawing.Size(462, 242);
+            this.adaugaContractGroupBox.TabIndex = 2;
+            this.adaugaContractGroupBox.TabStop = false;
+            this.adaugaContractGroupBox.Text = "Adauga contract";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(351, 218);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(128, 192);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(298, 20);
+            this.textBox3.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(128, 163);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(298, 20);
+            this.textBox2.TabIndex = 12;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(128, 130);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(298, 21);
+            this.comboBox3.TabIndex = 11;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(128, 101);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(298, 21);
+            this.comboBox2.TabIndex = 10;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(128, 74);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(298, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(128, 48);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(298, 20);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(128, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(298, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // sumaLabelTab1
+            // 
+            this.sumaLabelTab1.AutoSize = true;
+            this.sumaLabelTab1.Location = new System.Drawing.Point(25, 195);
+            this.sumaLabelTab1.Name = "sumaLabelTab1";
+            this.sumaLabelTab1.Size = new System.Drawing.Size(34, 13);
+            this.sumaLabelTab1.TabIndex = 6;
+            this.sumaLabelTab1.Text = "Suma";
+            // 
+            // chitantaLabelTab1
+            // 
+            this.chitantaLabelTab1.AutoSize = true;
+            this.chitantaLabelTab1.Location = new System.Drawing.Point(24, 166);
+            this.chitantaLabelTab1.Name = "chitantaLabelTab1";
+            this.chitantaLabelTab1.Size = new System.Drawing.Size(79, 13);
+            this.chitantaLabelTab1.TabIndex = 5;
+            this.chitantaLabelTab1.Text = "Numar chitanta";
+            // 
+            // mormantLabelTab1
+            // 
+            this.mormantLabelTab1.AutoSize = true;
+            this.mormantLabelTab1.Location = new System.Drawing.Point(22, 136);
+            this.mormantLabelTab1.Name = "mormantLabelTab1";
+            this.mormantLabelTab1.Size = new System.Drawing.Size(48, 13);
+            this.mormantLabelTab1.TabIndex = 4;
+            this.mormantLabelTab1.Text = "Mormant";
+            // 
+            // parcelaLabelTab1
+            // 
+            this.parcelaLabelTab1.AutoSize = true;
+            this.parcelaLabelTab1.Location = new System.Drawing.Point(23, 109);
+            this.parcelaLabelTab1.Name = "parcelaLabelTab1";
+            this.parcelaLabelTab1.Size = new System.Drawing.Size(43, 13);
+            this.parcelaLabelTab1.TabIndex = 3;
+            this.parcelaLabelTab1.Text = "Parcela";
+            // 
+            // cimitirContractLabelTab1
+            // 
+            this.cimitirContractLabelTab1.AutoSize = true;
+            this.cimitirContractLabelTab1.Location = new System.Drawing.Point(23, 80);
+            this.cimitirContractLabelTab1.Name = "cimitirContractLabelTab1";
+            this.cimitirContractLabelTab1.Size = new System.Drawing.Size(34, 13);
+            this.cimitirContractLabelTab1.TabIndex = 2;
+            this.cimitirContractLabelTab1.Text = "Cimitir";
+            // 
+            // dataExpirareContractLabelTab1
+            // 
+            this.dataExpirareContractLabelTab1.AutoSize = true;
+            this.dataExpirareContractLabelTab1.Location = new System.Drawing.Point(22, 50);
+            this.dataExpirareContractLabelTab1.Name = "dataExpirareContractLabelTab1";
+            this.dataExpirareContractLabelTab1.Size = new System.Drawing.Size(70, 13);
+            this.dataExpirareContractLabelTab1.TabIndex = 1;
+            this.dataExpirareContractLabelTab1.Text = "Data expirare";
+            // 
+            // numarContractLabelTab1
+            // 
+            this.numarContractLabelTab1.AutoSize = true;
+            this.numarContractLabelTab1.Location = new System.Drawing.Point(22, 23);
+            this.numarContractLabelTab1.Name = "numarContractLabelTab1";
+            this.numarContractLabelTab1.Size = new System.Drawing.Size(38, 13);
+            this.numarContractLabelTab1.TabIndex = 0;
+            this.numarContractLabelTab1.Text = "Numar";
+            // 
             // dateConcesionarGroupBoxTab1
             // 
             this.dateConcesionarGroupBoxTab1.Controls.Add(this.modificaDurataContractButtonTab1);
@@ -580,24 +728,24 @@
             // 
             this.contracteConcesionariGridViewTab2.AllowUserToAddRows = false;
             this.contracteConcesionariGridViewTab2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle2;
             this.contracteConcesionariGridViewTab2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.contracteConcesionariGridViewTab2.Location = new System.Drawing.Point(22, 48);
             this.contracteConcesionariGridViewTab2.Name = "contracteConcesionariGridViewTab2";
             this.contracteConcesionariGridViewTab2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.contracteConcesionariGridViewTab2.Size = new System.Drawing.Size(404, 215);
             this.contracteConcesionariGridViewTab2.TabIndex = 3;
             this.contracteConcesionariGridViewTab2.SelectionChanged += new System.EventHandler(this.contracteConcesionariGridViewTab2_SelectionChanged);
@@ -723,154 +871,6 @@
             this.CNPLabelConcesionari.Text = "CNP";
             this.CNPLabelConcesionari.Click += new System.EventHandler(this.label1_Click);
             // 
-            // adaugaContractGroupBox
-            // 
-            this.adaugaContractGroupBox.Controls.Add(this.button1);
-            this.adaugaContractGroupBox.Controls.Add(this.textBox3);
-            this.adaugaContractGroupBox.Controls.Add(this.textBox2);
-            this.adaugaContractGroupBox.Controls.Add(this.comboBox3);
-            this.adaugaContractGroupBox.Controls.Add(this.comboBox2);
-            this.adaugaContractGroupBox.Controls.Add(this.comboBox1);
-            this.adaugaContractGroupBox.Controls.Add(this.dateTimePicker1);
-            this.adaugaContractGroupBox.Controls.Add(this.textBox1);
-            this.adaugaContractGroupBox.Controls.Add(this.sumaLabelTab1);
-            this.adaugaContractGroupBox.Controls.Add(this.chitantaLabelTab1);
-            this.adaugaContractGroupBox.Controls.Add(this.mormantLabelTab1);
-            this.adaugaContractGroupBox.Controls.Add(this.parcelaLabelTab1);
-            this.adaugaContractGroupBox.Controls.Add(this.cimitirContractLabelTab1);
-            this.adaugaContractGroupBox.Controls.Add(this.dataExpirareContractLabelTab1);
-            this.adaugaContractGroupBox.Controls.Add(this.numarContractLabelTab1);
-            this.adaugaContractGroupBox.Location = new System.Drawing.Point(405, 368);
-            this.adaugaContractGroupBox.Name = "adaugaContractGroupBox";
-            this.adaugaContractGroupBox.Size = new System.Drawing.Size(462, 242);
-            this.adaugaContractGroupBox.TabIndex = 2;
-            this.adaugaContractGroupBox.TabStop = false;
-            this.adaugaContractGroupBox.Text = "Adauga contract";
-            // 
-            // numarContractLabelTab1
-            // 
-            this.numarContractLabelTab1.AutoSize = true;
-            this.numarContractLabelTab1.Location = new System.Drawing.Point(22, 23);
-            this.numarContractLabelTab1.Name = "numarContractLabelTab1";
-            this.numarContractLabelTab1.Size = new System.Drawing.Size(38, 13);
-            this.numarContractLabelTab1.TabIndex = 0;
-            this.numarContractLabelTab1.Text = "Numar";
-            // 
-            // dataExpirareContractLabelTab1
-            // 
-            this.dataExpirareContractLabelTab1.AutoSize = true;
-            this.dataExpirareContractLabelTab1.Location = new System.Drawing.Point(22, 50);
-            this.dataExpirareContractLabelTab1.Name = "dataExpirareContractLabelTab1";
-            this.dataExpirareContractLabelTab1.Size = new System.Drawing.Size(70, 13);
-            this.dataExpirareContractLabelTab1.TabIndex = 1;
-            this.dataExpirareContractLabelTab1.Text = "Data expirare";
-            // 
-            // cimitirContractLabelTab1
-            // 
-            this.cimitirContractLabelTab1.AutoSize = true;
-            this.cimitirContractLabelTab1.Location = new System.Drawing.Point(23, 80);
-            this.cimitirContractLabelTab1.Name = "cimitirContractLabelTab1";
-            this.cimitirContractLabelTab1.Size = new System.Drawing.Size(34, 13);
-            this.cimitirContractLabelTab1.TabIndex = 2;
-            this.cimitirContractLabelTab1.Text = "Cimitir";
-            // 
-            // parcelaLabelTab1
-            // 
-            this.parcelaLabelTab1.AutoSize = true;
-            this.parcelaLabelTab1.Location = new System.Drawing.Point(23, 109);
-            this.parcelaLabelTab1.Name = "parcelaLabelTab1";
-            this.parcelaLabelTab1.Size = new System.Drawing.Size(43, 13);
-            this.parcelaLabelTab1.TabIndex = 3;
-            this.parcelaLabelTab1.Text = "Parcela";
-            // 
-            // mormantLabelTab1
-            // 
-            this.mormantLabelTab1.AutoSize = true;
-            this.mormantLabelTab1.Location = new System.Drawing.Point(22, 136);
-            this.mormantLabelTab1.Name = "mormantLabelTab1";
-            this.mormantLabelTab1.Size = new System.Drawing.Size(48, 13);
-            this.mormantLabelTab1.TabIndex = 4;
-            this.mormantLabelTab1.Text = "Mormant";
-            // 
-            // chitantaLabelTab1
-            // 
-            this.chitantaLabelTab1.AutoSize = true;
-            this.chitantaLabelTab1.Location = new System.Drawing.Point(24, 166);
-            this.chitantaLabelTab1.Name = "chitantaLabelTab1";
-            this.chitantaLabelTab1.Size = new System.Drawing.Size(79, 13);
-            this.chitantaLabelTab1.TabIndex = 5;
-            this.chitantaLabelTab1.Text = "Numar chitanta";
-            // 
-            // sumaLabelTab1
-            // 
-            this.sumaLabelTab1.AutoSize = true;
-            this.sumaLabelTab1.Location = new System.Drawing.Point(25, 195);
-            this.sumaLabelTab1.Name = "sumaLabelTab1";
-            this.sumaLabelTab1.Size = new System.Drawing.Size(34, 13);
-            this.sumaLabelTab1.TabIndex = 6;
-            this.sumaLabelTab1.Text = "Suma";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(128, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(298, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(128, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(298, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(128, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(298, 21);
-            this.comboBox2.TabIndex = 10;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(128, 130);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(298, 21);
-            this.comboBox3.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(128, 163);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 20);
-            this.textBox2.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(128, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 20);
-            this.textBox3.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(351, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            //
             // tabRapoarte
             // 
             this.tabRapoarte.Controls.Add(this.tabControlRapoarte);
@@ -991,14 +991,65 @@
             this.grpRegistruMorminte.TabStop = false;
             this.grpRegistruMorminte.Text = "Registrul de morminte";
             // 
-            // lstRegistruMorminte
+            // lstRapoarteInhumati
             // 
-            this.lstRegistruMorminte.FormattingEnabled = true;
-            this.lstRegistruMorminte.Location = new System.Drawing.Point(7, 20);
-            this.lstRegistruMorminte.Name = "lstRegistruMorminte";
-            this.lstRegistruMorminte.Size = new System.Drawing.Size(582, 329);
-            this.lstRegistruMorminte.TabIndex = 0;
-            this.lstRegistruMorminte.SelectedIndexChanged += new System.EventHandler(this.lstRegistruMorminte_SelectedIndexChanged);
+            this.lstRapoarteInhumati.FormattingEnabled = true;
+            this.lstRapoarteInhumati.Location = new System.Drawing.Point(598, 37);
+            this.lstRapoarteInhumati.Name = "lstRapoarteInhumati";
+            this.lstRapoarteInhumati.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lstRapoarteInhumati.Size = new System.Drawing.Size(197, 43);
+            this.lstRapoarteInhumati.TabIndex = 9;
+            // 
+            // lblRapoarteInhumati
+            // 
+            this.lblRapoarteInhumati.AutoSize = true;
+            this.lblRapoarteInhumati.Location = new System.Drawing.Point(595, 20);
+            this.lblRapoarteInhumati.Name = "lblRapoarteInhumati";
+            this.lblRapoarteInhumati.Size = new System.Drawing.Size(50, 13);
+            this.lblRapoarteInhumati.TabIndex = 8;
+            this.lblRapoarteInhumati.Text = "Inhumati:";
+            // 
+            // grpRapoarteObservatii
+            // 
+            this.grpRapoarteObservatii.Controls.Add(this.btnRapoarteObservatii);
+            this.grpRapoarteObservatii.Controls.Add(this.txtRapoarteObservatii);
+            this.grpRapoarteObservatii.Location = new System.Drawing.Point(598, 88);
+            this.grpRapoarteObservatii.Name = "grpRapoarteObservatii";
+            this.grpRapoarteObservatii.Size = new System.Drawing.Size(197, 132);
+            this.grpRapoarteObservatii.TabIndex = 7;
+            this.grpRapoarteObservatii.TabStop = false;
+            this.grpRapoarteObservatii.Text = "Observatii";
+            this.grpRapoarteObservatii.Visible = false;
+            // 
+            // btnRapoarteObservatii
+            // 
+            this.btnRapoarteObservatii.Location = new System.Drawing.Point(116, 99);
+            this.btnRapoarteObservatii.Name = "btnRapoarteObservatii";
+            this.btnRapoarteObservatii.Size = new System.Drawing.Size(75, 23);
+            this.btnRapoarteObservatii.TabIndex = 1;
+            this.btnRapoarteObservatii.Text = "Salveaza";
+            this.btnRapoarteObservatii.UseVisualStyleBackColor = true;
+            this.btnRapoarteObservatii.Click += new System.EventHandler(this.btnRapoarteObservatii_Click);
+            // 
+            // txtRapoarteObservatii
+            // 
+            this.txtRapoarteObservatii.Location = new System.Drawing.Point(7, 20);
+            this.txtRapoarteObservatii.Multiline = true;
+            this.txtRapoarteObservatii.Name = "txtRapoarteObservatii";
+            this.txtRapoarteObservatii.Size = new System.Drawing.Size(184, 73);
+            this.txtRapoarteObservatii.TabIndex = 0;
+            // 
+            // grpRapoarteCauta
+            // 
+            this.grpRapoarteCauta.Controls.Add(this.lblRapoarteCimitir);
+            this.grpRapoarteCauta.Controls.Add(this.btnRapoarteCauta);
+            this.grpRapoarteCauta.Controls.Add(this.cmbRapoarteCimitir);
+            this.grpRapoarteCauta.Controls.Add(this.checkRapoarteMonument);
+            this.grpRapoarteCauta.Location = new System.Drawing.Point(598, 226);
+            this.grpRapoarteCauta.Name = "grpRapoarteCauta";
+            this.grpRapoarteCauta.Size = new System.Drawing.Size(197, 123);
+            this.grpRapoarteCauta.TabIndex = 6;
+            this.grpRapoarteCauta.TabStop = false;
             // 
             // lblRapoarteCimitir
             // 
@@ -1008,6 +1059,16 @@
             this.lblRapoarteCimitir.Size = new System.Drawing.Size(35, 13);
             this.lblRapoarteCimitir.TabIndex = 1;
             this.lblRapoarteCimitir.Text = "Cimitr:";
+            // 
+            // btnRapoarteCauta
+            // 
+            this.btnRapoarteCauta.Location = new System.Drawing.Point(115, 88);
+            this.btnRapoarteCauta.Name = "btnRapoarteCauta";
+            this.btnRapoarteCauta.Size = new System.Drawing.Size(75, 23);
+            this.btnRapoarteCauta.TabIndex = 5;
+            this.btnRapoarteCauta.Text = "Cauta";
+            this.btnRapoarteCauta.UseVisualStyleBackColor = true;
+            this.btnRapoarteCauta.Click += new System.EventHandler(this.btnRapoarteCauta_Click);
             // 
             // cmbRapoarteCimitir
             // 
@@ -1028,75 +1089,14 @@
             this.checkRapoarteMonument.Text = "Monument funerar";
             this.checkRapoarteMonument.UseVisualStyleBackColor = true;
             // 
-            // btnRapoarteCauta
+            // lstRegistruMorminte
             // 
-            this.btnRapoarteCauta.Location = new System.Drawing.Point(115, 88);
-            this.btnRapoarteCauta.Name = "btnRapoarteCauta";
-            this.btnRapoarteCauta.Size = new System.Drawing.Size(75, 23);
-            this.btnRapoarteCauta.TabIndex = 5;
-            this.btnRapoarteCauta.Text = "Cauta";
-            this.btnRapoarteCauta.UseVisualStyleBackColor = true;
-            this.btnRapoarteCauta.Click += new System.EventHandler(this.btnRapoarteCauta_Click);
-            // 
-            // grpRapoarteCauta
-            // 
-            this.grpRapoarteCauta.Controls.Add(this.lblRapoarteCimitir);
-            this.grpRapoarteCauta.Controls.Add(this.btnRapoarteCauta);
-            this.grpRapoarteCauta.Controls.Add(this.cmbRapoarteCimitir);
-            this.grpRapoarteCauta.Controls.Add(this.checkRapoarteMonument);
-            this.grpRapoarteCauta.Location = new System.Drawing.Point(598, 226);
-            this.grpRapoarteCauta.Name = "grpRapoarteCauta";
-            this.grpRapoarteCauta.Size = new System.Drawing.Size(197, 123);
-            this.grpRapoarteCauta.TabIndex = 6;
-            this.grpRapoarteCauta.TabStop = false;
-            // 
-            // grpRapoarteObservatii
-            // 
-            this.grpRapoarteObservatii.Controls.Add(this.btnRapoarteObservatii);
-            this.grpRapoarteObservatii.Controls.Add(this.txtRapoarteObservatii);
-            this.grpRapoarteObservatii.Location = new System.Drawing.Point(598, 88);
-            this.grpRapoarteObservatii.Name = "grpRapoarteObservatii";
-            this.grpRapoarteObservatii.Size = new System.Drawing.Size(197, 132);
-            this.grpRapoarteObservatii.TabIndex = 7;
-            this.grpRapoarteObservatii.TabStop = false;
-            this.grpRapoarteObservatii.Text = "Observatii";
-            this.grpRapoarteObservatii.Visible = false;
-            // 
-            // txtRapoarteObservatii
-            // 
-            this.txtRapoarteObservatii.Location = new System.Drawing.Point(7, 20);
-            this.txtRapoarteObservatii.Multiline = true;
-            this.txtRapoarteObservatii.Name = "txtRapoarteObservatii";
-            this.txtRapoarteObservatii.Size = new System.Drawing.Size(184, 73);
-            this.txtRapoarteObservatii.TabIndex = 0;
-            // 
-            // btnRapoarteObservatii
-            // 
-            this.btnRapoarteObservatii.Location = new System.Drawing.Point(116, 99);
-            this.btnRapoarteObservatii.Name = "btnRapoarteObservatii";
-            this.btnRapoarteObservatii.Size = new System.Drawing.Size(75, 23);
-            this.btnRapoarteObservatii.TabIndex = 1;
-            this.btnRapoarteObservatii.Text = "Salveaza";
-            this.btnRapoarteObservatii.UseVisualStyleBackColor = true;
-            this.btnRapoarteObservatii.Click += new System.EventHandler(this.btnRapoarteObservatii_Click);
-            // 
-            // lblRapoarteInhumati
-            // 
-            this.lblRapoarteInhumati.AutoSize = true;
-            this.lblRapoarteInhumati.Location = new System.Drawing.Point(595, 20);
-            this.lblRapoarteInhumati.Name = "lblRapoarteInhumati";
-            this.lblRapoarteInhumati.Size = new System.Drawing.Size(50, 13);
-            this.lblRapoarteInhumati.TabIndex = 8;
-            this.lblRapoarteInhumati.Text = "Inhumati:";
-            // 
-            // lstRapoarteInhumati
-            // 
-            this.lstRapoarteInhumati.FormattingEnabled = true;
-            this.lstRapoarteInhumati.Location = new System.Drawing.Point(598, 37);
-            this.lstRapoarteInhumati.Name = "lstRapoarteInhumati";
-            this.lstRapoarteInhumati.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstRapoarteInhumati.Size = new System.Drawing.Size(197, 43);
-            this.lstRapoarteInhumati.TabIndex = 9;
+            this.lstRegistruMorminte.FormattingEnabled = true;
+            this.lstRegistruMorminte.Location = new System.Drawing.Point(7, 20);
+            this.lstRegistruMorminte.Name = "lstRegistruMorminte";
+            this.lstRegistruMorminte.Size = new System.Drawing.Size(582, 329);
+            this.lstRegistruMorminte.TabIndex = 0;
+            this.lstRegistruMorminte.SelectedIndexChanged += new System.EventHandler(this.lstRegistruMorminte_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -1116,13 +1116,13 @@
             this.grpDecedat.ResumeLayout(false);
             this.grpDecedat.PerformLayout();
             this.tabConcesionari.ResumeLayout(false);
+            this.adaugaContractGroupBox.ResumeLayout(false);
+            this.adaugaContractGroupBox.PerformLayout();
             this.dateConcesionarGroupBoxTab1.ResumeLayout(false);
             this.dateConcesionarGroupBoxTab1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contracteConcesionariGridViewTab2)).EndInit();
             this.concesionarGroupBoxConcesionari.ResumeLayout(false);
             this.concesionarGroupBoxConcesionari.PerformLayout();
-            this.adaugaContractGroupBox.ResumeLayout(false);
-            this.adaugaContractGroupBox.PerformLayout();
             this.tabRapoarte.ResumeLayout(false);
             this.tabControlRapoarte.ResumeLayout(false);
             this.tabRapoarteInmormantari.ResumeLayout(false);
@@ -1131,10 +1131,10 @@
             this.tabMorminteSecond.ResumeLayout(false);
             this.grpRegistruMorminte.ResumeLayout(false);
             this.grpRegistruMorminte.PerformLayout();
-            this.grpRapoarteCauta.ResumeLayout(false);
-            this.grpRapoarteCauta.PerformLayout();
             this.grpRapoarteObservatii.ResumeLayout(false);
             this.grpRapoarteObservatii.PerformLayout();
+            this.grpRapoarteCauta.ResumeLayout(false);
+            this.grpRapoarteCauta.PerformLayout();
             this.ResumeLayout(false);
 
         }
