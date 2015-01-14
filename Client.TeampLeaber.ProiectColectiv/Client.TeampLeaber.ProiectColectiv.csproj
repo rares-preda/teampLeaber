@@ -71,6 +71,10 @@
     <Compile Include="Networking\Requests\CimitireRequest.cs" />
     <Compile Include="Models\MorminteConcesionarModel.cs" />
     <Compile Include="Models\PrelungireContractModel.cs" />
+    <Compile Include="Networking\Requests\DeleteReligionRequest.cs" />
+    <Compile Include="Networking\Requests\DeleteTipActRequest.cs" />
+    <Compile Include="Networking\Requests\GetInmormantariByDate.cs" />
+    <Compile Include="Networking\Requests\GetMorminteLibereRequest.cs" />
     <Compile Include="Networking\Requests\GetTipActeRequest.cs" />
     <Compile Include="Networking\Requests\ContracteConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\LogInRequest.cs" />
@@ -78,10 +82,18 @@
     <Compile Include="Networking\Requests\MorminteByConcesionar.cs" />
     <Compile Include="Networking\Requests\MorminteRequest.cs" />
     <Compile Include="Networking\Requests\ParceleRequest.cs" />
+    <Compile Include="Networking\Requests\PostReligionRequest.cs" />
     <Compile Include="Networking\Requests\ProgramareInmormantare.cs" />
+    <Compile Include="Networking\Requests\PutReligionRequest.cs" />
     <Compile Include="Networking\Requests\RaportInmormantariRequest.cs" />
-    <Compile Include="Networking\Requests\ReligiiRequest.cs" />
+    <Compile Include="Networking\Requests\GetReligiiRequest.cs" />
     <Compile Include="Networking\Requests\UpdateDocumentTypeRequest.cs" />
+    <Compile Include="Views\AddReligiiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddReligiiForm.Designer.cs">
+      <DependentUpon>AddReligiiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DocumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +118,6 @@
     <Compile Include="Views\EditInmormantareForm.Designer.cs">
       <DependentUpon>EditInmormantareForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditReligionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\EditReligionForm.Designer.cs">
-      <DependentUpon>EditReligionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
       <DependentUpon>ReligionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Constants.cs" />
+    <EmbeddedResource Include="Views\AddReligiiForm.resx">
+      <DependentUpon>AddReligiiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DocumentForm.resx">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,9 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditInmormantareForm.resx">
       <DependentUpon>EditInmormantareForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\EditReligionForm.resx">
-      <DependentUpon>EditReligionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

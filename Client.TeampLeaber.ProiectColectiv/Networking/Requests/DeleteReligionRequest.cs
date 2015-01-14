@@ -10,31 +10,34 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ReligiiRequest : BaseRequest
+    public class DeleteReligionRequest : BaseRequest
     {
-        public async Task<List<ReligieModel>> Run()
+        private int ID;
+        public DeleteReligionRequest(int id)
+        {
+            this.ID = id;
+        }
+        public async Task<bool> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.ReligiiPath);
-
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
-                {
-                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
-                    return religii;
-                }
+                response = await this.DeleteAsync(Constants.ReligiiPath + "/" + ID);
+                if (response.StatusCode == HttpStatusCode.OK) // 200
+                    return true;
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return null;
+                    return false;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return null;
+                return false;
             }
         }
+
     }
 }
+

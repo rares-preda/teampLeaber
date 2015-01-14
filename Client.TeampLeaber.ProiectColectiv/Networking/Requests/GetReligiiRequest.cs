@@ -1,46 +1,40 @@
-﻿using System;
+﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class AddDocumentRequest : BaseRequest
+    public class GetReligiiRequest : BaseRequest
     {
-        private Models.ActModel model;
-        public AddDocumentRequest(Models.ActModel model)
-        {
-            this.model = model;
-        }
-
-        internal async Task<bool> Run()
+        public async Task<List<ReligieModel>> Run()
         {
             try
             {
-                response = await this.PutAsJsonAsync(Constants.ActePath, model);
+                response = await this.GetAsync(Constants.ReligiiPath);
 
-                if (response.StatusCode == HttpStatusCode.OK) // 200
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    return true;
+                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
+                    return religii;
                 }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return false;
+                    return null;
                 }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return false;
+                return null;
             }
         }
-
     }
 }

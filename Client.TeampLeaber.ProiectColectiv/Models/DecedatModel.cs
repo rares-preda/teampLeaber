@@ -10,7 +10,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public string Cnp { get; set; }
         public string Nume { get; set; }
         public string Prenume { get; set; }
-        public List<ActeModel> Acte { get; set; }
+        public List<ActModel> Acte { get; set; }
 
         public bool IsValid()
         {

@@ -10,24 +10,20 @@ using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class AddDocumentRequest : BaseRequest
-    {
-        private Models.ActModel model;
-        public AddDocumentRequest(Models.ActModel model)
+    public class DeleteTipActRequest : BaseRequest
+    {  
+        private int ID;
+        public DeleteTipActRequest(int id)
         {
-            this.model = model;
+            this.ID = id;
         }
-
-        internal async Task<bool> Run()
+        public async Task<bool> Run()
         {
             try
             {
-                response = await this.PutAsJsonAsync(Constants.ActePath, model);
-
+                response = await this.DeleteAsync(Constants.TipActePath + "/" + ID);
                 if (response.StatusCode == HttpStatusCode.OK) // 200
-                {
                     return true;
-                }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
@@ -41,6 +37,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                 return false;
             }
         }
-
     }
 }
+
