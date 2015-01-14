@@ -24,7 +24,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.DeleteAsync(Constants.RenuntareContractConcesiune + "/" + numarContract);
+                response = await this.DeleteAsync(Constants.RenuntareContractConcesiune + "?numar=" + numarContract);
 
                 if (response.StatusCode == HttpStatusCode.OK) // 200
                 {
