@@ -5,18 +5,31 @@ using System.Text;
 
 namespace Client.TeampLeaber.ProiectColectiv.Models
 {
-    public class ActeModel
+    public class ActModel
     {
         public int Id { get; set; }
         public int Numar { get; set; }
         public int TipActId { get; set; }
+        public string TipActName { get; set; }
 
-        public ActeModel()
+        public ActModel(string numar, int Id, string tip)
+        {
+            this.Id = Id;
+            int n;
+            if (!Int32.TryParse(numar, out n))
+                this.Numar = 0;
+            else
+                this.Numar = n;
+            this.TipActId = Id;
+            this.TipActName = tip;
+        }
+
+        public ActModel()
         {
 
         }
 
-        public ActeModel(string numar, int Id)
+        public ActModel(string numar, int Id)
         {
             int n;
             if (!Int32.TryParse(numar, out n))
@@ -24,7 +37,9 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
             else 
                 this.Numar = n;
             this.TipActId = Id;
+          
         }
+
         public bool IsValid()
         {
             List<string> errors = new List<string>();
@@ -37,15 +52,15 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
             {
                 ErrorHandling.ErrorHandling.Instance.HandleErrors(errors);
                 return false;
-            }
+            } 
             return true;
         }
 
         public override string ToString()
         {
-            return Numar + "";
+            return TipActName + "    " + Numar;
         }
-        public ActeModel(int id, int numar, int tipActId)
+        public ActModel(int id, int numar, int tipActId)
         {
             this.Id = id;
             this.Numar = numar;

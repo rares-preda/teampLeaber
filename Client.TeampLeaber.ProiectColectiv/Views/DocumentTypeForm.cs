@@ -71,8 +71,6 @@ namespace Client.TeampLeaber.ProiectColectiv
             this.contr.AddDocumentTypeCommand();
         }
 
-
-
         internal void SetController(Controller.MainController mainController)
         {
             this.contr = mainController;
@@ -82,6 +80,27 @@ namespace Client.TeampLeaber.ProiectColectiv
         {
             this.contr.UpdateActeCommand();
         }
+
+        private void lstTipActe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetCommandsAvailability();
+        }
+
+        public void SetCommandsAvailability()
+        {
+            var item = lstTipActe.SelectedItem as Models.TipActModel;
+            if (item == null)
+                buttonDelete.Enabled = btnEditeazaTipActe.Enabled = false;
+            else
+                buttonDelete.Enabled = btnEditeazaTipActe.Enabled = true;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            this.contr.DeleteActCommand();
+        }
+
+
 
     
     }

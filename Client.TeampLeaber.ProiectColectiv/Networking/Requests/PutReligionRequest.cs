@@ -1,33 +1,33 @@
-﻿using System;
+﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class AddDocumentRequest : BaseRequest
+    public class PutReligionRequest : BaseRequest
     {
-        private Models.ActModel model;
-        public AddDocumentRequest(Models.ActModel model)
+        private ReligieModel model;
+
+
+        public PutReligionRequest(ReligieModel model)
         {
             this.model = model;
         }
 
-        internal async Task<bool> Run()
+        public async Task<bool> Run()
         {
             try
             {
-                response = await this.PutAsJsonAsync(Constants.ActePath, model);
+                response = await this.PutAsJsonAsync(Constants.ReligiiPath, model);
 
-                if (response.StatusCode == HttpStatusCode.OK) // 200
-                {
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                     return true;
-                }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
@@ -44,3 +44,4 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 
     }
 }
+

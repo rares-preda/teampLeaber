@@ -10,37 +10,40 @@ using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class AddDocumentRequest : BaseRequest
+    public class GetInmormantariByDate : BaseRequest
     {
-        private Models.ActModel model;
-        public AddDocumentRequest(Models.ActModel model)
-        {
-            this.model = model;
-        }
+        private DateTime data;
+        private int mormantId;
 
-        internal async Task<bool> Run()
+        public GetInmormantariByDate(DateTime d, int i)
+        {
+            data = d;
+            mormantId = i;
+        }
+        public async Task<List<RaportInmormantareModel>> Run()
         {
             try
             {
-                response = await this.PutAsJsonAsync(Constants.ActePath, model);
+                string fullpath = Constants.InmormantarePath + "?Year=" +  data.Year + "&Month=" + data.Month + "Day=" +  data.Day + "&MormantId=" + mormantId;
+                response = await this.GetAsync(fullpath);
 
-                if (response.StatusCode == HttpStatusCode.OK) // 200
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    return true;
+                    List<RaportInmormantareModel> value = await response.Content.ReadAsAsync<List<RaportInmormantareModel>>();
+                    return value;
                 }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return false;
+                    return null;
                 }
             }
             catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return false;
+                return null;
             }
         }
-
     }
 }

@@ -39,6 +39,17 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        public string TipName
+        {
+            get
+            {
+                if ((cmbTipActe.SelectedItem as Models.TipActModel) == null)
+                    return String.Empty;
+                return (cmbTipActe.SelectedItem as Models.TipActModel).Denumire;
+
+            }
+        }
+
         internal void ShowTipuriActeInList(List<Models.TipActModel> tipuriActe)
         {
             cmbTipActe.Items.Clear();

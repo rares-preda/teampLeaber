@@ -85,7 +85,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         internal async Task<List<ReligieModel>> GetReligii()
         {
-            var request = new Networking.Requests.ReligiiRequest();
+            var request = new Networking.Requests.GetReligiiRequest();
             List<ReligieModel> _religii = await request.Run();
             return _religii;
         }

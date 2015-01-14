@@ -45,7 +45,7 @@
             this.tabInmormantari = new System.Windows.Forms.TabPage();
             this.btnProgramare = new System.Windows.Forms.Button();
             this.grpDateInmormantare = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.inmormantariListTab1 = new System.Windows.Forms.ListBox();
             this.btnInmormantari = new System.Windows.Forms.Label();
             this.btnReligii = new System.Windows.Forms.Button();
             this.cmbReligie = new System.Windows.Forms.ComboBox();
@@ -63,6 +63,7 @@
             this.lblCNPConcesionar1 = new System.Windows.Forms.Label();
             this.txtCNPConcesionar1 = new System.Windows.Forms.TextBox();
             this.grpDecedat = new System.Windows.Forms.GroupBox();
+            this.buttonStergeActTab1 = new System.Windows.Forms.Button();
             this.lbActeTab1 = new System.Windows.Forms.ListBox();
             this.lblActeAnexate = new System.Windows.Forms.Label();
             this.btnActe = new System.Windows.Forms.Button();
@@ -139,6 +140,12 @@
             this.checkRapoarteMonument = new System.Windows.Forms.CheckBox();
             this.lstRegistruMorminte = new System.Windows.Forms.ListBox();
             this.tabEvidentaDecedati = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBoxMormantLiberTab1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.morminteLiberecmbBox = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBoxDecedatiCuApartinator = new System.Windows.Forms.GroupBox();
             this.groupBoxDecedatiFaraApartinator = new System.Windows.Forms.GroupBox();
             this.listBoxDecedatiFaraApartinator = new System.Windows.Forms.ListBox();
             this.groupBoxDecedatiCuApartinator = new System.Windows.Forms.GroupBox();
@@ -175,7 +182,6 @@
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpConcesionar1.SuspendLayout();
             this.grpDecedat.SuspendLayout();
             this.tabConcesionari.SuspendLayout();
@@ -187,6 +193,7 @@
             this.tabControlRapoarte.SuspendLayout();
             this.tabRapoarteInmormantari.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBoxMormantLiberTab1.SuspendLayout();
             this.tabMorminteSecond.SuspendLayout();
             this.grpRegistruMorminte.SuspendLayout();
             this.grpRapoarteObservatii.SuspendLayout();
@@ -217,6 +224,7 @@
             // 
             // tabInmormantari
             // 
+            this.tabInmormantari.Controls.Add(this.groupBoxMormantLiberTab1);
             this.tabInmormantari.Controls.Add(this.btnProgramare);
             this.tabInmormantari.Controls.Add(this.grpDateInmormantare);
             this.tabInmormantari.Controls.Add(this.grpConcesionar1);
@@ -231,7 +239,7 @@
             // 
             // btnProgramare
             // 
-            this.btnProgramare.Location = new System.Drawing.Point(544, 386);
+            this.btnProgramare.Location = new System.Drawing.Point(796, 587);
             this.btnProgramare.Name = "btnProgramare";
             this.btnProgramare.Size = new System.Drawing.Size(103, 23);
             this.btnProgramare.TabIndex = 3;
@@ -241,35 +249,35 @@
             // 
             // grpDateInmormantare
             // 
-            this.grpDateInmormantare.Controls.Add(this.dataGridView1);
+            this.grpDateInmormantare.Controls.Add(this.inmormantariListTab1);
             this.grpDateInmormantare.Controls.Add(this.btnInmormantari);
             this.grpDateInmormantare.Controls.Add(this.btnReligii);
             this.grpDateInmormantare.Controls.Add(this.cmbReligie);
             this.grpDateInmormantare.Controls.Add(this.lblReligie);
             this.grpDateInmormantare.Controls.Add(this.lblDataInmormantare);
             this.grpDateInmormantare.Controls.Add(this.dataInmormantare);
-            this.grpDateInmormantare.Location = new System.Drawing.Point(9, 242);
+            this.grpDateInmormantare.Location = new System.Drawing.Point(9, 308);
             this.grpDateInmormantare.Name = "grpDateInmormantare";
-            this.grpDateInmormantare.Size = new System.Drawing.Size(638, 132);
+            this.grpDateInmormantare.Size = new System.Drawing.Size(908, 249);
             this.grpDateInmormantare.TabIndex = 2;
             this.grpDateInmormantare.TabStop = false;
             this.grpDateInmormantare.Text = "Date inmormantare";
             // 
-            // dataGridView1
+            // inmormantariListTab1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(396, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(235, 99);
-            this.dataGridView1.TabIndex = 6;
+            this.inmormantariListTab1.FormattingEnabled = true;
+            this.inmormantariListTab1.Location = new System.Drawing.Point(23, 114);
+            this.inmormantariListTab1.Name = "inmormantariListTab1";
+            this.inmormantariListTab1.Size = new System.Drawing.Size(867, 95);
+            this.inmormantariListTab1.TabIndex = 12;
             // 
             // btnInmormantari
             // 
-            this.btnInmormantari.Location = new System.Drawing.Point(308, 20);
+            this.btnInmormantari.Location = new System.Drawing.Point(20, 92);
             this.btnInmormantari.Name = "btnInmormantari";
-            this.btnInmormantari.Size = new System.Drawing.Size(83, 28);
+            this.btnInmormantari.Size = new System.Drawing.Size(359, 28);
             this.btnInmormantari.TabIndex = 5;
-            this.btnInmormantari.Text = "Inmormantari programte:";
+            this.btnInmormantari.Text = "Inmormantari programate in ziua respectiva:";
             // 
             // btnReligii
             // 
@@ -279,6 +287,7 @@
             this.btnReligii.TabIndex = 4;
             this.btnReligii.Text = "Editeaza";
             this.btnReligii.UseVisualStyleBackColor = true;
+            this.btnReligii.Click += new System.EventHandler(this.btnReligii_Click);
             // 
             // cmbReligie
             // 
@@ -317,6 +326,7 @@
             this.dataInmormantare.Size = new System.Drawing.Size(189, 20);
             this.dataInmormantare.TabIndex = 0;
             this.dataInmormantare.Value = new System.DateTime(2014, 11, 26, 22, 32, 41, 0);
+            this.dataInmormantare.ValueChanged += new System.EventHandler(this.dataInmormantare_ValueChanged);
             // 
             // grpConcesionar1
             // 
@@ -329,9 +339,9 @@
             this.grpConcesionar1.Controls.Add(this.btnCautaConcesionar);
             this.grpConcesionar1.Controls.Add(this.lblCNPConcesionar1);
             this.grpConcesionar1.Controls.Add(this.txtCNPConcesionar1);
-            this.grpConcesionar1.Location = new System.Drawing.Point(318, 7);
+            this.grpConcesionar1.Location = new System.Drawing.Point(426, 7);
             this.grpConcesionar1.Name = "grpConcesionar1";
-            this.grpConcesionar1.Size = new System.Drawing.Size(329, 229);
+            this.grpConcesionar1.Size = new System.Drawing.Size(489, 295);
             this.grpConcesionar1.TabIndex = 1;
             this.grpConcesionar1.TabStop = false;
             this.grpConcesionar1.Text = "Concesionar";
@@ -339,7 +349,7 @@
             // lblLocuriDisponibile
             // 
             this.lblLocuriDisponibile.AutoSize = true;
-            this.lblLocuriDisponibile.Location = new System.Drawing.Point(12, 120);
+            this.lblLocuriDisponibile.Location = new System.Drawing.Point(102, 115);
             this.lblLocuriDisponibile.Name = "lblLocuriDisponibile";
             this.lblLocuriDisponibile.Size = new System.Drawing.Size(51, 13);
             this.lblLocuriDisponibile.TabIndex = 8;
@@ -350,7 +360,7 @@
             // 
             this.cmbMorminteDisponibile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMorminteDisponibile.FormattingEnabled = true;
-            this.cmbMorminteDisponibile.Location = new System.Drawing.Point(87, 117);
+            this.cmbMorminteDisponibile.Location = new System.Drawing.Point(177, 112);
             this.cmbMorminteDisponibile.Name = "cmbMorminteDisponibile";
             this.cmbMorminteDisponibile.Size = new System.Drawing.Size(154, 21);
             this.cmbMorminteDisponibile.TabIndex = 7;
@@ -359,7 +369,7 @@
             // txtPrenumeConcesionar1
             // 
             this.txtPrenumeConcesionar1.Enabled = false;
-            this.txtPrenumeConcesionar1.Location = new System.Drawing.Point(87, 91);
+            this.txtPrenumeConcesionar1.Location = new System.Drawing.Point(177, 86);
             this.txtPrenumeConcesionar1.Name = "txtPrenumeConcesionar1";
             this.txtPrenumeConcesionar1.Size = new System.Drawing.Size(154, 20);
             this.txtPrenumeConcesionar1.TabIndex = 6;
@@ -368,7 +378,7 @@
             // txtNumeConcesionar1
             // 
             this.txtNumeConcesionar1.Enabled = false;
-            this.txtNumeConcesionar1.Location = new System.Drawing.Point(87, 65);
+            this.txtNumeConcesionar1.Location = new System.Drawing.Point(177, 60);
             this.txtNumeConcesionar1.Name = "txtNumeConcesionar1";
             this.txtNumeConcesionar1.Size = new System.Drawing.Size(154, 20);
             this.txtNumeConcesionar1.TabIndex = 5;
@@ -377,7 +387,7 @@
             // lblConcesionarPrenume
             // 
             this.lblConcesionarPrenume.AutoSize = true;
-            this.lblConcesionarPrenume.Location = new System.Drawing.Point(11, 94);
+            this.lblConcesionarPrenume.Location = new System.Drawing.Point(101, 89);
             this.lblConcesionarPrenume.Name = "lblConcesionarPrenume";
             this.lblConcesionarPrenume.Size = new System.Drawing.Size(52, 13);
             this.lblConcesionarPrenume.TabIndex = 4;
@@ -387,7 +397,7 @@
             // lblConcesionarNume
             // 
             this.lblConcesionarNume.AutoSize = true;
-            this.lblConcesionarNume.Location = new System.Drawing.Point(24, 68);
+            this.lblConcesionarNume.Location = new System.Drawing.Point(114, 63);
             this.lblConcesionarNume.Name = "lblConcesionarNume";
             this.lblConcesionarNume.Size = new System.Drawing.Size(38, 13);
             this.lblConcesionarNume.TabIndex = 3;
@@ -396,7 +406,7 @@
             // 
             // btnCautaConcesionar
             // 
-            this.btnCautaConcesionar.Location = new System.Drawing.Point(247, 37);
+            this.btnCautaConcesionar.Location = new System.Drawing.Point(337, 32);
             this.btnCautaConcesionar.Name = "btnCautaConcesionar";
             this.btnCautaConcesionar.Size = new System.Drawing.Size(75, 23);
             this.btnCautaConcesionar.TabIndex = 2;
@@ -407,7 +417,7 @@
             // lblCNPConcesionar1
             // 
             this.lblCNPConcesionar1.AutoSize = true;
-            this.lblCNPConcesionar1.Location = new System.Drawing.Point(30, 42);
+            this.lblCNPConcesionar1.Location = new System.Drawing.Point(120, 37);
             this.lblCNPConcesionar1.Name = "lblCNPConcesionar1";
             this.lblCNPConcesionar1.Size = new System.Drawing.Size(32, 13);
             this.lblCNPConcesionar1.TabIndex = 1;
@@ -415,13 +425,14 @@
             // 
             // txtCNPConcesionar1
             // 
-            this.txtCNPConcesionar1.Location = new System.Drawing.Point(87, 39);
+            this.txtCNPConcesionar1.Location = new System.Drawing.Point(177, 34);
             this.txtCNPConcesionar1.Name = "txtCNPConcesionar1";
             this.txtCNPConcesionar1.Size = new System.Drawing.Size(154, 20);
             this.txtCNPConcesionar1.TabIndex = 0;
             // 
             // grpDecedat
             // 
+            this.grpDecedat.Controls.Add(this.buttonStergeActTab1);
             this.grpDecedat.Controls.Add(this.lbActeTab1);
             this.grpDecedat.Controls.Add(this.lblActeAnexate);
             this.grpDecedat.Controls.Add(this.btnActe);
@@ -434,18 +445,30 @@
             this.grpDecedat.Controls.Add(this.lblCnp);
             this.grpDecedat.Location = new System.Drawing.Point(9, 7);
             this.grpDecedat.Name = "grpDecedat";
-            this.grpDecedat.Size = new System.Drawing.Size(303, 229);
+            this.grpDecedat.Size = new System.Drawing.Size(411, 295);
             this.grpDecedat.TabIndex = 0;
             this.grpDecedat.TabStop = false;
             this.grpDecedat.Text = "Decedat";
+            // 
+            // buttonStergeActTab1
+            // 
+            this.buttonStergeActTab1.Enabled = false;
+            this.buttonStergeActTab1.Location = new System.Drawing.Point(98, 266);
+            this.buttonStergeActTab1.Name = "buttonStergeActTab1";
+            this.buttonStergeActTab1.Size = new System.Drawing.Size(86, 23);
+            this.buttonStergeActTab1.TabIndex = 11;
+            this.buttonStergeActTab1.Text = "Sterge act ";
+            this.buttonStergeActTab1.UseVisualStyleBackColor = true;
+            this.buttonStergeActTab1.Click += new System.EventHandler(this.buttonStergeActTab1_Click);
             // 
             // lbActeTab1
             // 
             this.lbActeTab1.FormattingEnabled = true;
             this.lbActeTab1.Location = new System.Drawing.Point(98, 174);
             this.lbActeTab1.Name = "lbActeTab1";
-            this.lbActeTab1.Size = new System.Drawing.Size(180, 43);
+            this.lbActeTab1.Size = new System.Drawing.Size(295, 82);
             this.lbActeTab1.TabIndex = 9;
+            this.lbActeTab1.SelectedIndexChanged += new System.EventHandler(this.lbActeTab1_SelectedIndexChanged);
             // 
             // lblActeAnexate
             // 
@@ -458,9 +481,9 @@
             // 
             // btnActe
             // 
-            this.btnActe.Location = new System.Drawing.Point(192, 145);
+            this.btnActe.Location = new System.Drawing.Point(192, 266);
             this.btnActe.Name = "btnActe";
-            this.btnActe.Size = new System.Drawing.Size(95, 23);
+            this.btnActe.Size = new System.Drawing.Size(86, 23);
             this.btnActe.TabIndex = 7;
             this.btnActe.Text = "Adauga acte";
             this.btnActe.UseVisualStyleBackColor = true;
@@ -478,6 +501,7 @@
             this.chkApartinator.TabIndex = 6;
             this.chkApartinator.Text = "Are apartinator";
             this.chkApartinator.UseVisualStyleBackColor = true;
+            this.chkApartinator.CheckedChanged += new System.EventHandler(this.chkApartinator_CheckedChanged);
             // 
             // txtPrenume
             // 
@@ -1357,6 +1381,34 @@
             this.groupBoxDecedatiFaraApartinator.TabStop = false;
             this.groupBoxDecedatiFaraApartinator.Text = "Decedati fara apartinator";
             // 
+            // groupBoxMormantLiberTab1
+            // 
+            this.groupBoxMormantLiberTab1.Controls.Add(this.morminteLiberecmbBox);
+            this.groupBoxMormantLiberTab1.Controls.Add(this.label2);
+            this.groupBoxMormantLiberTab1.Location = new System.Drawing.Point(426, 7);
+            this.groupBoxMormantLiberTab1.Name = "groupBoxMormantLiberTab1";
+            this.groupBoxMormantLiberTab1.Size = new System.Drawing.Size(489, 295);
+            this.groupBoxMormantLiberTab1.TabIndex = 9;
+            this.groupBoxMormantLiberTab1.TabStop = false;
+            this.groupBoxMormantLiberTab1.Text = "Alegeti un mormant liber:";
+            this.groupBoxMormantLiberTab1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 0;
+            // 
+            // morminteLiberecmbBox
+            // 
+            this.morminteLiberecmbBox.FormattingEnabled = true;
+            this.morminteLiberecmbBox.Location = new System.Drawing.Point(104, 39);
+            this.morminteLiberecmbBox.Name = "morminteLiberecmbBox";
+            this.morminteLiberecmbBox.Size = new System.Drawing.Size(274, 21);
+            this.morminteLiberecmbBox.TabIndex = 1;
+            // tabPage3
             // listBoxDecedatiFaraApartinator
             // 
             this.listBoxDecedatiFaraApartinator.FormattingEnabled = true;
@@ -1675,7 +1727,6 @@
             this.tabInmormantari.ResumeLayout(false);
             this.grpDateInmormantare.ResumeLayout(false);
             this.grpDateInmormantare.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpConcesionar1.ResumeLayout(false);
             this.grpConcesionar1.PerformLayout();
             this.grpDecedat.ResumeLayout(false);
@@ -1693,6 +1744,8 @@
             this.tabRapoarteInmormantari.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBoxMormantLiberTab1.ResumeLayout(false);
+            this.groupBoxMormantLiberTab1.PerformLayout();
             this.tabMorminteSecond.ResumeLayout(false);
             this.grpRegistruMorminte.ResumeLayout(false);
             this.grpRegistruMorminte.PerformLayout();
@@ -1739,7 +1792,6 @@
         private System.Windows.Forms.GroupBox grpDateInmormantare;
         private System.Windows.Forms.DateTimePicker dataInmormantare;
         private System.Windows.Forms.Button btnProgramare;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label btnInmormantari;
         private System.Windows.Forms.Button btnReligii;
         private System.Windows.Forms.ComboBox cmbReligie;
@@ -1813,6 +1865,11 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonStergeActTab1;
+        private System.Windows.Forms.ListBox inmormantariListTab1;
+        private System.Windows.Forms.GroupBox groupBoxMormantLiberTab1;
+        private System.Windows.Forms.ComboBox morminteLiberecmbBox;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabEvidentaDecedati;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBoxDecedatiFaraApartinator;
