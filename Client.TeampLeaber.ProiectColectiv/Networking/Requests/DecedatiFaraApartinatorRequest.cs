@@ -18,7 +18,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
             try
             {
                 response = await this.GetAsync(Constants.PersoanaDecedataPath + "/GetFaraApartinator");
-
                 if (response.StatusCode == HttpStatusCode.OK) //200
                 {
                     List<DecedatFaraApartinatorModel> decedatiFaraApartinator = await response.Content.ReadAsAsync<List<DecedatFaraApartinatorModel>>();

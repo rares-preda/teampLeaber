@@ -20,6 +20,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
                 this.Numar = 0;
             else
                 this.Numar = n;
+            this.TipActId = Id;
             this.TipActName = tip;
         }
 

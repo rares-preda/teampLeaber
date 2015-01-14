@@ -93,10 +93,24 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
             if (!model.IsValid())
                 return;
+            int nrActe1 = 0;
+            int nrActe2 = 0;
+            if (acte != null)
+            {
+                nrActe1 = acte.Where(x => x.TipActId == 13).ToList().Count();
+                nrActe2 = acte.Where(x => x.TipActId == 12).ToList().Count();
+            }
+        
+            if (acte == null || nrActe1 < 1 || nrActe2 < 1)
+            {
+                MessageBox.Show("Pentru inregistrarea unei inmormantari fara apartinator, este obligatorie o solicitare IML si o adeverinta de inhumare.");
+                return;
+            }
             var request = new Networking.Requests.ProgramareInmormantareRequest(model);
             bool ok = await request.Run();
             if (!ok)
                 return;
+            view.ClearAllDataAfterSuccess();
             MessageBox.Show(Utils.Constants.SUCCESS_MESSAGE);
         }
 

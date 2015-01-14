@@ -556,6 +556,16 @@ namespace Client.TeampLeaber.ProiectColectiv
         }
         internal void ClearAllDataAfterSuccess()
         {
+            inmormantariListTab1.Items.Clear();
+            cmbMorminteDisponibile.Items.Clear();
+            txtPrenumeConcesionar1.Text = String.Empty;
+            txtNumeConcesionar1.Text = String.Empty;
+            txtNumeConcesionar1.Text = String.Empty;
+            lbActeTab1.Items.Clear();
+            chkApartinator.Checked = true;
+            morminteLiberecmbBox.Items.Clear();
+            txtCNP.Text = txtPrenume.Text = txtNume.Text = String.Empty;
+            txtNumeConcesionar1.Visible = txtPrenumeConcesionar1.Visible = lblConcesionarNume.Visible = lblConcesionarPrenume.Visible = false;
         }
 
     }

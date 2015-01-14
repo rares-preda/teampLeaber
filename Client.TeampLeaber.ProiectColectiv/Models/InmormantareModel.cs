@@ -13,7 +13,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public int MormantId { get; set; }
         public DateTime Data { get; set; }
         public int ReligieId { get; set; }
-        public bool AreApartinator { get; set; }
         public InmormantareModel(string _decedatNume, string _decedatPrenume, string  _decedatCNP, int _religieId,
                 int _mormantId, DateTime _selectedDate,  bool areAp, List<ActModel> acte)
         {
@@ -25,7 +24,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
             this.ReligieId = _religieId;
             this.MormantId = _mormantId;
             this.Data = _selectedDate;
-            this.AreApartinator = areAp;
+            this.Decedat.AreApartinator = areAp;
 
         }
 
@@ -33,7 +32,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         {
             var errors = new List<string>();
 
-            if (AreApartinator && !Decedat.IsValid())
+            if (!Decedat.IsValid())
                 return false;
 
             if (this.Data == null)
