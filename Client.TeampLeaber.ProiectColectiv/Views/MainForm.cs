@@ -365,5 +365,20 @@ namespace Client.TeampLeaber.ProiectColectiv
                 foreach (var item in decedatiFaraApartinator)
                     listBoxDecedatiFaraApartinator.Items.Add(item.ToString());
         }
+
+        internal void SetContracteConcesiune(List<EvidentaContracteConcesiuneModel> contracteConcesiune)
+        {
+            foreach (var item in contracteConcesiune)
+            {
+                listBoxContracteConcesiune.Items.Add(item.ToString());
+            }
+        }
+
+        private void buttonAfisareContracteConcesiune_Click(object sender, EventArgs e)
+        {
+            listBoxContracteConcesiune.Items.Clear();
+            bool finalizat = checkBoxFinalizatTabRapoarteContracteConcesiune.Checked;
+            raportController.GetContracteConcesiune(yearPickerContracteConcesiune.Value.Year, finalizat);
+        }
     }
 }
