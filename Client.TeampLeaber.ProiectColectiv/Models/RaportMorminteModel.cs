@@ -24,8 +24,12 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 
         public override string ToString()
         {
-            return "Parcela: " + Parcela.Denumire + "; Mormant: " + Mormant.Numar + "; Concesionar: " 
-                + Concesionar.Nume + " " + Concesionar.Prenume; 
+            string raport = "Parcela: " + Parcela.Denumire + "; Mormant: " + Mormant.Numar.ToString() + "; ";
+            if (Concesionar != null)
+            {
+                raport += "Concesionar: " + Concesionar.Nume + " " + Concesionar.Prenume + "; Chitanta: " + NumarChitanta + "; ";
+            }
+            return raport;
         }
     }
 }

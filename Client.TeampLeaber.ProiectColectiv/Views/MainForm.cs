@@ -395,7 +395,7 @@ namespace Client.TeampLeaber.ProiectColectiv
         {
             lstRapoarteInhumati.Items.Clear();
             foreach (var item in inmormantari)
-                lstRapoarteInhumati.Items.Add(item.Decedat.Nume + " " + item.Decedat.Prenume + " - " + item.Data);
+                lstRapoarteInhumati.Items.Add(item.Decedat.Nume + " " + item.Decedat.Prenume + " - " + item.Data.ToShortDateString());
         }
 
         public void SetRaport2CimitirComboBoxIndex(int index)

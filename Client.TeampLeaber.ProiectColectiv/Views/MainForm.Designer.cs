@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -824,6 +827,18 @@
             // 
             this.contracteConcesionariGridViewTab2.AllowUserToAddRows = false;
             this.contracteConcesionariGridViewTab2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -852,6 +867,8 @@
             this.contracteConcesionariGridViewTab2.Location = new System.Drawing.Point(22, 48);
             this.contracteConcesionariGridViewTab2.Name = "contracteConcesionariGridViewTab2";
             this.contracteConcesionariGridViewTab2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle15;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1161,6 +1178,68 @@
             this.grpRapoarteCauta.TabIndex = 6;
             this.grpRapoarteCauta.TabStop = false;
             // 
+            // lblRapoarteInhumati
+            // 
+            this.lblRapoarteInhumati.AutoSize = true;
+            this.lblRapoarteInhumati.Location = new System.Drawing.Point(595, 20);
+            this.lblRapoarteInhumati.Name = "lblRapoarteInhumati";
+            this.lblRapoarteInhumati.Size = new System.Drawing.Size(50, 13);
+            this.lblRapoarteInhumati.TabIndex = 8;
+            this.lblRapoarteInhumati.Text = "Inhumati:";
+            // 
+            // grpRapoarteObservatii
+            // btnRapoarteCauta
+            // 
+            this.btnRapoarteCauta.Location = new System.Drawing.Point(115, 88);
+            this.btnRapoarteCauta.Name = "btnRapoarteCauta";
+            this.btnRapoarteCauta.Size = new System.Drawing.Size(75, 23);
+            this.btnRapoarteCauta.TabIndex = 5;
+            this.btnRapoarteCauta.Text = "Cauta";
+            this.btnRapoarteCauta.UseVisualStyleBackColor = true;
+            this.btnRapoarteCauta.Click += new System.EventHandler(this.btnRapoarteCauta_Click);
+            // 
+            // cmbRapoarteCimitir
+            // 
+            this.grpRapoarteObservatii.Controls.Add(this.btnRapoarteObservatii);
+            this.grpRapoarteObservatii.Controls.Add(this.txtRapoarteObservatii);
+            this.grpRapoarteObservatii.Location = new System.Drawing.Point(598, 88);
+            this.grpRapoarteObservatii.Name = "grpRapoarteObservatii";
+            this.grpRapoarteObservatii.Size = new System.Drawing.Size(197, 132);
+            this.grpRapoarteObservatii.TabIndex = 7;
+            this.grpRapoarteObservatii.TabStop = false;
+            this.grpRapoarteObservatii.Text = "Observatii";
+            this.grpRapoarteObservatii.Visible = false;
+            // 
+            // btnRapoarteObservatii
+            // 
+            this.btnRapoarteObservatii.Location = new System.Drawing.Point(116, 99);
+            this.btnRapoarteObservatii.Name = "btnRapoarteObservatii";
+            this.btnRapoarteObservatii.Size = new System.Drawing.Size(75, 23);
+            this.btnRapoarteObservatii.TabIndex = 1;
+            this.btnRapoarteObservatii.Text = "Salveaza";
+            this.btnRapoarteObservatii.UseVisualStyleBackColor = true;
+            this.btnRapoarteObservatii.Click += new System.EventHandler(this.btnRapoarteObservatii_Click);
+            // 
+            // txtRapoarteObservatii
+            // 
+            this.txtRapoarteObservatii.Location = new System.Drawing.Point(7, 20);
+            this.txtRapoarteObservatii.Multiline = true;
+            this.txtRapoarteObservatii.Name = "txtRapoarteObservatii";
+            this.txtRapoarteObservatii.Size = new System.Drawing.Size(184, 73);
+            this.txtRapoarteObservatii.TabIndex = 0;
+            // 
+            // grpRapoarteCauta
+            // 
+            this.grpRapoarteCauta.Controls.Add(this.lblRapoarteCimitir);
+            this.grpRapoarteCauta.Controls.Add(this.btnRapoarteCauta);
+            this.grpRapoarteCauta.Controls.Add(this.cmbRapoarteCimitir);
+            this.grpRapoarteCauta.Controls.Add(this.checkRapoarteMonument);
+            this.grpRapoarteCauta.Location = new System.Drawing.Point(598, 226);
+            this.grpRapoarteCauta.Name = "grpRapoarteCauta";
+            this.grpRapoarteCauta.Size = new System.Drawing.Size(197, 123);
+            this.grpRapoarteCauta.TabIndex = 6;
+            this.grpRapoarteCauta.TabStop = false;
+            // 
             // lblRapoarteCimitir
             // 
             this.lblRapoarteCimitir.AutoSize = true;
@@ -1199,6 +1278,15 @@
             this.checkRapoarteMonument.Text = "Monument funerar";
             this.checkRapoarteMonument.UseVisualStyleBackColor = true;
             // 
+            // lstRegistruMorminte
+            // 
+            this.lstRegistruMorminte.FormattingEnabled = true;
+            this.lstRegistruMorminte.Location = new System.Drawing.Point(7, 20);
+            this.lstRegistruMorminte.Name = "lstRegistruMorminte";
+            this.lstRegistruMorminte.Size = new System.Drawing.Size(582, 329);
+            this.lstRegistruMorminte.TabIndex = 0;
+            this.lstRegistruMorminte.SelectedIndexChanged += new System.EventHandler(this.lstRegistruMorminte_SelectedIndexChanged);
+            //
             // lstRegistruMorminte
             // 
             this.lstRegistruMorminte.FormattingEnabled = true;

@@ -26,7 +26,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.GetAsync(Constants.RaportMormintePath + "?cimitirId=" + _cimitirId + "&monument=" + _monumentFunerar);
+                response = await this.GetAsync(Constants.RaportMormintePath + "?cimitirId=" + _cimitirId + "&monumentFunerar=" + _monumentFunerar);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {

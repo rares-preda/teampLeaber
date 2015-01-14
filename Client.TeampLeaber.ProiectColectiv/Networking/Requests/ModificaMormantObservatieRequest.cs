@@ -14,7 +14,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
     {
         private MormantModel _mormant;
 
-
         public ModificaMormantObservatieRequest(MormantModel mormant)
         {
             _mormant = mormant;
@@ -24,7 +23,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.RaportInmormantariPath, _mormant);
+                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                     return true;

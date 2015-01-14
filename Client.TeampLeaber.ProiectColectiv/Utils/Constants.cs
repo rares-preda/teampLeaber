@@ -26,7 +26,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string AdaugareContractConcesiune = "/api/ContractConcesiune";
         public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
         public static readonly string ActePath = "/api/act";
-        public static readonly string RaportMormintePath = "/api/Mormant/Raport";
+        public static readonly string RaportMormintePath = "/api/mormant/raport";
         public static readonly string PersoanaDecedataPath = "/api/PersoanaDecedata";
 
         public static class ErrorMessages
