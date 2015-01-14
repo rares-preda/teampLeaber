@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LocuriDeVeciController.cs" />
     <Compile Include="Networking\Requests\AdaugareContractRequest.cs" />
     <Compile Include="Models\DecedatCuApartinatorModel.cs" />
     <Compile Include="Models\DecedatFaraApartinatorModel.cs" />

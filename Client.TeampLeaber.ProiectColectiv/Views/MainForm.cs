@@ -16,6 +16,7 @@ namespace Client.TeampLeaber.ProiectColectiv
     {
         private RaportController raportController;
         private ConcesionariController concesionariController;
+        private LocuriDeVeciController locuriDeVeciController;
         private MainController _mainController;
         public string CNPConcesionarTab1 { get; set; }
 
@@ -111,6 +112,11 @@ namespace Client.TeampLeaber.ProiectColectiv
         internal void SetConcesionariController(Controller.ConcesionariController concesionariController)
         {
             this.concesionariController = concesionariController;
+        }
+
+        internal void SetLocuriDeVeciController(Controller.LocuriDeVeciController locuriDeVeciController)
+        {
+            this.locuriDeVeciController = locuriDeVeciController;
         }
 
         internal void SetRaportController(Controller.RaportController raportController)
@@ -554,6 +560,7 @@ namespace Client.TeampLeaber.ProiectColectiv
                 }
             }
         }
+
         internal void ClearAllDataAfterSuccess()
         {
             inmormantariListTab1.Items.Clear();
@@ -568,5 +575,38 @@ namespace Client.TeampLeaber.ProiectColectiv
             txtNumeConcesionar1.Visible = txtPrenumeConcesionar1.Visible = lblConcesionarNume.Visible = lblConcesionarPrenume.Visible = false;
         }
 
+
+        public void ShowCimitireTab6(List<CimitirModel> cimitire)
+        {
+            cimitireListBoxTab6.DataSource = cimitire;
+        }
+
+        public void ShowParceleTab6(List<ParcelaModel> parcele)
+        {
+            parceleListBoxTab6.DataSource = parcele;
+        }
+
+        public void ShowMorminteTab6(List<MormantModel> morminte)
+        {
+            morminteListBoxTab6.DataSource = morminte;
+        }
+
+        private void cimitireListBoxTab6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                CimitirModel cimitir = (CimitirModel)cimitireListBoxTab6.SelectedValue;
+                locuriDeVeciController.ShowParceleByCimitir(cimitir);
+            }
+        }
+
+        private void parceleListBoxTab6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (parceleListBoxTab6.SelectedIndex >= 0)
+            {
+                ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedValue;
+                locuriDeVeciController.ShowMorminteByParcela(parcela);
+            }
+        }
     }
 }
