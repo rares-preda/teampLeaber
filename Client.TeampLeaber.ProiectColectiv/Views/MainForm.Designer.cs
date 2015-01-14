@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -65,6 +68,14 @@
             this.lblCnp = new System.Windows.Forms.Label();
             this.tabConcesionari = new System.Windows.Forms.TabPage();
             this.adaugaContractGroupBox = new System.Windows.Forms.GroupBox();
+            this.adaugaContractButtonTab1 = new System.Windows.Forms.Button();
+            this.sumaTextFieldTab1 = new System.Windows.Forms.TextBox();
+            this.nrChitantaTextFieldTab1 = new System.Windows.Forms.TextBox();
+            this.mormantComboboxTab1 = new System.Windows.Forms.ComboBox();
+            this.parcelaComboboxTab1 = new System.Windows.Forms.ComboBox();
+            this.cimitirComboBoxTab1 = new System.Windows.Forms.ComboBox();
+            this.dataExpirareDatePickerTab1 = new System.Windows.Forms.DateTimePicker();
+            this.numarContractConcesiuneTextBoxTab1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -493,6 +504,14 @@
             // 
             // adaugaContractGroupBox
             // 
+            this.adaugaContractGroupBox.Controls.Add(this.adaugaContractButtonTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.sumaTextFieldTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.nrChitantaTextFieldTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.mormantComboboxTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.parcelaComboboxTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.cimitirComboBoxTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.dataExpirareDatePickerTab1);
+            this.adaugaContractGroupBox.Controls.Add(this.numarContractConcesiuneTextBoxTab1);
             this.adaugaContractGroupBox.Controls.Add(this.button1);
             this.adaugaContractGroupBox.Controls.Add(this.textBox3);
             this.adaugaContractGroupBox.Controls.Add(this.textBox2);
@@ -515,6 +534,70 @@
             this.adaugaContractGroupBox.TabStop = false;
             this.adaugaContractGroupBox.Text = "Adauga contract";
             // 
+            // adaugaContractButtonTab1
+            // 
+            this.adaugaContractButtonTab1.Location = new System.Drawing.Point(351, 218);
+            this.adaugaContractButtonTab1.Name = "adaugaContractButtonTab1";
+            this.adaugaContractButtonTab1.Size = new System.Drawing.Size(75, 23);
+            this.adaugaContractButtonTab1.TabIndex = 14;
+            this.adaugaContractButtonTab1.Text = "Adauga";
+            this.adaugaContractButtonTab1.UseVisualStyleBackColor = true;
+            this.adaugaContractButtonTab1.Click += new System.EventHandler(this.adaugaContractButtonTab1_Click);
+            // 
+            // sumaTextFieldTab1
+            // 
+            this.sumaTextFieldTab1.Location = new System.Drawing.Point(128, 192);
+            this.sumaTextFieldTab1.Name = "sumaTextFieldTab1";
+            this.sumaTextFieldTab1.Size = new System.Drawing.Size(298, 20);
+            this.sumaTextFieldTab1.TabIndex = 13;
+            // 
+            // nrChitantaTextFieldTab1
+            // 
+            this.nrChitantaTextFieldTab1.Location = new System.Drawing.Point(128, 163);
+            this.nrChitantaTextFieldTab1.Name = "nrChitantaTextFieldTab1";
+            this.nrChitantaTextFieldTab1.Size = new System.Drawing.Size(298, 20);
+            this.nrChitantaTextFieldTab1.TabIndex = 12;
+            // 
+            // mormantComboboxTab1
+            // 
+            this.mormantComboboxTab1.FormattingEnabled = true;
+            this.mormantComboboxTab1.Location = new System.Drawing.Point(128, 130);
+            this.mormantComboboxTab1.Name = "mormantComboboxTab1";
+            this.mormantComboboxTab1.Size = new System.Drawing.Size(298, 21);
+            this.mormantComboboxTab1.TabIndex = 11;
+            // 
+            // parcelaComboboxTab1
+            // 
+            this.parcelaComboboxTab1.FormattingEnabled = true;
+            this.parcelaComboboxTab1.Location = new System.Drawing.Point(128, 101);
+            this.parcelaComboboxTab1.Name = "parcelaComboboxTab1";
+            this.parcelaComboboxTab1.Size = new System.Drawing.Size(298, 21);
+            this.parcelaComboboxTab1.TabIndex = 10;
+            this.parcelaComboboxTab1.SelectedIndexChanged += new System.EventHandler(this.parcelaComboboxTab1_SelectedIndexChanged);
+            // 
+            // cimitirComboBoxTab1
+            // 
+            this.cimitirComboBoxTab1.FormattingEnabled = true;
+            this.cimitirComboBoxTab1.Location = new System.Drawing.Point(128, 74);
+            this.cimitirComboBoxTab1.Name = "cimitirComboBoxTab1";
+            this.cimitirComboBoxTab1.Size = new System.Drawing.Size(298, 21);
+            this.cimitirComboBoxTab1.TabIndex = 9;
+            this.cimitirComboBoxTab1.SelectedIndexChanged += new System.EventHandler(this.cimitirComboBoxTab1_SelectedIndexChanged);
+            // 
+            // dataExpirareDatePickerTab1
+            // 
+            this.dataExpirareDatePickerTab1.Location = new System.Drawing.Point(128, 48);
+            this.dataExpirareDatePickerTab1.Name = "dataExpirareDatePickerTab1";
+            this.dataExpirareDatePickerTab1.Size = new System.Drawing.Size(298, 20);
+            this.dataExpirareDatePickerTab1.TabIndex = 8;
+            // 
+            // numarContractConcesiuneTextBoxTab1
+            // 
+            this.numarContractConcesiuneTextBoxTab1.Location = new System.Drawing.Point(128, 19);
+            this.numarContractConcesiuneTextBoxTab1.Name = "numarContractConcesiuneTextBoxTab1";
+            this.numarContractConcesiuneTextBoxTab1.Size = new System.Drawing.Size(298, 20);
+            this.numarContractConcesiuneTextBoxTab1.TabIndex = 7;
+            //
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(351, 218);
@@ -741,6 +824,18 @@
             // 
             this.contracteConcesionariGridViewTab2.AllowUserToAddRows = false;
             this.contracteConcesionariGridViewTab2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle14;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -757,6 +852,8 @@
             this.contracteConcesionariGridViewTab2.Location = new System.Drawing.Point(22, 48);
             this.contracteConcesionariGridViewTab2.Name = "contracteConcesionariGridViewTab2";
             this.contracteConcesionariGridViewTab2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle15;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.contracteConcesionariGridViewTab2.Size = new System.Drawing.Size(404, 215);
@@ -1306,6 +1403,14 @@
         private System.Windows.Forms.Label cimitirContractLabelTab1;
         private System.Windows.Forms.Label dataExpirareContractLabelTab1;
         private System.Windows.Forms.Label numarContractLabelTab1;
+        private System.Windows.Forms.TextBox numarContractConcesiuneTextBoxTab1;
+        private System.Windows.Forms.ComboBox mormantComboboxTab1;
+        private System.Windows.Forms.ComboBox parcelaComboboxTab1;
+        private System.Windows.Forms.ComboBox cimitirComboBoxTab1;
+        private System.Windows.Forms.DateTimePicker dataExpirareDatePickerTab1;
+        private System.Windows.Forms.TextBox sumaTextFieldTab1;
+        private System.Windows.Forms.TextBox nrChitantaTextFieldTab1;
+        private System.Windows.Forms.Button adaugaContractButtonTab1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;

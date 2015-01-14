@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Networking\Requests\AdaugareContractRequest.cs" />
     <Compile Include="Models\DecedatCuApartinatorModel.cs" />
     <Compile Include="Models\DecedatFaraApartinatorModel.cs" />
     <Compile Include="Models\RaportMorminteModel.cs" />
@@ -84,10 +85,12 @@
     <Compile Include="Networking\Requests\MorminteByConcesionar.cs" />
     <Compile Include="Networking\Requests\MorminteRequest.cs" />
     <Compile Include="Networking\Requests\ParceleRequest.cs" />
+    <Compile Include="Networking\Requests\PrelungireConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\ProgramareInmormantare.cs" />
     <Compile Include="Networking\Requests\RaportInmormantariRequest.cs" />
     <Compile Include="Networking\Requests\RaportMorminteRequest.cs" />
     <Compile Include="Networking\Requests\ReligiiRequest.cs" />
+    <Compile Include="Networking\Requests\RenuntareContractConcesiuneRequest.cs" />
     <Compile Include="Networking\Requests\UpdateDocumentTypeRequest.cs" />
     <Compile Include="Views\DocumentForm.cs">
       <SubType>Form</SubType>
