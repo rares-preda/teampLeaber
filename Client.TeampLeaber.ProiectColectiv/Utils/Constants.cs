@@ -22,9 +22,13 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string RaportInmormantariPath = "/api/inmormantare";
         public static readonly string TipActePath = "/api/tipAct";
         public static readonly string PrelungireContractConcesiune = "/api/ContractConcesiune/Prelungire";
+        public static readonly string RenuntareContractConcesiune = "/api/ContractConcesiune";
+        public static readonly string AdaugareContractConcesiune = "/api/ContractConcesiune";
         public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
         public static readonly string ActePath = "/api/act";
         public static readonly string MorminteLiberePath = "/getmormintelibere";
+        public static readonly string RaportMormintePath = "/api/mormant/raport";
+        public static readonly string PersoanaDecedataPath = "/api/PersoanaDecedata";
 
         public static class ErrorMessages
         {
@@ -35,7 +39,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
             public static readonly string NO_RELIGION_SELECTED = "Va rugam alegeti o religie valida";
             public static readonly string NO_MORMANT_SELECTED = "Alegeti un mormant concesionat";
             public static readonly string LISTA_VIDA = "Nu a fost gasit nici un rezultat.";
-            public static readonly string NO_INSTANCES_MORMINTE_CONCESIONAR =  "Nu exista morminte atribuite acestui concesionar";
+            public static readonly string NO_INSTANCES_MORMINTE_CONCESIONAR = "Nu exista morminte atribuite acestui concesionar";
         }
 
         public static string SUCCESS_MESSAGE = "Operatia a fost realizata cu succes !";

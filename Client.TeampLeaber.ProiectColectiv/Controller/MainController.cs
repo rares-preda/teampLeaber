@@ -18,7 +18,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         private List<TipActModel> tipuriActe;
         private List<ActModel> acte;
         private List<Models.MormantModel> mormintelibere;
-
+       
         private DocumentForm documentForm;
         private DocumentTypeForm documentTypeForm;
         private EditDocumentTypeForm editDocumentTypeForm;
@@ -33,7 +33,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             documentForm = new DocumentForm();
             documentForm.SetController(this);
             GetReligions();
-        
+            GetDecedati();
         }
 
         private async Task GetReligions()
@@ -68,7 +68,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             view.ConcsNumeTab1 = value.Nume;
             view.ConcsPrenumeTab1 = value.Prenume;
             view.UpdateMorminteTab1(value.Morminte);
-             
+
         }
 
         internal async void ProgrameazaInmormantare()
@@ -107,7 +107,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             documentForm.Show();
 
             await RefreshTipuriActe();
-           
+
         }
 
         private async Task RefreshTipuriActe()
@@ -127,10 +127,10 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             documentTypeForm = new DocumentTypeForm();
             documentTypeForm.SetController(this);
             documentTypeForm.Show();
-            
+
 
             documentTypeForm.AddTypeList(this.tipuriActe);
-           // var request = new 
+            // var request = new 
         }
 
         internal void AddDocumentTypeCommand()
@@ -291,10 +291,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             var act = view.SelectedActTab1;
             if (acte.Contains(act))
                 acte.Remove(act);
-
+                documentForm.Close();
             view.UpdateActeList(acte);
             view.SetCommandsAvailabilityTab1();
         }
+    
 
         internal async void NewDateSelected()
         {
@@ -303,7 +304,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
                 return;
             var id = view.GetSelectedMormantTab1().Id;
             var request = new Networking.Requests.GetInmormantariByDate(date, id);
-
             var list = await request.Run();
             view.SetInmormantariListTab1(list);
         }
@@ -315,6 +315,17 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             view.PopulateMorminteLibereList(mormintelibere);
         }
 
-       
+
+        internal async void GetDecedati()
+        {
+            var requestDecedatiCuApartinator = new Networking.Requests.DecedatiCuApartinatorRequest();
+            List<DecedatCuApartinatorModel> decedatiCuApartinator = await requestDecedatiCuApartinator.Run();
+            view.SetDecedatiCuApartinator(decedatiCuApartinator);
+
+            var requestDecedatiFaraApartinator = new Networking.Requests.DecedatiFaraApartinatorRequest();
+            List<DecedatFaraApartinatorModel> decedatiFaraApartinator = await requestDecedatiFaraApartinator.Run();
+            view.SetDecedatiFaraApartinator(decedatiFaraApartinator);
+        }
+
     }
 }

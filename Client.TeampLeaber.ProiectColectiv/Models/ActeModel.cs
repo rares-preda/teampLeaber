@@ -14,14 +14,31 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 
         public ActModel(string numar, int Id, string tip)
         {
+            this.Id = Id;
+            int n;
+            if (!Int32.TryParse(numar, out n))
+                this.Numar = 0;
+            else
+                this.Numar = n;
+            this.TipActName = tip;
+        }
+
+        public ActModel()
+        {
+
+        }
+
+        public ActModel(string numar, int Id)
+        {
             int n;
             if (!Int32.TryParse(numar, out n))
                 this.Numar = 0;
             else 
                 this.Numar = n;
             this.TipActId = Id;
-            this.TipActName = tip;
+          
         }
+
         public bool IsValid()
         {
             List<string> errors = new List<string>();
@@ -34,7 +51,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
             {
                 ErrorHandling.ErrorHandling.Instance.HandleErrors(errors);
                 return false;
-            }
+            } 
             return true;
         }
 

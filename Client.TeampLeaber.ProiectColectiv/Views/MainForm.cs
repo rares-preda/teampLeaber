@@ -17,14 +17,15 @@ namespace Client.TeampLeaber.ProiectColectiv
         private RaportController raportController;
         private ConcesionariController concesionariController;
         private MainController _mainController;
+        public string CNPConcesionarTab1 { get; set; }
 
         public MainForm()
         {
             InitializeComponent();
-
+            adaugaContractGroupBox.Visible = false;
         }
 
-        public string  DecedatCNPTab1
+        public string DecedatCNPTab1
         {
             get
             {
@@ -64,13 +65,13 @@ namespace Client.TeampLeaber.ProiectColectiv
             get
             {
                 return txtNumeConcesionar1.Text;
-              
+
             }
         }
 
         public string ConcsPrenumeTab1
         {
-            set 
+            set
             {
                 txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = true;
                 txtPrenumeConcesionar1.Text = value;
@@ -156,7 +157,7 @@ namespace Client.TeampLeaber.ProiectColectiv
         public Models.MormantModel GetSelectedMormantTab1()
         {
             if (chkApartinator.Checked)
-                 return cmbMorminteDisponibile.SelectedItem as Models.MormantModel;
+                return cmbMorminteDisponibile.SelectedItem as Models.MormantModel;
             return morminteLiberecmbBox.SelectedItem as Models.MormantModel;
         }
 
@@ -166,7 +167,7 @@ namespace Client.TeampLeaber.ProiectColectiv
                 this._mainController.ProgrameazaInmormantare();
             else
                 this._mainController.ProgrameazaInmormantareFaraApartinator();
-        
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -233,9 +234,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             this.raportController.SetEditInmormantareView();
         }
 
-        private void cautaContracteButtonTab2_Click(object sender, EventArgs e)
+        private async void cautaContracteButtonTab2_Click(object sender, EventArgs e)
         {
-            this.concesionariController.GetContracteByCNP(this.cautaCNPConcesionarTextBoxTab2.Text);
+            await this.concesionariController.showContracteByCNP(this.cautaCNPConcesionarTextBoxTab2.Text);
+
+            this.adaugaContractGroupBox.Visible = true;
         }
 
         public void AddContracteGridView(List<ContractModel> contracte)
@@ -258,7 +261,27 @@ namespace Client.TeampLeaber.ProiectColectiv
 
         private void modificaDurataContractButtonTab1_Click(object sender, EventArgs e)
         {
-            var s = contracteConcesionariGridViewTab2.SelectedRows[0];
+            if (prelungireComboBoxTab1.SelectedIndex < 0 || contracteConcesionariGridViewTab2.SelectedRows.Count == 0)
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Selecteaza contractul si una din optiunile de modificare a duratei contractului de concesiune.");
+            }
+            else
+            {
+                var s = contracteConcesionariGridViewTab2.SelectedRows[0];
+                string numar = (string)s.Cells["Numar"].Value;
+
+                if (prelungireComboBoxTab1.SelectedIndex == 0)
+                {
+                    concesionariController.RenuntaContractConcesiune(numar);
+                }
+                else
+                {
+                    int nrAni = int.Parse(prelungireComboBoxTab1.SelectedItem.ToString());
+                    PrelungireContractModel prelungireContract = new PrelungireContractModel(numar, nrAni);
+                    concesionariController.PrelungesteContractConcesiune(prelungireContract);
+                }
+
+            }
         }
         internal void UpdateActeList(List<Models.ActModel> acte)
         {
@@ -346,10 +369,194 @@ namespace Client.TeampLeaber.ProiectColectiv
         }
 
 
+        public void SetCimitireTab1(List<CimitirModel> cimitire)
+        {
+            cimitirComboBoxTab1.DataSource = cimitire;
+        }
 
+        private void cimitirComboBoxTab1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cimitirComboBoxTab1.SelectedIndex >= 0)
+            {
+                CimitirModel cimitir = (CimitirModel)cimitirComboBoxTab1.SelectedItem;
+                concesionariController.ShowParceleByCimitir(cimitir);
+            }
+            else
+            {
+                parcelaComboboxTab1.SelectedIndex = -1;
+                mormantComboboxTab1.SelectedIndex = -1;
+            }
+        }
+
+        public void ShowParceleInComboBoxTab1(List<ParcelaModel> parcele)
+        {
+            this.parcelaComboboxTab1.DataSource = parcele;
+            mormantComboboxTab1.SelectedIndex = -1;
+        }
+        public void ShowMorminteInComboBoxTab1(List<MormantModel> morminte)
+        {
+            this.mormantComboboxTab1.DataSource = morminte;
+        }
+
+        private void parcelaComboboxTab1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (parcelaComboboxTab1.SelectedIndex >= 0)
+            {
+                ParcelaModel parcela = (ParcelaModel)parcelaComboboxTab1.SelectedItem;
+                concesionariController.ShowMorminteByParcela(parcela);
+            }
+            else
+            {
+                mormantComboboxTab1.SelectedIndex = -1;
+            }
+        }
+
+        private void adaugaContractButtonTab1_Click(object sender, EventArgs e)
+        {
+            if (numarContractConcesiuneTextBoxTab1.Text == "" || cimitirComboBoxTab1.SelectedIndex < 0 ||
+                parcelaComboboxTab1.SelectedIndex < 0 || mormantComboboxTab1.SelectedIndex < 0 ||
+                nrChitantaTextFieldTab1.Text == "" || sumaTextFieldTab1.Text == "")
+            {
+                string nrChitanta = nrChitantaTextFieldTab1.Text;
+                float suma = 0;
+                if (float.TryParse(sumaTextFieldTab1.Text, out suma))
+                {
+
+                }
+                else
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Suma trebuie sa fie numar real");
+                    return;
+                }
+
+                ChitantaModel chitanta = new ChitantaModel(0, nrChitanta, suma);
+
+                ContractModel contractModel = new ContractModel(numarContractConcesiuneTextBoxTab1.Text,
+                                              DateTime.Now,
+                                              dataExpirareDatePickerTab1.Value,
+                                              chitanta,
+                                              (CimitirModel)cimitirComboBoxTab1.SelectedValue,
+                                              (ParcelaModel)parcelaComboboxTab1.SelectedValue,
+                                              (MormantModel)mormantComboboxTab1.SelectedValue);
+                if (contractModel.isValid())
+                {
+                    concesionariController.addContract(contractModel);
+                }
+            }
+        }
+        public Models.CimitirModel Raport2CimitirComboBox
+        {
+            get
+            {
+                return cmbRapoarteCimitir.SelectedItem as Models.CimitirModel;
+            }
+        }
+
+        public Models.RaportMorminteModel Raport2ListSelectedItem
+        {
+            get
+            {
+                return lstRegistruMorminte.SelectedItem as Models.RaportMorminteModel;
+            }
+        }
+
+        public bool Raport2CheckboxMonumentFunerar
+        {
+            get
+            {
+                return checkRapoarteMonument.Checked;
+            }
+        }
+
+        public void LoadRaport2ListBox(List<Models.RaportMorminteModel> registruMorminte)
+        {
+            lstRegistruMorminte.Items.Clear();
+            foreach (var item in registruMorminte)
+                lstRegistruMorminte.Items.Add(item);
+        }
+
+        public void LoadRaport2CimitirCombobox(List<Models.CimitirModel> cimitire)
+        {
+            cmbRapoarteCimitir.Items.Clear();
+            foreach (var item in cimitire)
+                cmbRapoarteCimitir.Items.Add(item);
+        }
+
+        public void LoadRaport2InhumatiListBox(List<Models.InmormantareModel> inmormantari)
+        {
+            lstRapoarteInhumati.Items.Clear();
+            foreach (var item in inmormantari)
+                lstRapoarteInhumati.Items.Add(item.Decedat.Nume + " " + item.Decedat.Prenume + " - " + item.Data.ToShortDateString());
+        }
+
+        public void SetRaport2CimitirComboBoxIndex(int index)
+        {
+            if (index >= 0 && index < cmbRapoarteCimitir.Items.Count)
+            {
+                cmbRapoarteCimitir.SelectedIndex = index;
+            }
+        }
+
+        private void tabControlRapoarte_Selected(object sender, TabControlEventArgs e)
+        {
+            raportController.UpdateRegistruCimitir();
+        }
+
+        private void btnRapoarteCauta_Click(object sender, EventArgs e)
+        {
+            raportController.LoadRegistruCimitirListBox();
+        }
+
+        private void lstRegistruMorminte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstRegistruMorminte.SelectedIndex >= 0)
+            {
+                grpRapoarteObservatii.Visible = true;
+                raportController.SetInfoMormant();
+            }
+        }
+
+        public string Raport2ObservatiiTextBox
+        {
+            get
+            {
+                return txtRapoarteObservatii.Text;
+            }
+            set
+            {
+                txtRapoarteObservatii.Text = value;
+            }
+        }
+
+        private void btnRapoarteObservatii_Click(object sender, EventArgs e)
+        {
+            raportController.UpdateMormantObservatie();
+        }
+
+        public void SetDecedatiCuApartinator(List<DecedatCuApartinatorModel> decedatiCuApartinator)
+        {
+            if (decedatiCuApartinator != null)
+            {
+                foreach (var item in decedatiCuApartinator)
+                {
+                    listBoxDecedatiCuApartinator.Items.Add(item.ToString());
+                }
+            }
+        }
+
+        public void SetDecedatiFaraApartinator(List<DecedatFaraApartinatorModel> decedatiFaraApartinator)
+        {
+            if (decedatiFaraApartinator != null)
+            {
+                foreach (var item in decedatiFaraApartinator)
+                {
+                    listBoxDecedatiFaraApartinator.Items.Add(item.ToString());
+                }
+            }
+        }
         internal void ClearAllDataAfterSuccess()
         {
-            //To DO
         }
+
     }
 }
