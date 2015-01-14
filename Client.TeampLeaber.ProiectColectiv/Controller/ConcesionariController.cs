@@ -37,17 +37,75 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             }
         }
 
-        public async void GetContracteByCNP(string cnp)
+        public async Task showContracteByCNP(string cnp)
+        {
+             await RefreshContracteByCNP(cnp);
+
+             var cimtireRequest = new Networking.Requests.CimitireRequest();
+             List<CimitirModel> cimitire = await cimtireRequest.Run();
+             _view.SetCimitireTab1(cimitire);
+        }
+
+        public async Task RefreshContracteByCNP(string cnp)
         {
             if (cnp.Length == 13)
             {
                 var contracteConcesionarRequest = new Networking.Requests.ContracteConcesionarRequest(cnp);
                 List<ContractModel> contracte = await contracteConcesionarRequest.Run();
+                _view.CNPConcesionarTab1 = cnp;
                 _view.AddContracteGridView(contracte);
             }
             else
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.INVALID_CNP);
+            }
+        }
+
+        public async void PrelungesteContractConcesiune(PrelungireContractModel prelungireContract)
+        {
+            var prelungireContractRequest = new Networking.Requests.PrelungireConcesionarRequest(prelungireContract);
+            bool success = await prelungireContractRequest.Run();
+
+            if (success)
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.SUCCESS_MESSAGE);
+                RefreshContracteByCNP(_view.CNPConcesionarTab1);
+            }
+        }
+
+        public async void RenuntaContractConcesiune(string numar)
+        {
+            var renuntaContractRequest = new Networking.Requests.RenuntareContractConcesiuneRequest(numar);
+            bool success = await renuntaContractRequest.Run();
+
+            if (success)
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.SUCCESS_MESSAGE);
+                RefreshContracteByCNP(_view.CNPConcesionarTab1);
+            }
+        }
+
+        public async void ShowParceleByCimitir(CimitirModel cimitir)
+        {
+            var parcelaRequest = new Networking.Requests.ParceleRequest(cimitir.Id);
+            List<ParcelaModel> parcele = await parcelaRequest.Run();
+            _view.ShowParceleInComboBoxTab1(parcele);
+        }
+
+        public async void ShowMorminteByParcela(ParcelaModel parcela) 
+        {
+            var morminteRequest = new Networking.Requests.MorminteRequest(parcela.Id);
+            List<MormantModel> morminte = await morminteRequest.Run();
+            _view.ShowMorminteInComboBoxTab1(morminte);
+        }
+
+        public async void addContract(ContractModel contractModel)
+        {
+            var addContractRequest = new Networking.Requests.AdaugareContractRequest(contractModel);
+            bool success = await addContractRequest.Run();
+            if (success)
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.SUCCESS_MESSAGE);
             }
         }
     }

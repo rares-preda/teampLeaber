@@ -1,37 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Client.TeampLeaber.ProiectColectiv.Utils;
 using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class RaportMorminteRequest : BaseRequest
+    public class GetInmormantariByDate : BaseRequest
     {
-        private int _cimitirId;
-        private int _monumentFunerar;
+        private DateTime data;
+        private int mormantId;
 
-        public RaportMorminteRequest(int cimitirId, bool monumentFunerar)
+        public GetInmormantariByDate(DateTime d, int i)
         {
-            _cimitirId = cimitirId;
-            if (monumentFunerar == true) _monumentFunerar = 1;
-            else _monumentFunerar = 0;
+            data = d;
+            mormantId = i;
         }
-
-        public async Task<List<RaportMorminteModel>> Run()
+        public async Task<List<RaportInmormantareModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.RaportMormintePath + "?cimitirId=" + _cimitirId + "&monumentFunerar=" + _monumentFunerar);
+                string fullpath = Constants.InmormantarePath + "?Year=" +  data.Year + "&Month=" + data.Month + "Day=" +  data.Day + "&MormantId=" + mormantId;
+                response = await this.GetAsync(fullpath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<RaportMorminteModel> morminte = await response.Content.ReadAsAsync<List<RaportMorminteModel>>();
-                    return morminte;
+                    List<RaportInmormantareModel> value = await response.Content.ReadAsAsync<List<RaportInmormantareModel>>();
+                    return value;
                 }
                 else
                 {

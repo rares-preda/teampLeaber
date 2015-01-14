@@ -1,31 +1,28 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ModificaMormantObservatieRequest : BaseRequest
-    {
-        private MormantModel _mormant;
-
-        public ModificaMormantObservatieRequest(MormantModel mormant)
+    public class DeleteTipActRequest : BaseRequest
+    {  
+        private int ID;
+        public DeleteTipActRequest(int id)
         {
-            _mormant = mormant;
+            this.ID = id;
         }
-
         public async Task<bool> Run()
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
-
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
+                response = await this.DeleteAsync(Constants.TipActePath + "/" + ID);
+                if (response.StatusCode == HttpStatusCode.OK) // 200
                     return true;
                 else
                 {
@@ -40,6 +37,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                 return false;
             }
         }
-
     }
 }
+

@@ -1,6 +1,4 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -8,25 +6,30 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using Client.TeampLeaber.ProiectColectiv.ErrorHandling;
+using Client.TeampLeaber.ProiectColectiv.Models;
+
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ModificaMormantObservatieRequest : BaseRequest
+    public class RenuntareContractConcesiuneRequest : BaseRequest
     {
-        private MormantModel _mormant;
-
-        public ModificaMormantObservatieRequest(MormantModel mormant)
+        private string numarContract;
+        public RenuntareContractConcesiuneRequest(string numarContract)
         {
-            _mormant = mormant;
+            this.numarContract = numarContract;
         }
 
-        public async Task<bool> Run()
+        internal async Task<bool> Run()
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
+                response = await this.DeleteAsync(Constants.RenuntareContractConcesiune + "?numar=" + numarContract);
 
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
+                if (response.StatusCode == HttpStatusCode.OK) // 200
+                {
                     return true;
+                }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
@@ -40,6 +43,5 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                 return false;
             }
         }
-
     }
 }

@@ -1,32 +1,36 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.ErrorHandling;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ModificaMormantObservatieRequest : BaseRequest
+    public class AdaugareContractRequest : BaseRequest
     {
-        private MormantModel _mormant;
+        private ContractModel contract;
 
-        public ModificaMormantObservatieRequest(MormantModel mormant)
+        public AdaugareContractRequest(ContractModel contract)
         {
-            _mormant = mormant;
+            this.contract = contract;
         }
 
-        public async Task<bool> Run()
+        internal async Task<bool> Run()
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
+                response = await this.PutAsJsonAsync(Constants.AdaugareContractConcesiune, contract);
 
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
+                if (response.StatusCode == HttpStatusCode.OK) // 200
+                {
                     return true;
+                }
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
@@ -34,12 +38,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return false;
                 }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return false;
             }
         }
-
     }
 }

@@ -10,22 +10,19 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ModificaMormantObservatieRequest : BaseRequest
+    public class DeleteReligionRequest : BaseRequest
     {
-        private MormantModel _mormant;
-
-        public ModificaMormantObservatieRequest(MormantModel mormant)
+        private int ID;
+        public DeleteReligionRequest(int id)
         {
-            _mormant = mormant;
+            this.ID = id;
         }
-
         public async Task<bool> Run()
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
-
-                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
+                response = await this.DeleteAsync(Constants.ReligiiPath + "/" + ID);
+                if (response.StatusCode == HttpStatusCode.OK) // 200
                     return true;
                 else
                 {
@@ -43,3 +40,4 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 
     }
 }
+

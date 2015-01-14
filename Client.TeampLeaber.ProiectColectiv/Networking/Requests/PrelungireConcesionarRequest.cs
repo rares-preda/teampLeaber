@@ -1,29 +1,29 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using Client.TeampLeaber.ProiectColectiv.ErrorHandling;
+using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ModificaMormantObservatieRequest : BaseRequest
+    public class PrelungireConcesionarRequest : BaseRequest
     {
-        private MormantModel _mormant;
-
-        public ModificaMormantObservatieRequest(MormantModel mormant)
+        private Models.PrelungireContractModel contract;
+        public PrelungireConcesionarRequest(Models.PrelungireContractModel contract)
         {
-            _mormant = mormant;
+            this.contract = contract;
         }
 
         public async Task<bool> Run()
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
+                response = await this.PostAsJsonAsync(Constants.PrelungireContractConcesiune, contract);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                     return true;
@@ -40,6 +40,5 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                 return false;
             }
         }
-
     }
 }

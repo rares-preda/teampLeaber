@@ -12,8 +12,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
     public class AddDocumentRequest : BaseRequest
     {
-        private Models.ActeModel model;
-        public AddDocumentRequest(Models.ActeModel model)
+        private Models.ActModel model;
+        public AddDocumentRequest(Models.ActModel model)
         {
             this.model = model;
         }

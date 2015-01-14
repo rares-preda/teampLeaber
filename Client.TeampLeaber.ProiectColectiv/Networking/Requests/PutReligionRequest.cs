@@ -3,27 +3,28 @@ using Client.TeampLeaber.ProiectColectiv.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ModificaMormantObservatieRequest : BaseRequest
+    public class PutReligionRequest : BaseRequest
     {
-        private MormantModel _mormant;
+        private ReligieModel model;
 
-        public ModificaMormantObservatieRequest(MormantModel mormant)
+
+        public PutReligionRequest(ReligieModel model)
         {
-            _mormant = mormant;
+            this.model = model;
         }
 
         public async Task<bool> Run()
         {
             try
             {
-                response = await this.PostAsJsonAsync(Constants.MormintePath, _mormant);
+                response = await this.PutAsJsonAsync(Constants.ReligiiPath, model);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                     return true;
@@ -43,3 +44,4 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 
     }
 }
+
