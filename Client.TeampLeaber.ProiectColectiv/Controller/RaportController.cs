@@ -25,7 +25,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
             var request = new Networking.Requests.RaportInmormantariRequest(an);
             List<RaportInmormantareModel> inmormantari = await request.Run();
-            if (inmormantari.Count() > 0)
+            if (inmormantari != null && inmormantari.Count() > 0)
             {
                 _view.SetRapoarteInmormantareList(inmormantari);
             }
@@ -127,6 +127,53 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             }
 
             _editView.Close();
+        }
+
+        internal async void UpdateRegistruCimitir()
+        {
+            var cimitire = await this.GetCimitire();
+            _view.LoadRaport2CimitirCombobox(cimitire);
+            _view.SetRaport2CimitirComboBoxIndex(0);
+        }
+
+        internal async void LoadRegistruCimitirListBox()
+        {
+            int cimitirId = _view.Raport2CimitirComboBox.Id;
+            bool monument = _view.Raport2CheckboxMonumentFunerar;
+
+            var request = new Networking.Requests.RaportMorminteRequest(cimitirId, monument);
+            List<RaportMorminteModel> morminte = await request.Run();
+            if (morminte != null && morminte.Count() > 0)
+            {
+                _view.LoadRaport2ListBox(morminte);
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.ErrorMessages.LISTA_VIDA);
+            }
+        }
+
+        internal void SetInfoMormant()
+        {
+            _view.Raport2ObservatiiTextBox = _view.Raport2ListSelectedItem.Mormant.Numar.ToString();
+            if (_view.Raport2ListSelectedItem.Inmormantari != null && _view.Raport2ListSelectedItem.Inmormantari.Count > 0)
+                _view.LoadRaport2InhumatiListBox(_view.Raport2ListSelectedItem.Inmormantari);
+        }
+
+        internal async void UpdateMormantObservatie()
+        {
+            MormantModel mormant = _view.Raport2ListSelectedItem.Mormant;
+
+            if (_view.Raport2ObservatiiTextBox != "")
+            {
+                mormant.Observatie = _view.Raport2ObservatiiTextBox;
+                var request = new Networking.Requests.ModificaMormantObservatieRequest(mormant);
+                bool ok = await request.Run();
+                if (!ok)
+                    return;
+                ErrorHandling.ErrorHandling.Instance.HandleError(Utils.Constants.SUCCESS_MESSAGE);
+                LoadRegistruCimitirListBox();
+            }
         }
     }
 }
