@@ -11,6 +11,10 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public int Numar { get; set; }
         public int TipActId { get; set; }
 
+        public ActeModel()
+        {
+
+        }
 
         public ActeModel(string numar, int Id)
         {
