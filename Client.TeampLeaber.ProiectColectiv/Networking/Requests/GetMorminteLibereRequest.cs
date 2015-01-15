@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Net;
 using System.Net.Http;
-
 using Client.TeampLeaber.ProiectColectiv.Models;
 using Client.TeampLeaber.ProiectColectiv.Utils;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class DecedatiFaraApartinatorRequest : BaseRequest
+    public class GetMorminteLibereRequest : BaseRequest
     {
-        internal async Task<List<DecedatFaraApartinatorModel>> Run()
+        public async Task<List<MormantModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.PersoanaDecedataPath + "/GetFaraApartinator");
-                if (response.StatusCode == HttpStatusCode.OK) //200
+                response = await this.GetAsync(Constants.MormintePath + Constants.MorminteLiberePath);
+
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<DecedatFaraApartinatorModel> decedatiFaraApartinator = await response.Content.ReadAsAsync<List<DecedatFaraApartinatorModel>>();
-                    return decedatiFaraApartinator;
+                    List<MormantModel> result = await response.Content.ReadAsAsync<List<MormantModel>>();
+                    return result;
                 }
                 else
                 {

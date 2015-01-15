@@ -1,27 +1,27 @@
-﻿using System;
+﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
-
-using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class DecedatiFaraApartinatorRequest : BaseRequest
+    public class GetReligiiRequest : BaseRequest
     {
-        internal async Task<List<DecedatFaraApartinatorModel>> Run()
+        public async Task<List<ReligieModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.PersoanaDecedataPath + "/GetFaraApartinator");
-                if (response.StatusCode == HttpStatusCode.OK) //200
+                response = await this.GetAsync(Constants.ReligiiPath);
+
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<DecedatFaraApartinatorModel> decedatiFaraApartinator = await response.Content.ReadAsAsync<List<DecedatFaraApartinatorModel>>();
-                    return decedatiFaraApartinator;
+                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
+                    return religii;
                 }
                 else
                 {
@@ -30,7 +30,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;

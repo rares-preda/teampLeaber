@@ -30,7 +30,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;

@@ -13,9 +13,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public int MormantId { get; set; }
         public DateTime Data { get; set; }
         public int ReligieId { get; set; }
-
         public InmormantareModel(string _decedatNume, string _decedatPrenume, string  _decedatCNP, int _religieId,
-                int _mormantId, DateTime _selectedDate, List<ActeModel> acte)
+                int _mormantId, DateTime _selectedDate,  bool areAp, List<ActModel> acte)
         {
             this.Decedat = new DecedatModel();
             this.Decedat.Nume = _decedatNume;
@@ -25,6 +24,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
             this.ReligieId = _religieId;
             this.MormantId = _mormantId;
             this.Data = _selectedDate;
+            this.Decedat.AreApartinator = areAp;
 
         }
 
