@@ -52,6 +52,11 @@
     <Compile Include="Models\StadiuSolutionareModel.cs" />
     <Compile Include="Networking\Requests\AdaugareCerereAtribuireRequest.cs" />
     <Compile Include="Controller\LocuriDeVeciController.cs" />
+    <Compile Include="Models\MormantModelForRequest.cs" />
+    <Compile Include="Models\ParcelaModelForRequest.cs" />
+    <Compile Include="Networking\Requests\AdaugaCimitireRequest.cs" />
+    <Compile Include="Networking\Requests\AdaugaMorminteRequest.cs" />
+    <Compile Include="Networking\Requests\AdaugaParceleRequest.cs" />
     <Compile Include="Networking\Requests\AdaugareContractRequest.cs" />
     <Compile Include="Models\DecedatCuApartinatorModel.cs" />
     <Compile Include="Models\DecedatFaraApartinatorModel.cs" />
@@ -79,7 +84,7 @@
     <Compile Include="Networking\BaseRequest.cs" />
     <Compile Include="Networking\Requests\AdaugareConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\CereriAtribuireRequest.cs" />
-    <Compile Include="Networking\Requests\CimitireRequest.cs" />
+    <Compile Include="Networking\Requests\GetCimitireRequest.cs" />
     <Compile Include="Models\MorminteConcesionarModel.cs" />
     <Compile Include="Models\PrelungireContractModel.cs" />
     <Compile Include="Networking\Requests\DeleteReligionRequest.cs" />
@@ -91,13 +96,16 @@
     <Compile Include="Networking\Requests\GetTipActeRequest.cs" />
     <Compile Include="Networking\Requests\ContracteConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\LogInRequest.cs" />
+    <Compile Include="Networking\Requests\ModificaCimitireRequest.cs" />
     <Compile Include="Networking\Requests\ModificaInmormantareRequest.cs" />
     <Compile Include="Networking\Requests\ModificaMormantObservatieRequest.cs" />
     <Compile Include="Networking\Requests\ModificareCerereAtribuireRequest.cs" />
     <Compile Include="Networking\Requests\ModificareStadiuSolutionareRequest.cs" />
+    <Compile Include="Networking\Requests\ModificaMormantRequest.cs" />
+    <Compile Include="Networking\Requests\ModificaParcelaRequest.cs" />
     <Compile Include="Networking\Requests\MorminteByConcesionar.cs" />
-    <Compile Include="Networking\Requests\MorminteRequest.cs" />
-    <Compile Include="Networking\Requests\ParceleRequest.cs" />
+    <Compile Include="Networking\Requests\GetMorminteRequest.cs" />
+    <Compile Include="Networking\Requests\GetParceleRequest.cs" />
     <Compile Include="Networking\Requests\PostReligionRequest.cs" />
     <Compile Include="Networking\Requests\PrelungireConcesionarRequest.cs" />
     <Compile Include="Networking\Requests\ProgramareInmormantare.cs" />
@@ -110,6 +118,9 @@
     <Compile Include="Networking\Requests\StadiiSolutionareRequest.cs" />
     <Compile Include="Networking\Requests\StergereCerereAtribuireRequest.cs" />
     <Compile Include="Networking\Requests\StergereStadiuSolutionareRequest.cs" />
+    <Compile Include="Networking\Requests\StergeCimitireRequest.cs" />
+    <Compile Include="Networking\Requests\StergeMormantRequest.cs" />
+    <Compile Include="Networking\Requests\StergeParcelaRequest.cs" />
     <Compile Include="Networking\Requests\UpdateDocumentTypeRequest.cs" />
     <Compile Include="Views\AddReligiiForm.cs">
       <SubType>Form</SubType>

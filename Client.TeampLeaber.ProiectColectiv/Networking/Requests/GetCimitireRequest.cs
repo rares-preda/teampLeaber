@@ -10,25 +10,18 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class MorminteRequest : BaseRequest
+    public class GetCimitireRequest : BaseRequest
     {
-        private int _idParcela;
-
-        public MorminteRequest(int idParcela)
-        {
-            _idParcela = idParcela;
-        }
-
-        public async Task<List<MormantModel>> Run()
+        public async Task<List<CimitirModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.MormintePath + "/GetByParcela?parcelaId=" + this._idParcela);
+                response = await this.GetAsync(Constants.CimitirePath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<MormantModel> morminte = await response.Content.ReadAsAsync<List<MormantModel>>();
-                    return morminte;
+                    List<CimitirModel> cimitire = await response.Content.ReadAsAsync<List<CimitirModel>>();
+                    return cimitire;
                 }
                 else
                 {

@@ -81,21 +81,21 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         internal async Task<List<CimitirModel>> GetCimitire()
         {
-            var request = new Networking.Requests.CimitireRequest();
+            var request = new Networking.Requests.GetCimitireRequest();
             List<CimitirModel> _cimitire = await request.Run();
             return _cimitire;
         }
 
         internal async Task<List<ParcelaModel>> GetParcele(int _cimitirId)
         {
-            var request = new Networking.Requests.ParceleRequest(_cimitirId);
+            var request = new Networking.Requests.GetParceleRequest(_cimitirId);
             List<ParcelaModel> _parcele = await request.Run();
             return _parcele;
         }
 
         internal async Task<List<MormantModel>> GetMorminte(int _parcelaId)
         {
-            var request = new Networking.Requests.MorminteRequest(_parcelaId);
+            var request = new Networking.Requests.GetMorminteRequest(_parcelaId);
             List<MormantModel> _morminte = await request.Run();
             return _morminte;
         }
