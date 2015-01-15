@@ -29,9 +29,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 
         public override string ToString()
         {
-            return "Persoana: " + this.Decedat.Cnp + " " + this.Decedat.Nume + " " + this.Decedat.Prenume +
-                "; Cimitir: " + Cimitir.Denumire + "; Parcela: " + Parcela.Denumire + "; Data inmormantarii: " +
-                Date.ToShortDateString() + "; Religie: " + Religie.Denumire;
+            return Decedat != null ? "Persoana: " + Decedat.Cnp + " " + Decedat.Nume + " " + Decedat.Prenume + "; " : "Necunoscut; " +
+                Cimitir != null ? "Cimitir: " + Cimitir.Denumire + "; " : String.Empty +
+                Parcela != null ? "Parcela: " + Parcela.Denumire + "; " : String.Empty +
+                Date != null ? "Data inmormantarii: " + Date.ToShortDateString() + "; " : String.Empty +
+                Religie != null ? "Religie: " + Religie.Denumire + "; " : String.Empty;
         }
 
         public bool IsValid()

@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabInmormantari = new System.Windows.Forms.TabPage();
             this.btnProgramare = new System.Windows.Forms.Button();
@@ -135,12 +129,42 @@
             this.checkRapoarteMonument = new System.Windows.Forms.CheckBox();
             this.lstRegistruMorminte = new System.Windows.Forms.ListBox();
             this.tabEvidentaDecedati = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBoxDecedatiCuApartinator = new System.Windows.Forms.GroupBox();
             this.groupBoxDecedatiFaraApartinator = new System.Windows.Forms.GroupBox();
-            this.listBoxDecedatiCuApartinator = new System.Windows.Forms.ListBox();
             this.listBoxDecedatiFaraApartinator = new System.Windows.Forms.ListBox();
+            this.groupBoxDecedatiCuApartinator = new System.Windows.Forms.GroupBox();
+            this.listBoxDecedatiCuApartinator = new System.Windows.Forms.ListBox();
+            this.tabCereriAtribuire = new System.Windows.Forms.TabPage();
+            this.grpStadiiSolutionare = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnStergeStadiuSolutionare = new System.Windows.Forms.Button();
+            this.btnEditareStadiu = new System.Windows.Forms.Button();
+            this.txtDenumireStadiuSolutionare = new System.Windows.Forms.TextBox();
+            this.grpEditareStadiuSolutionare = new System.Windows.Forms.Label();
+            this.grpAdaugaStadiuSolutionare = new System.Windows.Forms.GroupBox();
+            this.btnAdaugaStadiuSolutionare = new System.Windows.Forms.Button();
+            this.txtDenumireStadiu = new System.Windows.Forms.TextBox();
+            this.lblDenumireStadiuSolutionare = new System.Windows.Forms.Label();
+            this.lstStadiiSolutionare = new System.Windows.Forms.ListBox();
+            this.grpCereriAtribuire = new System.Windows.Forms.GroupBox();
+            this.grpEditareCerere = new System.Windows.Forms.GroupBox();
+            this.btnStergeCerere = new System.Windows.Forms.Button();
+            this.btnModificaCerere = new System.Windows.Forms.Button();
+            this.cmbStadiuSolutionareEdit = new System.Windows.Forms.ComboBox();
+            this.lblStadiuSolutionareEdit = new System.Windows.Forms.Label();
+            this.txtNrInfocetEdit = new System.Windows.Forms.TextBox();
+            this.lblNrInfocetEdit = new System.Windows.Forms.Label();
+            this.txtNrCurentEdit = new System.Windows.Forms.TextBox();
+            this.lblNrCurentEdit = new System.Windows.Forms.Label();
+            this.grpAdaugaCerere = new System.Windows.Forms.GroupBox();
+            this.btnAdaugaCerere = new System.Windows.Forms.Button();
+            this.cmbStadiuSolutionare = new System.Windows.Forms.ComboBox();
+            this.lblStadiuSolutionare = new System.Windows.Forms.Label();
+            this.txtNrInfocet = new System.Windows.Forms.TextBox();
+            this.lblNrInforcet = new System.Windows.Forms.Label();
+            this.txtNrCurent = new System.Windows.Forms.TextBox();
+            this.lblNrCurent = new System.Windows.Forms.Label();
+            this.lstCereriAtribuire = new System.Windows.Forms.ListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tab.SuspendLayout();
             this.tabInmormantari.SuspendLayout();
             this.grpDateInmormantare.SuspendLayout();
@@ -161,8 +185,15 @@
             this.grpRapoarteObservatii.SuspendLayout();
             this.grpRapoarteCauta.SuspendLayout();
             this.tabEvidentaDecedati.SuspendLayout();
-            this.groupBoxDecedatiCuApartinator.SuspendLayout();
             this.groupBoxDecedatiFaraApartinator.SuspendLayout();
+            this.groupBoxDecedatiCuApartinator.SuspendLayout();
+            this.tabCereriAtribuire.SuspendLayout();
+            this.grpStadiiSolutionare.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.grpAdaugaStadiuSolutionare.SuspendLayout();
+            this.grpCereriAtribuire.SuspendLayout();
+            this.grpEditareCerere.SuspendLayout();
+            this.grpAdaugaCerere.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab
@@ -171,7 +202,7 @@
             this.tab.Controls.Add(this.tabConcesionari);
             this.tab.Controls.Add(this.tabRapoarte);
             this.tab.Controls.Add(this.tabEvidentaDecedati);
-            this.tab.Controls.Add(this.tabPage2);
+            this.tab.Controls.Add(this.tabCereriAtribuire);
             this.tab.Controls.Add(this.tabPage3);
             this.tab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab.Location = new System.Drawing.Point(0, 0);
@@ -179,6 +210,7 @@
             this.tab.SelectedIndex = 0;
             this.tab.Size = new System.Drawing.Size(931, 644);
             this.tab.TabIndex = 0;
+            this.tab.Selected += new System.Windows.Forms.TabControlEventHandler(this.tab_Selected);
             // 
             // tabInmormantari
             // 
@@ -600,7 +632,7 @@
             this.numarContractConcesiuneTextBoxTab1.Name = "numarContractConcesiuneTextBoxTab1";
             this.numarContractConcesiuneTextBoxTab1.Size = new System.Drawing.Size(298, 20);
             this.numarContractConcesiuneTextBoxTab1.TabIndex = 7;
-            //
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(351, 218);
@@ -827,18 +859,6 @@
             // 
             this.contracteConcesionariGridViewTab2.AllowUserToAddRows = false;
             this.contracteConcesionariGridViewTab2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -851,28 +871,12 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle5;
             this.contracteConcesionariGridViewTab2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.contracteConcesionariGridViewTab2.Location = new System.Drawing.Point(22, 48);
             this.contracteConcesionariGridViewTab2.Name = "contracteConcesionariGridViewTab2";
             this.contracteConcesionariGridViewTab2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.contracteConcesionariGridViewTab2.Size = new System.Drawing.Size(404, 215);
             this.contracteConcesionariGridViewTab2.TabIndex = 3;
             this.contracteConcesionariGridViewTab2.SelectionChanged += new System.EventHandler(this.contracteConcesionariGridViewTab2_SelectionChanged);
@@ -1178,68 +1182,6 @@
             this.grpRapoarteCauta.TabIndex = 6;
             this.grpRapoarteCauta.TabStop = false;
             // 
-            // lblRapoarteInhumati
-            // 
-            this.lblRapoarteInhumati.AutoSize = true;
-            this.lblRapoarteInhumati.Location = new System.Drawing.Point(595, 20);
-            this.lblRapoarteInhumati.Name = "lblRapoarteInhumati";
-            this.lblRapoarteInhumati.Size = new System.Drawing.Size(50, 13);
-            this.lblRapoarteInhumati.TabIndex = 8;
-            this.lblRapoarteInhumati.Text = "Inhumati:";
-            // 
-            // grpRapoarteObservatii
-            // btnRapoarteCauta
-            // 
-            this.btnRapoarteCauta.Location = new System.Drawing.Point(115, 88);
-            this.btnRapoarteCauta.Name = "btnRapoarteCauta";
-            this.btnRapoarteCauta.Size = new System.Drawing.Size(75, 23);
-            this.btnRapoarteCauta.TabIndex = 5;
-            this.btnRapoarteCauta.Text = "Cauta";
-            this.btnRapoarteCauta.UseVisualStyleBackColor = true;
-            this.btnRapoarteCauta.Click += new System.EventHandler(this.btnRapoarteCauta_Click);
-            // 
-            // cmbRapoarteCimitir
-            // 
-            this.grpRapoarteObservatii.Controls.Add(this.btnRapoarteObservatii);
-            this.grpRapoarteObservatii.Controls.Add(this.txtRapoarteObservatii);
-            this.grpRapoarteObservatii.Location = new System.Drawing.Point(598, 88);
-            this.grpRapoarteObservatii.Name = "grpRapoarteObservatii";
-            this.grpRapoarteObservatii.Size = new System.Drawing.Size(197, 132);
-            this.grpRapoarteObservatii.TabIndex = 7;
-            this.grpRapoarteObservatii.TabStop = false;
-            this.grpRapoarteObservatii.Text = "Observatii";
-            this.grpRapoarteObservatii.Visible = false;
-            // 
-            // btnRapoarteObservatii
-            // 
-            this.btnRapoarteObservatii.Location = new System.Drawing.Point(116, 99);
-            this.btnRapoarteObservatii.Name = "btnRapoarteObservatii";
-            this.btnRapoarteObservatii.Size = new System.Drawing.Size(75, 23);
-            this.btnRapoarteObservatii.TabIndex = 1;
-            this.btnRapoarteObservatii.Text = "Salveaza";
-            this.btnRapoarteObservatii.UseVisualStyleBackColor = true;
-            this.btnRapoarteObservatii.Click += new System.EventHandler(this.btnRapoarteObservatii_Click);
-            // 
-            // txtRapoarteObservatii
-            // 
-            this.txtRapoarteObservatii.Location = new System.Drawing.Point(7, 20);
-            this.txtRapoarteObservatii.Multiline = true;
-            this.txtRapoarteObservatii.Name = "txtRapoarteObservatii";
-            this.txtRapoarteObservatii.Size = new System.Drawing.Size(184, 73);
-            this.txtRapoarteObservatii.TabIndex = 0;
-            // 
-            // grpRapoarteCauta
-            // 
-            this.grpRapoarteCauta.Controls.Add(this.lblRapoarteCimitir);
-            this.grpRapoarteCauta.Controls.Add(this.btnRapoarteCauta);
-            this.grpRapoarteCauta.Controls.Add(this.cmbRapoarteCimitir);
-            this.grpRapoarteCauta.Controls.Add(this.checkRapoarteMonument);
-            this.grpRapoarteCauta.Location = new System.Drawing.Point(598, 226);
-            this.grpRapoarteCauta.Name = "grpRapoarteCauta";
-            this.grpRapoarteCauta.Size = new System.Drawing.Size(197, 123);
-            this.grpRapoarteCauta.TabIndex = 6;
-            this.grpRapoarteCauta.TabStop = false;
-            // 
             // lblRapoarteCimitir
             // 
             this.lblRapoarteCimitir.AutoSize = true;
@@ -1286,15 +1228,6 @@
             this.lstRegistruMorminte.Size = new System.Drawing.Size(582, 329);
             this.lstRegistruMorminte.TabIndex = 0;
             this.lstRegistruMorminte.SelectedIndexChanged += new System.EventHandler(this.lstRegistruMorminte_SelectedIndexChanged);
-            //
-            // lstRegistruMorminte
-            // 
-            this.lstRegistruMorminte.FormattingEnabled = true;
-            this.lstRegistruMorminte.Location = new System.Drawing.Point(7, 20);
-            this.lstRegistruMorminte.Name = "lstRegistruMorminte";
-            this.lstRegistruMorminte.Size = new System.Drawing.Size(582, 329);
-            this.lstRegistruMorminte.TabIndex = 0;
-            this.lstRegistruMorminte.SelectedIndexChanged += new System.EventHandler(this.lstRegistruMorminte_SelectedIndexChanged);
             // 
             // tabEvidentaDecedati
             // 
@@ -1308,25 +1241,23 @@
             this.tabEvidentaDecedati.Text = "Evidenta decedati";
             this.tabEvidentaDecedati.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // groupBoxDecedatiFaraApartinator
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(923, 618);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.groupBoxDecedatiFaraApartinator.Controls.Add(this.listBoxDecedatiFaraApartinator);
+            this.groupBoxDecedatiFaraApartinator.Location = new System.Drawing.Point(479, 21);
+            this.groupBoxDecedatiFaraApartinator.Name = "groupBoxDecedatiFaraApartinator";
+            this.groupBoxDecedatiFaraApartinator.Size = new System.Drawing.Size(422, 565);
+            this.groupBoxDecedatiFaraApartinator.TabIndex = 1;
+            this.groupBoxDecedatiFaraApartinator.TabStop = false;
+            this.groupBoxDecedatiFaraApartinator.Text = "Decedati fara apartinator";
             // 
-            // tabPage3
+            // listBoxDecedatiFaraApartinator
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(923, 618);
-            this.tabPage3.TabIndex = 5;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.listBoxDecedatiFaraApartinator.FormattingEnabled = true;
+            this.listBoxDecedatiFaraApartinator.Location = new System.Drawing.Point(15, 31);
+            this.listBoxDecedatiFaraApartinator.Name = "listBoxDecedatiFaraApartinator";
+            this.listBoxDecedatiFaraApartinator.Size = new System.Drawing.Size(382, 511);
+            this.listBoxDecedatiFaraApartinator.TabIndex = 0;
             // 
             // groupBoxDecedatiCuApartinator
             // 
@@ -1338,16 +1269,6 @@
             this.groupBoxDecedatiCuApartinator.TabStop = false;
             this.groupBoxDecedatiCuApartinator.Text = "Decedati cu apartinator";
             // 
-            // groupBoxDecedatiFaraApartinator
-            // 
-            this.groupBoxDecedatiFaraApartinator.Controls.Add(this.listBoxDecedatiFaraApartinator);
-            this.groupBoxDecedatiFaraApartinator.Location = new System.Drawing.Point(479, 21);
-            this.groupBoxDecedatiFaraApartinator.Name = "groupBoxDecedatiFaraApartinator";
-            this.groupBoxDecedatiFaraApartinator.Size = new System.Drawing.Size(422, 565);
-            this.groupBoxDecedatiFaraApartinator.TabIndex = 1;
-            this.groupBoxDecedatiFaraApartinator.TabStop = false;
-            this.groupBoxDecedatiFaraApartinator.Text = "Decedati fara apartinator";
-            // 
             // listBoxDecedatiCuApartinator
             // 
             this.listBoxDecedatiCuApartinator.FormattingEnabled = true;
@@ -1356,13 +1277,317 @@
             this.listBoxDecedatiCuApartinator.Size = new System.Drawing.Size(384, 511);
             this.listBoxDecedatiCuApartinator.TabIndex = 0;
             // 
-            // listBoxDecedatiFaraApartinator
+            // tabCereriAtribuire
             // 
-            this.listBoxDecedatiFaraApartinator.FormattingEnabled = true;
-            this.listBoxDecedatiFaraApartinator.Location = new System.Drawing.Point(15, 31);
-            this.listBoxDecedatiFaraApartinator.Name = "listBoxDecedatiFaraApartinator";
-            this.listBoxDecedatiFaraApartinator.Size = new System.Drawing.Size(382, 511);
-            this.listBoxDecedatiFaraApartinator.TabIndex = 0;
+            this.tabCereriAtribuire.Controls.Add(this.grpStadiiSolutionare);
+            this.tabCereriAtribuire.Controls.Add(this.grpCereriAtribuire);
+            this.tabCereriAtribuire.Location = new System.Drawing.Point(4, 22);
+            this.tabCereriAtribuire.Name = "tabCereriAtribuire";
+            this.tabCereriAtribuire.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCereriAtribuire.Size = new System.Drawing.Size(923, 618);
+            this.tabCereriAtribuire.TabIndex = 4;
+            this.tabCereriAtribuire.Text = "Cereri de atribuire";
+            this.tabCereriAtribuire.UseVisualStyleBackColor = true;
+            // 
+            // grpStadiiSolutionare
+            // 
+            this.grpStadiiSolutionare.Controls.Add(this.groupBox2);
+            this.grpStadiiSolutionare.Controls.Add(this.grpAdaugaStadiuSolutionare);
+            this.grpStadiiSolutionare.Controls.Add(this.lstStadiiSolutionare);
+            this.grpStadiiSolutionare.Location = new System.Drawing.Point(566, 7);
+            this.grpStadiiSolutionare.Name = "grpStadiiSolutionare";
+            this.grpStadiiSolutionare.Size = new System.Drawing.Size(251, 307);
+            this.grpStadiiSolutionare.TabIndex = 1;
+            this.grpStadiiSolutionare.TabStop = false;
+            this.grpStadiiSolutionare.Text = "Stadii solutionare";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnStergeStadiuSolutionare);
+            this.groupBox2.Controls.Add(this.btnEditareStadiu);
+            this.groupBox2.Controls.Add(this.txtDenumireStadiuSolutionare);
+            this.groupBox2.Controls.Add(this.grpEditareStadiuSolutionare);
+            this.groupBox2.Location = new System.Drawing.Point(108, 152);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(136, 145);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Editare stadiu solutionare";
+            // 
+            // btnStergeStadiuSolutionare
+            // 
+            this.btnStergeStadiuSolutionare.Location = new System.Drawing.Point(55, 114);
+            this.btnStergeStadiuSolutionare.Name = "btnStergeStadiuSolutionare";
+            this.btnStergeStadiuSolutionare.Size = new System.Drawing.Size(75, 23);
+            this.btnStergeStadiuSolutionare.TabIndex = 22;
+            this.btnStergeStadiuSolutionare.Text = "Sterge";
+            this.btnStergeStadiuSolutionare.UseVisualStyleBackColor = true;
+            this.btnStergeStadiuSolutionare.Click += new System.EventHandler(this.btnStergeStadiuSolutionare_Click);
+            // 
+            // btnEditareStadiu
+            // 
+            this.btnEditareStadiu.Location = new System.Drawing.Point(55, 87);
+            this.btnEditareStadiu.Name = "btnEditareStadiu";
+            this.btnEditareStadiu.Size = new System.Drawing.Size(75, 23);
+            this.btnEditareStadiu.TabIndex = 2;
+            this.btnEditareStadiu.Text = "Modifica";
+            this.btnEditareStadiu.UseVisualStyleBackColor = true;
+            this.btnEditareStadiu.Click += new System.EventHandler(this.btnEditareStadiu_Click);
+            // 
+            // txtDenumireStadiuSolutionare
+            // 
+            this.txtDenumireStadiuSolutionare.Location = new System.Drawing.Point(10, 55);
+            this.txtDenumireStadiuSolutionare.Name = "txtDenumireStadiuSolutionare";
+            this.txtDenumireStadiuSolutionare.Size = new System.Drawing.Size(121, 20);
+            this.txtDenumireStadiuSolutionare.TabIndex = 1;
+            // 
+            // grpEditareStadiuSolutionare
+            // 
+            this.grpEditareStadiuSolutionare.AutoSize = true;
+            this.grpEditareStadiuSolutionare.Location = new System.Drawing.Point(7, 39);
+            this.grpEditareStadiuSolutionare.Name = "grpEditareStadiuSolutionare";
+            this.grpEditareStadiuSolutionare.Size = new System.Drawing.Size(55, 13);
+            this.grpEditareStadiuSolutionare.TabIndex = 0;
+            this.grpEditareStadiuSolutionare.Text = "Denumire:";
+            // 
+            // grpAdaugaStadiuSolutionare
+            // 
+            this.grpAdaugaStadiuSolutionare.Controls.Add(this.btnAdaugaStadiuSolutionare);
+            this.grpAdaugaStadiuSolutionare.Controls.Add(this.txtDenumireStadiu);
+            this.grpAdaugaStadiuSolutionare.Controls.Add(this.lblDenumireStadiuSolutionare);
+            this.grpAdaugaStadiuSolutionare.Location = new System.Drawing.Point(109, 20);
+            this.grpAdaugaStadiuSolutionare.Name = "grpAdaugaStadiuSolutionare";
+            this.grpAdaugaStadiuSolutionare.Size = new System.Drawing.Size(136, 126);
+            this.grpAdaugaStadiuSolutionare.TabIndex = 1;
+            this.grpAdaugaStadiuSolutionare.TabStop = false;
+            this.grpAdaugaStadiuSolutionare.Text = "Adaugare stadiu solutionare";
+            // 
+            // btnAdaugaStadiuSolutionare
+            // 
+            this.btnAdaugaStadiuSolutionare.Location = new System.Drawing.Point(55, 94);
+            this.btnAdaugaStadiuSolutionare.Name = "btnAdaugaStadiuSolutionare";
+            this.btnAdaugaStadiuSolutionare.Size = new System.Drawing.Size(75, 23);
+            this.btnAdaugaStadiuSolutionare.TabIndex = 2;
+            this.btnAdaugaStadiuSolutionare.Text = "Adauga";
+            this.btnAdaugaStadiuSolutionare.UseVisualStyleBackColor = true;
+            this.btnAdaugaStadiuSolutionare.Click += new System.EventHandler(this.btnAdaugaStadiuSolutionare_Click);
+            // 
+            // txtDenumireStadiu
+            // 
+            this.txtDenumireStadiu.Location = new System.Drawing.Point(9, 57);
+            this.txtDenumireStadiu.Name = "txtDenumireStadiu";
+            this.txtDenumireStadiu.Size = new System.Drawing.Size(121, 20);
+            this.txtDenumireStadiu.TabIndex = 1;
+            // 
+            // lblDenumireStadiuSolutionare
+            // 
+            this.lblDenumireStadiuSolutionare.AutoSize = true;
+            this.lblDenumireStadiuSolutionare.Location = new System.Drawing.Point(6, 41);
+            this.lblDenumireStadiuSolutionare.Name = "lblDenumireStadiuSolutionare";
+            this.lblDenumireStadiuSolutionare.Size = new System.Drawing.Size(55, 13);
+            this.lblDenumireStadiuSolutionare.TabIndex = 0;
+            this.lblDenumireStadiuSolutionare.Text = "Denumire:";
+            // 
+            // lstStadiiSolutionare
+            // 
+            this.lstStadiiSolutionare.FormattingEnabled = true;
+            this.lstStadiiSolutionare.Location = new System.Drawing.Point(7, 20);
+            this.lstStadiiSolutionare.Name = "lstStadiiSolutionare";
+            this.lstStadiiSolutionare.Size = new System.Drawing.Size(95, 277);
+            this.lstStadiiSolutionare.TabIndex = 0;
+            this.lstStadiiSolutionare.SelectedIndexChanged += new System.EventHandler(this.lstStadiiSolutionare_SelectedIndexChanged);
+            // 
+            // grpCereriAtribuire
+            // 
+            this.grpCereriAtribuire.Controls.Add(this.grpEditareCerere);
+            this.grpCereriAtribuire.Controls.Add(this.grpAdaugaCerere);
+            this.grpCereriAtribuire.Controls.Add(this.lstCereriAtribuire);
+            this.grpCereriAtribuire.Location = new System.Drawing.Point(9, 7);
+            this.grpCereriAtribuire.Name = "grpCereriAtribuire";
+            this.grpCereriAtribuire.Size = new System.Drawing.Size(551, 307);
+            this.grpCereriAtribuire.TabIndex = 0;
+            this.grpCereriAtribuire.TabStop = false;
+            this.grpCereriAtribuire.Text = "Cereri de atribuire";
+            // 
+            // grpEditareCerere
+            // 
+            this.grpEditareCerere.Controls.Add(this.btnStergeCerere);
+            this.grpEditareCerere.Controls.Add(this.btnModificaCerere);
+            this.grpEditareCerere.Controls.Add(this.cmbStadiuSolutionareEdit);
+            this.grpEditareCerere.Controls.Add(this.lblStadiuSolutionareEdit);
+            this.grpEditareCerere.Controls.Add(this.txtNrInfocetEdit);
+            this.grpEditareCerere.Controls.Add(this.lblNrInfocetEdit);
+            this.grpEditareCerere.Controls.Add(this.txtNrCurentEdit);
+            this.grpEditareCerere.Controls.Add(this.lblNrCurentEdit);
+            this.grpEditareCerere.Location = new System.Drawing.Point(296, 162);
+            this.grpEditareCerere.Name = "grpEditareCerere";
+            this.grpEditareCerere.Size = new System.Drawing.Size(242, 137);
+            this.grpEditareCerere.TabIndex = 8;
+            this.grpEditareCerere.TabStop = false;
+            this.grpEditareCerere.Text = "Editare cerere";
+            // 
+            // btnStergeCerere
+            // 
+            this.btnStergeCerere.Location = new System.Drawing.Point(12, 104);
+            this.btnStergeCerere.Name = "btnStergeCerere";
+            this.btnStergeCerere.Size = new System.Drawing.Size(75, 23);
+            this.btnStergeCerere.TabIndex = 21;
+            this.btnStergeCerere.Text = "Sterge";
+            this.btnStergeCerere.UseVisualStyleBackColor = true;
+            this.btnStergeCerere.Click += new System.EventHandler(this.btnStergeCerere_Click);
+            // 
+            // btnModificaCerere
+            // 
+            this.btnModificaCerere.Location = new System.Drawing.Point(154, 104);
+            this.btnModificaCerere.Name = "btnModificaCerere";
+            this.btnModificaCerere.Size = new System.Drawing.Size(75, 23);
+            this.btnModificaCerere.TabIndex = 20;
+            this.btnModificaCerere.Text = "Modifica";
+            this.btnModificaCerere.UseVisualStyleBackColor = true;
+            this.btnModificaCerere.Click += new System.EventHandler(this.btnModificaCerere_Click);
+            // 
+            // cmbStadiuSolutionareEdit
+            // 
+            this.cmbStadiuSolutionareEdit.FormattingEnabled = true;
+            this.cmbStadiuSolutionareEdit.Location = new System.Drawing.Point(108, 77);
+            this.cmbStadiuSolutionareEdit.Name = "cmbStadiuSolutionareEdit";
+            this.cmbStadiuSolutionareEdit.Size = new System.Drawing.Size(121, 21);
+            this.cmbStadiuSolutionareEdit.TabIndex = 19;
+            // 
+            // lblStadiuSolutionareEdit
+            // 
+            this.lblStadiuSolutionareEdit.AutoSize = true;
+            this.lblStadiuSolutionareEdit.Location = new System.Drawing.Point(9, 80);
+            this.lblStadiuSolutionareEdit.Name = "lblStadiuSolutionareEdit";
+            this.lblStadiuSolutionareEdit.Size = new System.Drawing.Size(94, 13);
+            this.lblStadiuSolutionareEdit.TabIndex = 18;
+            this.lblStadiuSolutionareEdit.Text = "Stadiu solutionare:";
+            // 
+            // txtNrInfocetEdit
+            // 
+            this.txtNrInfocetEdit.Location = new System.Drawing.Point(108, 50);
+            this.txtNrInfocetEdit.Name = "txtNrInfocetEdit";
+            this.txtNrInfocetEdit.Size = new System.Drawing.Size(121, 20);
+            this.txtNrInfocetEdit.TabIndex = 17;
+            // 
+            // lblNrInfocetEdit
+            // 
+            this.lblNrInfocetEdit.AutoSize = true;
+            this.lblNrInfocetEdit.Location = new System.Drawing.Point(9, 53);
+            this.lblNrInfocetEdit.Name = "lblNrInfocetEdit";
+            this.lblNrInfocetEdit.Size = new System.Drawing.Size(76, 13);
+            this.lblNrInfocetEdit.TabIndex = 16;
+            this.lblNrInfocetEdit.Text = "Numar infocet:";
+            // 
+            // txtNrCurentEdit
+            // 
+            this.txtNrCurentEdit.Location = new System.Drawing.Point(108, 22);
+            this.txtNrCurentEdit.Name = "txtNrCurentEdit";
+            this.txtNrCurentEdit.Size = new System.Drawing.Size(121, 20);
+            this.txtNrCurentEdit.TabIndex = 15;
+            // 
+            // lblNrCurentEdit
+            // 
+            this.lblNrCurentEdit.AutoSize = true;
+            this.lblNrCurentEdit.Location = new System.Drawing.Point(9, 25);
+            this.lblNrCurentEdit.Name = "lblNrCurentEdit";
+            this.lblNrCurentEdit.Size = new System.Drawing.Size(74, 13);
+            this.lblNrCurentEdit.TabIndex = 14;
+            this.lblNrCurentEdit.Text = "Numar curent:";
+            // 
+            // grpAdaugaCerere
+            // 
+            this.grpAdaugaCerere.Controls.Add(this.btnAdaugaCerere);
+            this.grpAdaugaCerere.Controls.Add(this.cmbStadiuSolutionare);
+            this.grpAdaugaCerere.Controls.Add(this.lblStadiuSolutionare);
+            this.grpAdaugaCerere.Controls.Add(this.txtNrInfocet);
+            this.grpAdaugaCerere.Controls.Add(this.lblNrInforcet);
+            this.grpAdaugaCerere.Controls.Add(this.txtNrCurent);
+            this.grpAdaugaCerere.Controls.Add(this.lblNrCurent);
+            this.grpAdaugaCerere.Location = new System.Drawing.Point(296, 19);
+            this.grpAdaugaCerere.Name = "grpAdaugaCerere";
+            this.grpAdaugaCerere.Size = new System.Drawing.Size(242, 137);
+            this.grpAdaugaCerere.TabIndex = 7;
+            this.grpAdaugaCerere.TabStop = false;
+            this.grpAdaugaCerere.Text = "Adaugare cerere";
+            // 
+            // btnAdaugaCerere
+            // 
+            this.btnAdaugaCerere.Location = new System.Drawing.Point(154, 104);
+            this.btnAdaugaCerere.Name = "btnAdaugaCerere";
+            this.btnAdaugaCerere.Size = new System.Drawing.Size(75, 23);
+            this.btnAdaugaCerere.TabIndex = 13;
+            this.btnAdaugaCerere.Text = "Adauga";
+            this.btnAdaugaCerere.UseVisualStyleBackColor = true;
+            this.btnAdaugaCerere.Click += new System.EventHandler(this.btnAdaugaCerere_Click);
+            // 
+            // cmbStadiuSolutionare
+            // 
+            this.cmbStadiuSolutionare.FormattingEnabled = true;
+            this.cmbStadiuSolutionare.Location = new System.Drawing.Point(108, 77);
+            this.cmbStadiuSolutionare.Name = "cmbStadiuSolutionare";
+            this.cmbStadiuSolutionare.Size = new System.Drawing.Size(121, 21);
+            this.cmbStadiuSolutionare.TabIndex = 12;
+            // 
+            // lblStadiuSolutionare
+            // 
+            this.lblStadiuSolutionare.AutoSize = true;
+            this.lblStadiuSolutionare.Location = new System.Drawing.Point(9, 80);
+            this.lblStadiuSolutionare.Name = "lblStadiuSolutionare";
+            this.lblStadiuSolutionare.Size = new System.Drawing.Size(94, 13);
+            this.lblStadiuSolutionare.TabIndex = 11;
+            this.lblStadiuSolutionare.Text = "Stadiu solutionare:";
+            // 
+            // txtNrInfocet
+            // 
+            this.txtNrInfocet.Location = new System.Drawing.Point(108, 50);
+            this.txtNrInfocet.Name = "txtNrInfocet";
+            this.txtNrInfocet.Size = new System.Drawing.Size(121, 20);
+            this.txtNrInfocet.TabIndex = 10;
+            // 
+            // lblNrInforcet
+            // 
+            this.lblNrInforcet.AutoSize = true;
+            this.lblNrInforcet.Location = new System.Drawing.Point(9, 53);
+            this.lblNrInforcet.Name = "lblNrInforcet";
+            this.lblNrInforcet.Size = new System.Drawing.Size(76, 13);
+            this.lblNrInforcet.TabIndex = 9;
+            this.lblNrInforcet.Text = "Numar infocet:";
+            // 
+            // txtNrCurent
+            // 
+            this.txtNrCurent.Location = new System.Drawing.Point(108, 22);
+            this.txtNrCurent.Name = "txtNrCurent";
+            this.txtNrCurent.Size = new System.Drawing.Size(121, 20);
+            this.txtNrCurent.TabIndex = 8;
+            // 
+            // lblNrCurent
+            // 
+            this.lblNrCurent.AutoSize = true;
+            this.lblNrCurent.Location = new System.Drawing.Point(9, 25);
+            this.lblNrCurent.Name = "lblNrCurent";
+            this.lblNrCurent.Size = new System.Drawing.Size(74, 13);
+            this.lblNrCurent.TabIndex = 7;
+            this.lblNrCurent.Text = "Numar curent:";
+            // 
+            // lstCereriAtribuire
+            // 
+            this.lstCereriAtribuire.FormattingEnabled = true;
+            this.lstCereriAtribuire.Location = new System.Drawing.Point(7, 20);
+            this.lstCereriAtribuire.Name = "lstCereriAtribuire";
+            this.lstCereriAtribuire.Size = new System.Drawing.Size(283, 277);
+            this.lstCereriAtribuire.TabIndex = 0;
+            this.lstCereriAtribuire.SelectedIndexChanged += new System.EventHandler(this.lstCereriAtribuire_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(923, 618);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -1402,8 +1627,19 @@
             this.grpRapoarteCauta.ResumeLayout(false);
             this.grpRapoarteCauta.PerformLayout();
             this.tabEvidentaDecedati.ResumeLayout(false);
-            this.groupBoxDecedatiCuApartinator.ResumeLayout(false);
             this.groupBoxDecedatiFaraApartinator.ResumeLayout(false);
+            this.groupBoxDecedatiCuApartinator.ResumeLayout(false);
+            this.tabCereriAtribuire.ResumeLayout(false);
+            this.grpStadiiSolutionare.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.grpAdaugaStadiuSolutionare.ResumeLayout(false);
+            this.grpAdaugaStadiuSolutionare.PerformLayout();
+            this.grpCereriAtribuire.ResumeLayout(false);
+            this.grpEditareCerere.ResumeLayout(false);
+            this.grpEditareCerere.PerformLayout();
+            this.grpAdaugaCerere.ResumeLayout(false);
+            this.grpAdaugaCerere.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1508,12 +1744,42 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabEvidentaDecedati;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabCereriAtribuire;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBoxDecedatiFaraApartinator;
         private System.Windows.Forms.GroupBox groupBoxDecedatiCuApartinator;
         private System.Windows.Forms.ListBox listBoxDecedatiFaraApartinator;
         private System.Windows.Forms.ListBox listBoxDecedatiCuApartinator;
+        private System.Windows.Forms.GroupBox grpStadiiSolutionare;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnEditareStadiu;
+        private System.Windows.Forms.TextBox txtDenumireStadiuSolutionare;
+        private System.Windows.Forms.Label grpEditareStadiuSolutionare;
+        private System.Windows.Forms.GroupBox grpAdaugaStadiuSolutionare;
+        private System.Windows.Forms.Button btnAdaugaStadiuSolutionare;
+        private System.Windows.Forms.TextBox txtDenumireStadiu;
+        private System.Windows.Forms.Label lblDenumireStadiuSolutionare;
+        private System.Windows.Forms.ListBox lstStadiiSolutionare;
+        private System.Windows.Forms.GroupBox grpCereriAtribuire;
+        private System.Windows.Forms.GroupBox grpEditareCerere;
+        private System.Windows.Forms.Button btnModificaCerere;
+        private System.Windows.Forms.ComboBox cmbStadiuSolutionareEdit;
+        private System.Windows.Forms.Label lblStadiuSolutionareEdit;
+        private System.Windows.Forms.TextBox txtNrInfocetEdit;
+        private System.Windows.Forms.Label lblNrInfocetEdit;
+        private System.Windows.Forms.TextBox txtNrCurentEdit;
+        private System.Windows.Forms.Label lblNrCurentEdit;
+        private System.Windows.Forms.GroupBox grpAdaugaCerere;
+        private System.Windows.Forms.Button btnAdaugaCerere;
+        private System.Windows.Forms.ComboBox cmbStadiuSolutionare;
+        private System.Windows.Forms.Label lblStadiuSolutionare;
+        private System.Windows.Forms.TextBox txtNrInfocet;
+        private System.Windows.Forms.Label lblNrInforcet;
+        private System.Windows.Forms.TextBox txtNrCurent;
+        private System.Windows.Forms.Label lblNrCurent;
+        private System.Windows.Forms.ListBox lstCereriAtribuire;
+        private System.Windows.Forms.Button btnStergeCerere;
+        private System.Windows.Forms.Button btnStergeStadiuSolutionare;
     }
 }
 

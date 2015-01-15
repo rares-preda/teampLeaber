@@ -28,6 +28,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string ActePath = "/api/act";
         public static readonly string RaportMormintePath = "/api/mormant/raport";
         public static readonly string PersoanaDecedataPath = "/api/PersoanaDecedata";
+        public static readonly string CereriAtribuirePath = "/api/CerereAtribuire";
+        public static readonly string StadiiSolutionarePath = "/api/StadiuSolutionare";
 
         public static class ErrorMessages
         {
