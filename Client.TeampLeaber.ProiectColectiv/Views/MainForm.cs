@@ -18,6 +18,8 @@ namespace Client.TeampLeaber.ProiectColectiv
         private ConcesionariController concesionariController;
         private LocuriDeVeciController locuriDeVeciController;
         private MainController _mainController;
+        private CereriAtribuireController _cereriAtribuireController;
+
         public string CNPConcesionarTab1 { get; set; }
 
         public MainForm()
@@ -124,6 +126,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             this.raportController = raportController;
         }
 
+        internal void SetCereriAtribuireController(Controller.CereriAtribuireController cereriAtribuireController)
+        {
+            this._cereriAtribuireController = cereriAtribuireController;
+        }
+
         private void btnCautaConcesionar_Click(object sender, EventArgs e)
         {
             this._mainController.CautaConcesionarCommand();
@@ -181,9 +188,10 @@ namespace Client.TeampLeaber.ProiectColectiv
 
         }
 
-        private void adaugaButtonConcesionari_Click(object sender, EventArgs e)
+        private async void adaugaButtonConcesionari_Click(object sender, EventArgs e)
         {
-            this.concesionariController.AdaugaConcesionar();
+            await this.concesionariController.AdaugaConcesionar();
+            this.clearConcesionar();
         }
 
         public string CnpConcesionarTab2
@@ -249,7 +257,33 @@ namespace Client.TeampLeaber.ProiectColectiv
 
         public void AddContracteGridView(List<ContractModel> contracte)
         {
-            contracteConcesionariGridViewTab2.DataSource = contracte;
+            try
+            {
+                contracteConcesionariGridViewTab2.DataSource = contracte;
+            }
+            catch (Exception e)
+            {
+
+            }
+            
+        }
+
+        public void ClearCimitireDetailsTab6()
+        {
+            this.denumireCimitirTextBoxTab6.Text = "";
+        }
+
+        public void ClearParceleDetailsTab6()
+        {
+            this.denumireParcelaTextBoxTab6.Text = "";
+        }
+
+        public void ClearMorminteDetailsTab6()
+        {
+            suprafataMormantTextBoxTab6.Text = "";
+            numarMormantTextBoxTab6.Text = "";
+            valoareIstoricaMormantCheckboxTab6.Checked = false;
+            observatiiMormantRichTextBoxTab6.Text = "";
         }
 
         private void contracteConcesionariGridViewTab2_SelectionChanged(object sender, EventArgs e)
@@ -257,12 +291,25 @@ namespace Client.TeampLeaber.ProiectColectiv
             prelungireLabelTab1.Visible = true;
             prelungireComboBoxTab1.Visible = true;
             modificaDurataContractButtonTab1.Visible = true;
+
+            var s = contracteConcesionariGridViewTab2.SelectedRows[0];
+
+            this.numarContractConcesiuneTextBoxTab1.Text = s.Cells["Numar"].Value.ToString();
+            this.dataExpirareDatePickerTab1.Value = (DateTime)s.Cells["DataExpirare"].Value;
+            this.cimitirComboBoxTab1.SelectedItem = (CimitirModel)s.Cells["Cimitir"].Value;
+            this.parcelaComboboxTab1.SelectedItem = (ParcelaModel)s.Cells["Parcela"].Value;
+            this.mormantComboboxTab1.SelectedItem = (MormantModel)s.Cells["Mormant"].Value;
+            ChitantaModel chitanta = (ChitantaModel)s.Cells["Chitanta"].Value;
+            this.nrChitantaTextFieldTab1.Text = chitanta.Numar.ToString();
+            this.sumaTextFieldTab1.Text = chitanta.Suma.ToString();
+
         }
         internal void ClearDateConcesionarDataTab1()
         {
             txtNumeConcesionar1.Visible = lblConcesionarNume.Visible = false;
             txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = false;
             lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
+            cmbMorminteDisponibile.Visible = false;
         }
 
         private void modificaDurataContractButtonTab1_Click(object sender, EventArgs e)
@@ -561,6 +608,175 @@ namespace Client.TeampLeaber.ProiectColectiv
             }
         }
 
+        public string AdaugareNumarCurentTextBox
+        {
+            get { return txtNrCurent.Text; }
+        }
+
+        public string EditareNumarCurentTextBox
+        {
+            get { return txtNrCurentEdit.Text;  }
+            set { txtNrCurentEdit.Text = value; }
+        }
+
+        public string AdaugareNumarInfocetTextBox
+        {
+            get { return txtNrInfocet.Text; }
+        }
+
+        public string EditareNumarInfocetTextBox
+        {
+            get { return txtNrInfocetEdit.Text; }
+            set { txtNrInfocetEdit.Text = value; }
+        }
+
+        public Models.StadiuSolutionareModel AdaugareStadiuSolutionareComboBox
+        {
+            get { return cmbStadiuSolutionare.SelectedItem as Models.StadiuSolutionareModel; }
+        }
+
+        public void SetStadiiSolutionareComboBoxIndex(int index)
+        {
+            if (index >= 0 && index < cmbStadiuSolutionare.Items.Count)
+            {
+                cmbStadiuSolutionare.SelectedIndex = index;
+                cmbStadiuSolutionareEdit.SelectedIndex = index;
+            }
+        }
+
+        public void SetStadiiSolutionareItems(List<Models.StadiuSolutionareModel> stadii)
+        {
+            cmbStadiuSolutionare.Items.Clear();
+            cmbStadiuSolutionareEdit.Items.Clear();
+            lstStadiiSolutionare.Items.Clear();
+            if (stadii != null && stadii.Count > 0)
+            {
+                foreach (var item in stadii)
+                {
+                    cmbStadiuSolutionare.Items.Add(item);
+                    cmbStadiuSolutionareEdit.Items.Add(item);
+                    lstStadiiSolutionare.Items.Add(item);
+                }
+            }
+        }
+
+        public Models.StadiuSolutionareModel EditareStadiuSolutionareCombobox
+        {
+            get { return cmbStadiuSolutionareEdit.SelectedItem as Models.StadiuSolutionareModel; }
+            set { cmbStadiuSolutionareEdit.SelectedItem = value; }
+        }
+
+        public void SetCereriAtribuireList(List<Models.CerereAtribuireModel> cereri)
+        {
+            lstCereriAtribuire.Items.Clear();
+            if (cereri != null && cereri.Count > 0)
+            {
+                foreach (var item in cereri)
+                {
+                    lstCereriAtribuire.Items.Add(item);
+                }
+            }
+        }
+
+        public Models.CerereAtribuireModel GetCereriAtribuireSelectedItem()
+        {
+            return lstCereriAtribuire.SelectedItem as Models.CerereAtribuireModel;
+        }
+
+        public void SetGroupBoxEditareCereriAtribuireVisible(bool visible)
+        {
+            grpEditareCerere.Visible = visible;
+        }
+
+        public string AdaugareStadiuSolutionareTextBox
+        {
+            get { return txtDenumireStadiu.Text; }
+        }
+
+        public string EditareStadiuSolutionareTextBox
+        {
+            get { return txtDenumireStadiuSolutionare.Text; }
+            set { txtDenumireStadiuSolutionare.Text = value; }
+        }
+
+        public Models.StadiuSolutionareModel GetStadiuSolutionareSelectedItem()
+        {
+            return lstStadiiSolutionare.SelectedItem as Models.StadiuSolutionareModel;
+        }
+
+        public void SetGroupBoxEditareStadiuSolutionareVisible(bool visible)
+        {
+            grpEditareStadiiSolutionare.Visible = visible;
+        }
+
+        private void lstCereriAtribuire_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grpEditareCerere.Visible = lstCereriAtribuire.SelectedIndex >= 0;
+            if (lstCereriAtribuire.SelectedIndex >= 0)
+            {
+                Models.CerereAtribuireModel cerere = lstCereriAtribuire.SelectedItem as Models.CerereAtribuireModel;
+                EditareNumarCurentTextBox = cerere.NumarCurent.ToString();
+                EditareNumarInfocetTextBox = cerere.NumarInfocet;
+                foreach (var item in cmbStadiuSolutionareEdit.Items)
+                {
+                    var model = item as Models.StadiuSolutionareModel;
+                    if (model.Id == cerere.StadiuSolutionare.Id)
+                    {
+                        EditareStadiuSolutionareCombobox = model;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void lstStadiiSolutionare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grpEditareStadiiSolutionare.Visible = lstStadiiSolutionare.SelectedIndex >= 0;
+            if (lstStadiiSolutionare.SelectedIndex >= 0)
+                txtDenumireStadiu.Text = lstStadiiSolutionare.SelectedItem.ToString();
+        }
+
+        private void tab_Selected(object sender, TabControlEventArgs e)
+        {
+            _cereriAtribuireController.InitializeMainFormCereriTab();
+        }
+
+        private void btnAdaugaCerere_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.AdaugaCerereAtribuire();
+        }
+
+        public void ClearTextBoxesTabCereriAtribuire()
+        {
+            txtNrCurent.Text = txtNrCurentEdit.Text = txtNrInfocet.Text = txtNrInfocetEdit.Text
+                = txtDenumireStadiu.Text = txtDenumireStadiuSolutionare.Text = "";
+        }
+
+        private void btnStergeCerere_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.StergeCerereAtribuire();
+        }
+
+        private void btnModificaCerere_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.ModificaCerereAtribuire();
+        }
+
+        private void btnAdaugaStadiuSolutionare_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.AdaugaStadiuSolutionare();
+        }
+
+        private void btnStergeStadiuSolutionare_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.StergeStadiuSolutionare();
+        }
+
+        private void btnEditareStadiu_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.ModificaStadiuSolutionare();
+        }
+
         internal void ClearAllDataAfterSuccess()
         {
             inmormantariListTab1.Items.Clear();
@@ -596,7 +812,20 @@ namespace Client.TeampLeaber.ProiectColectiv
             if (cimitireListBoxTab6.SelectedIndex >= 0)
             {
                 CimitirModel cimitir = (CimitirModel)cimitireListBoxTab6.SelectedValue;
+                ClearCimitireDetailsTab6();
+                ClearParceleDetailsTab6();
+                ClearMorminteDetailsTab6();
+
+                denumireCimitirTextBoxTab6.Text = cimitir.Denumire;
+                parceleListBoxTab6.DataSource = null;
+                morminteListBoxTab6.DataSource = null;
+
                 locuriDeVeciController.ShowParceleByCimitir(cimitir);
+            }
+            else
+            {
+                parceleListBoxTab6.SelectedIndex = -1;
+                morminteListBoxTab6.SelectedIndex = -1;
             }
         }
 
@@ -605,8 +834,297 @@ namespace Client.TeampLeaber.ProiectColectiv
             if (parceleListBoxTab6.SelectedIndex >= 0)
             {
                 ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedValue;
+                ClearParceleDetailsTab6();
+                ClearMorminteDetailsTab6();
+
+                denumireParcelaTextBoxTab6.Text = parcela.Denumire;
+
+                morminteListBoxTab6.DataSource = null;
                 locuriDeVeciController.ShowMorminteByParcela(parcela);
             }
+            else
+            {
+                parceleListBoxTab6.SelectedIndex = -1;
+            }
+        }
+
+        private void adaugaCimitirButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (denumireCimitirTextBoxTab6.Text == "")
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati adaugat denumirea cimitirului");
+            }
+            else
+            {
+                CimitirModel cimitir = new CimitirModel(0, denumireCimitirTextBoxTab6.Text);
+                if (cimitir.IsValid())
+                {
+                    locuriDeVeciController.AdaugaCimitir(cimitir);
+                }
+            }
+        }
+
+        private void modificaCimitirButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (denumireCimitirTextBoxTab6.Text == "")
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati adaugat noua denumire");
+                }
+                else
+                {
+                    CimitirModel cimitir = (CimitirModel)cimitireListBoxTab6.SelectedItem;
+                    cimitir.Denumire = denumireCimitirTextBoxTab6.Text;
+
+                    locuriDeVeciController.ModificaCimitir(cimitir);
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul pe care doriti sa-l modificati");
+            }
+        }
+
+        private void deleteCimitirButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                CimitirModel cimitir = (CimitirModel)cimitireListBoxTab6.SelectedItem;
+                locuriDeVeciController.StergeCimitir(cimitir);
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul pe care doriti sa-l stergeti");
+            }
+        }
+
+        private void adaugaParcelaButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (denumireParcelaTextBoxTab6.Text == "")
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati adaugat denumirea parcelei");
+                }
+                else
+                {
+                    ParcelaModel parcela = new ParcelaModel(0, denumireParcelaTextBoxTab6.Text);
+                    locuriDeVeciController.AdaugaParcela(parcela, (CimitirModel)cimitireListBoxTab6.SelectedItem);
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul in care doriti sa adaugati parcela");
+            }
+        }
+
+        private void modificaParcelaButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (parceleListBoxTab6.SelectedIndex >= 0)
+                {
+                    if (denumireParcelaTextBoxTab6.Text == "")
+                    {
+                        ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati adaugat denumirea parcelei");
+                    }
+                    else
+                    {
+                        ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedItem;
+                        CimitirModel cimitir = (CimitirModel)cimitireListBoxTab6.SelectedItem;
+                        parcela.Denumire = denumireParcelaTextBoxTab6.Text;
+
+                        locuriDeVeciController.ModificaParcela(parcela, cimitir);
+                    }
+                }
+                else
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat parcela pe care doriti sa o modificati");
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul din care doriti sa modificati parcela");
+            }
+        }
+
+        private void stergeParcelaButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (parceleListBoxTab6.SelectedIndex >= 0)
+                {
+                    CimitirModel cimitir = (CimitirModel)cimitireListBoxTab6.SelectedItem;
+                    ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedItem;
+                    locuriDeVeciController.StergeParcelaForCimir(parcela, cimitir);
+                }
+                else
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat parcela pe care dorit sa o stergeti");
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat mormantul din care doriti sa stergeti parcela");
+            }
+        }
+
+        public void clearConcesionar()
+        {
+            this.cnpTextBoxConcesionari.Text = "";
+            this.numeTextBoxConcesionari.Text = "";
+            this.prenumeTextBoxConcesionari.Text = "";
+            this.domiciliuRichTextBoxConcesionari.Text = "";
+        }
+
+        private void morminteListBoxTab6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (morminteListBoxTab6.SelectedIndex >= 0)
+            {
+                MormantModel mormant = (MormantModel)morminteListBoxTab6.SelectedItem;
+                this.suprafataMormantTextBoxTab6.Text = mormant.Suprafata.ToString();
+                this.numarMormantTextBoxTab6.Text = mormant.Numar.ToString();
+                this.valoareIstoricaMormantCheckboxTab6.Checked = mormant.AreValoareIstorica;
+                if (mormant.Observatie != null)
+                {
+                    this.observatiiMormantRichTextBoxTab6.Text = mormant.Observatie;
+                }
+                else
+                {
+                    this.observatiiMormantRichTextBoxTab6.Text = "";
+                }
+            }
+        }
+
+        private void adaugaMormantButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (parceleListBoxTab6.SelectedIndex >= 0)
+                {
+                    if (suprafataMormantTextBoxTab6.Text == "" || numarMormantTextBoxTab6.Text == "")
+                    {
+                        ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati completat datele despre mormant");
+                    }
+                    else
+                    {
+                        double suprafata = 0;
+                        if( !double.TryParse(suprafataMormantTextBoxTab6.Text, out suprafata) ) {
+                            ErrorHandling.ErrorHandling.Instance.HandleError("Suprafata trebuie sa fie numar real");
+                            return;
+                        }
+
+                        int numar = 0;
+                        if (!int.TryParse(numarMormantTextBoxTab6.Text, out numar))
+                        {
+                            ErrorHandling.ErrorHandling.Instance.HandleError("Mormantul trebuie sa fie numar intreg");
+                            return;
+                        }
+
+                        MormantModel mormant = new MormantModel(0, suprafata, numar, valoareIstoricaMormantCheckboxTab6.Checked, observatiiMormantRichTextBoxTab6.Text);
+                        ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedItem;
+                        if (mormant.isValid())
+                        {
+                            locuriDeVeciController.AdaugaMormant(mormant, parcela);
+                        }
+                    }
+                }
+                else
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat parcela in care doriti sa adaugati mormantul");
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul in care doriti sa adaugati mormantul");
+            }
+        }
+
+        private void modificaMormantButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (parceleListBoxTab6.SelectedIndex >= 0)
+                {
+                    if (morminteListBoxTab6.SelectedIndex >= 0)
+                    {
+                        if (suprafataMormantTextBoxTab6.Text == "" || numarMormantTextBoxTab6.Text == "")
+                        {
+                            ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati completat datele despre mormant");
+                        }
+                        else
+                        {
+                            double suprafata = 0;
+                            if (!double.TryParse(suprafataMormantTextBoxTab6.Text, out suprafata))
+                            {
+                                ErrorHandling.ErrorHandling.Instance.HandleError("Suprafata trebuie sa fie numar real");
+                                return;
+                            }
+
+                            int numar = 0;
+                            if (!int.TryParse(numarMormantTextBoxTab6.Text, out numar))
+                            {
+                                ErrorHandling.ErrorHandling.Instance.HandleError("Mormantul trebuie sa fie numar intreg");
+                                return;
+                            }
+
+                            ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedItem;
+                            MormantModel mormantSelectat = (MormantModel)morminteListBoxTab6.SelectedItem;
+                            MormantModel mormant = new MormantModel(mormantSelectat.Id, suprafata, numar, valoareIstoricaMormantCheckboxTab6.Checked, observatiiMormantRichTextBoxTab6.Text);
+                            if (mormant.isValid())
+                            {
+                                locuriDeVeciController.ModificaMormant(mormant, parcela);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat mormantul pe care doriti sa-l modificati");
+                    }
+                }
+                else
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat parcela in care doriti sa adaugati mormantul");
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul in care doriti sa adaugati mormantul");
+            }
+        }
+
+        private void stergeMormantButtonTab6_Click(object sender, EventArgs e)
+        {
+            if (cimitireListBoxTab6.SelectedIndex >= 0)
+            {
+                if (parceleListBoxTab6.SelectedIndex >= 0)
+                {
+                    if (morminteListBoxTab6.SelectedIndex >= 0)
+                    {
+                        ParcelaModel parcela = (ParcelaModel)parceleListBoxTab6.SelectedItem;
+                        MormantModel mormant = (MormantModel)morminteListBoxTab6.SelectedItem;
+                        locuriDeVeciController.StergeMormant(mormant, parcela);
+                    }
+                    else
+                    {
+                        ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat mormantul pe care doriti sa-l modificati");
+                    }
+                }
+                else
+                {
+                    ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat parcela in care doriti sa adaugati mormantul");
+                }
+            }
+            else
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul in care doriti sa adaugati mormantul");
+            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         internal void SetContracteConcesiune(List<EvidentaContracteConcesiuneModel> contracteConcesiune)

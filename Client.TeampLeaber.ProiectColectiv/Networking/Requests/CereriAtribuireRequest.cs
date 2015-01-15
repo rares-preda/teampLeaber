@@ -1,34 +1,27 @@
-﻿using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class ParceleRequest : BaseRequest
+    public class CereriAtribuireRequest : BaseRequest
     {
-        private int _idCimitir;
-
-        public ParceleRequest(int idCimitir)
-        {
-            _idCimitir = idCimitir;
-        }
-
-        public async Task<List<ParcelaModel>> Run()
+        public async Task<List<CerereAtribuireModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.ParcelePath + "/GetByCimitir?cimitirId=" + this._idCimitir);
+                response = await this.GetAsync(Constants.CereriAtribuirePath + "?guid=" + Guid.NewGuid());
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<ParcelaModel> parcele = await response.Content.ReadAsAsync<List<ParcelaModel>>();
-                    return parcele;
+                    List<CerereAtribuireModel> cereri = await response.Content.ReadAsAsync<List<CerereAtribuireModel>>();
+                    return cereri;
                 }
                 else
                 {

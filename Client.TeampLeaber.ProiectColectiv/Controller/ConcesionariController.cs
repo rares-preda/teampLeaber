@@ -19,7 +19,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             _view.SetConcesionariController(this);
         }
 
-        public async void AdaugaConcesionar()
+        public async Task AdaugaConcesionar()
         {
             ConcesionarModel concesionar = new ConcesionarModel(_view.CnpConcesionarTab2, 
                                                                 _view.NumeConcesionarTab2,
@@ -41,7 +41,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
         {
              await RefreshContracteByCNP(cnp);
 
-             var cimtireRequest = new Networking.Requests.CimitireRequest();
+             var cimtireRequest = new Networking.Requests.GetCimitireRequest();
              List<CimitirModel> cimitire = await cimtireRequest.Run();
              _view.SetCimitireTab1(cimitire);
         }
@@ -87,14 +87,14 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
 
         public async void ShowParceleByCimitir(CimitirModel cimitir)
         {
-            var parcelaRequest = new Networking.Requests.ParceleRequest(cimitir.Id);
+            var parcelaRequest = new Networking.Requests.GetParceleRequest(cimitir.Id);
             List<ParcelaModel> parcele = await parcelaRequest.Run();
             _view.ShowParceleInComboBoxTab1(parcele);
         }
 
         public async void ShowMorminteByParcela(ParcelaModel parcela) 
         {
-            var morminteRequest = new Networking.Requests.MorminteRequest(parcela.Id);
+            var morminteRequest = new Networking.Requests.GetMorminteRequest(parcela.Id);
             List<MormantModel> morminte = await morminteRequest.Run();
             _view.ShowMorminteInComboBoxTab1(morminte);
         }

@@ -10,30 +10,34 @@ using System.Threading.Tasks;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class CimitireRequest : BaseRequest
+    public class ModificareCerereAtribuireRequest : BaseRequest
     {
-        public async Task<List<CimitirModel>> Run()
+        private CerereAtribuireModel _cerere;
+
+        public ModificareCerereAtribuireRequest(CerereAtribuireModel cerere)
+        {
+            _cerere = cerere;
+        }
+
+        public async Task<bool> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.CimitirePath);
+                response = await this.PostAsJsonAsync(Constants.CereriAtribuirePath, _cerere);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
-                {
-                    List<CimitirModel> cimitire = await response.Content.ReadAsAsync<List<CimitirModel>>();
-                    return cimitire;
-                }
+                    return true;
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return null;
+                    return false;
                 }
             }
             catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return null;
+                return false;
             }
         }
     }

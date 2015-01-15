@@ -15,6 +15,15 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public bool AreValoareIstorica { get; set; }
         public string Observatie { get; set; }
 
+        public MormantModel(int id, double suprafata, int numar, bool areValoareIstorica, string observati)
+        {
+            this.Id = id;
+            this.Suprafata = suprafata;
+            this.Numar = numar;
+            this.AreValoareIstorica = areValoareIstorica;
+            this.Observatie = observati;
+        }
+
         public bool isValid()
         {
             var errors = new List<string>();

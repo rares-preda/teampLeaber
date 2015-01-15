@@ -70,6 +70,7 @@
             // 
             // cmbMorminte
             // 
+            this.cmbMorminte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMorminte.FormattingEnabled = true;
             this.cmbMorminte.Location = new System.Drawing.Point(66, 82);
             this.cmbMorminte.Name = "cmbMorminte";
@@ -78,6 +79,7 @@
             // 
             // cmbParcele
             // 
+            this.cmbParcele.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbParcele.FormattingEnabled = true;
             this.cmbParcele.Location = new System.Drawing.Point(66, 52);
             this.cmbParcele.Name = "cmbParcele";
@@ -105,6 +107,7 @@
             // 
             // cmbCimitir
             // 
+            this.cmbCimitir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCimitir.FormattingEnabled = true;
             this.cmbCimitir.Location = new System.Drawing.Point(66, 23);
             this.cmbCimitir.Name = "cmbCimitir";
@@ -199,6 +202,7 @@
             // 
             // cmbReligii
             // 
+            this.cmbReligii.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbReligii.FormattingEnabled = true;
             this.cmbReligii.Location = new System.Drawing.Point(61, 20);
             this.cmbReligii.Name = "cmbReligii";

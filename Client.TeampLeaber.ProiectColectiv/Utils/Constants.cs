@@ -16,6 +16,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string CimitirePath = "/api/cimitir";
         public static readonly string ParcelePath = "/api/parcela";
         public static readonly string MormintePath = "/api/mormant";
+        public static readonly string ModificaMormintePath = "/api/mormant/update";
         public static readonly string ConcesionarPath = "/api/concesionar";
         public static readonly string ContracteConcesionarPath = "/api/contractConcesiune";
         public static readonly string InmormantarePath = "/api/inmormantare";
@@ -24,7 +25,6 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string PrelungireContractConcesiune = "/api/ContractConcesiune/Prelungire";
         public static readonly string RenuntareContractConcesiune = "/api/ContractConcesiune/DeleteContract";
         public static readonly string AdaugareContractConcesiune = "/api/ContractConcesiune/AddContract";
-
         public static readonly string AdaugareConcesionariSuccessMessage = "Concesionar adaugat cu success";
         public static readonly string ActePath = "/api/act";
         public static readonly string MorminteLiberePath = "/getmormintelibere";
@@ -32,6 +32,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string PersoanaDecedataPath = "/api/PersoanaDecedata";
         public static readonly string ContracteConcesiuneEliberate = "/api/ContractConcesiune/GetByAnEliberare?an=";
         public static readonly string ContracteConcesiuneExpirate = "/api/ContractConcesiune/GetByAnExpirare?an=";
+        public static readonly string CereriAtribuirePath = "/api/CerereAtribuire";
+        public static readonly string StadiiSolutionarePath = "/api/StadiuSolutionare";
 
         public static class ErrorMessages
         {

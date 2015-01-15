@@ -1,34 +1,34 @@
-﻿using System;
+﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Utils;
-using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class RaportInmormantariRequest : BaseRequest
+    public class GetMorminteRequest : BaseRequest
     {
-        private int an;
+        private int _idParcela;
 
-        public RaportInmormantariRequest(int an)
+        public GetMorminteRequest(int idParcela)
         {
-            this.an = an;
+            _idParcela = idParcela;
         }
 
-        public async Task<List<RaportInmormantareModel>> Run()
+        public async Task<List<MormantModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.RaportInmormantariPath + "?year=" + this.an + "&guid=" + Guid.NewGuid());
+                response = await this.GetAsync(Constants.MormintePath + "/GetByParcela?parcelaId=" + this._idParcela);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<RaportInmormantareModel> inmormantari = await response.Content.ReadAsAsync<List<RaportInmormantareModel>>();
-                    return inmormantari;
+                    List<MormantModel> morminte = await response.Content.ReadAsAsync<List<MormantModel>>();
+                    return morminte;
                 }
                 else
                 {
