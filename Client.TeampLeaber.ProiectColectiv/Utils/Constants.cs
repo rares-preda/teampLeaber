@@ -16,6 +16,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string CimitirePath = "/api/cimitir";
         public static readonly string ParcelePath = "/api/parcela";
         public static readonly string MormintePath = "/api/mormant";
+        public static readonly string ModificaMormintePath = "/api/mormant/update";
         public static readonly string ConcesionarPath = "/api/concesionar";
         public static readonly string ContracteConcesionarPath = "/api/contractConcesiune";
         public static readonly string InmormantarePath = "/api/inmormantare";
