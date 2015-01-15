@@ -30,6 +30,8 @@ namespace Client.TeampLeaber.ProiectColectiv.Utils
         public static readonly string MorminteLiberePath = "/getmormintelibere";
         public static readonly string RaportMormintePath = "/api/mormant/raport";
         public static readonly string PersoanaDecedataPath = "/api/PersoanaDecedata";
+        public static readonly string ContracteConcesiuneEliberate = "/api/ContractConcesiune/GetByAnEliberare?an=";
+        public static readonly string ContracteConcesiuneExpirate = "/api/ContractConcesiune/GetByAnExpirare?an=";
         public static readonly string CereriAtribuirePath = "/api/CerereAtribuire";
         public static readonly string StadiiSolutionarePath = "/api/StadiuSolutionare";
 

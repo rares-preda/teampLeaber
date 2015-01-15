@@ -28,6 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -169,6 +184,15 @@
             this.lblNrCurent = new System.Windows.Forms.Label();
             this.lstCereriAtribuire = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabContracteConcesiune = new System.Windows.Forms.TabPage();
+            this.groupBoxContracteConcesiune = new System.Windows.Forms.GroupBox();
+            this.listBoxContracteConcesiune = new System.Windows.Forms.ListBox();
+            this.labelAnContracteConcesiune = new System.Windows.Forms.Label();
+            this.yearPickerContracteConcesiune = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune = new System.Windows.Forms.CheckBox();
+            this.buttonAfisareContracteConcesiune = new System.Windows.Forms.Button();
+            this.cimitireGroupBoxTab6 = new System.Windows.Forms.GroupBox();
+            this.parceleGroupBoxTab6 = new System.Windows.Forms.GroupBox();
             this.morminteGroupBoxTab6Box4 = new System.Windows.Forms.GroupBox();
             this.stergeMormantButtonTab6 = new System.Windows.Forms.Button();
             this.modificaMormantButtonTab6 = new System.Windows.Forms.Button();
@@ -219,6 +243,8 @@
             this.tabEvidentaDecedati.SuspendLayout();
             this.groupBoxDecedatiFaraApartinator.SuspendLayout();
             this.groupBoxDecedatiCuApartinator.SuspendLayout();
+            this.tabContracteConcesiune.SuspendLayout();
+            this.groupBoxContracteConcesiune.SuspendLayout();
             this.tabCereriAtribuire.SuspendLayout();
             this.grpStadiiSolutionare.SuspendLayout();
             this.grpEditareStadiiSolutionare.SuspendLayout();
@@ -940,6 +966,34 @@
             // 
             this.contracteConcesionariGridViewTab2.AllowUserToAddRows = false;
             this.contracteConcesionariGridViewTab2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contracteConcesionariGridViewTab2.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.contracteConcesionariGridViewTab2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -956,6 +1010,16 @@
             this.contracteConcesionariGridViewTab2.Location = new System.Drawing.Point(22, 48);
             this.contracteConcesionariGridViewTab2.Name = "contracteConcesionariGridViewTab2";
             this.contracteConcesionariGridViewTab2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contracteConcesionariGridViewTab2.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.contracteConcesionariGridViewTab2.Size = new System.Drawing.Size(404, 215);
@@ -1098,6 +1162,7 @@
             // 
             this.tabControlRapoarte.Controls.Add(this.tabRapoarteInmormantari);
             this.tabControlRapoarte.Controls.Add(this.tabMorminteSecond);
+            this.tabControlRapoarte.Controls.Add(this.tabContracteConcesiune);
             this.tabControlRapoarte.Location = new System.Drawing.Point(6, 6);
             this.tabControlRapoarte.Name = "tabControlRapoarte";
             this.tabControlRapoarte.SelectedIndex = 0;
@@ -1157,6 +1222,7 @@
             this.anPickerTabRapoarte.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.anPickerTabRapoarte.Location = new System.Drawing.Point(629, 36);
             this.anPickerTabRapoarte.Name = "anPickerTabRapoarte";
+            this.anPickerTabRapoarte.ShowUpDown = true;
             this.anPickerTabRapoarte.Size = new System.Drawing.Size(75, 20);
             this.anPickerTabRapoarte.TabIndex = 2;
             // 
@@ -1677,6 +1743,80 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(923, 618);
             this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabContracteConcesiune
+            // 
+            this.tabContracteConcesiune.Controls.Add(this.groupBoxContracteConcesiune);
+            this.tabContracteConcesiune.Location = new System.Drawing.Point(4, 22);
+            this.tabContracteConcesiune.Name = "tabContracteConcesiune";
+            this.tabContracteConcesiune.Padding = new System.Windows.Forms.Padding(3);
+            this.tabContracteConcesiune.Size = new System.Drawing.Size(889, 457);
+            this.tabContracteConcesiune.TabIndex = 2;
+            this.tabContracteConcesiune.Text = "Contracte concesiune";
+            this.tabContracteConcesiune.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxContracteConcesiune
+            // 
+            this.groupBoxContracteConcesiune.Controls.Add(this.buttonAfisareContracteConcesiune);
+            this.groupBoxContracteConcesiune.Controls.Add(this.checkBoxFinalizatTabRapoarteContracteConcesiune);
+            this.groupBoxContracteConcesiune.Controls.Add(this.yearPickerContracteConcesiune);
+            this.groupBoxContracteConcesiune.Controls.Add(this.labelAnContracteConcesiune);
+            this.groupBoxContracteConcesiune.Controls.Add(this.listBoxContracteConcesiune);
+            this.groupBoxContracteConcesiune.Location = new System.Drawing.Point(7, 18);
+            this.groupBoxContracteConcesiune.Name = "groupBoxContracteConcesiune";
+            this.groupBoxContracteConcesiune.Size = new System.Drawing.Size(503, 424);
+            this.groupBoxContracteConcesiune.TabIndex = 0;
+            this.groupBoxContracteConcesiune.TabStop = false;
+            this.groupBoxContracteConcesiune.Text = "Contracte concesiune";
+            // 
+            // listBoxContracteConcesiune
+            // 
+            this.listBoxContracteConcesiune.FormattingEnabled = true;
+            this.listBoxContracteConcesiune.Location = new System.Drawing.Point(15, 19);
+            this.listBoxContracteConcesiune.Name = "listBoxContracteConcesiune";
+            this.listBoxContracteConcesiune.Size = new System.Drawing.Size(320, 394);
+            this.listBoxContracteConcesiune.TabIndex = 0;
+            // 
+            // labelAnContracteConcesiune
+            // 
+            this.labelAnContracteConcesiune.AutoSize = true;
+            this.labelAnContracteConcesiune.Location = new System.Drawing.Point(354, 19);
+            this.labelAnContracteConcesiune.Name = "labelAnContracteConcesiune";
+            this.labelAnContracteConcesiune.Size = new System.Drawing.Size(23, 13);
+            this.labelAnContracteConcesiune.TabIndex = 1;
+            this.labelAnContracteConcesiune.Text = "An:";
+            // 
+            // yearPickerContracteConcesiune
+            // 
+            this.yearPickerContracteConcesiune.CustomFormat = "yyyy";
+            this.yearPickerContracteConcesiune.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.yearPickerContracteConcesiune.Location = new System.Drawing.Point(383, 19);
+            this.yearPickerContracteConcesiune.Name = "yearPickerContracteConcesiune";
+            this.yearPickerContracteConcesiune.ShowUpDown = true;
+            this.yearPickerContracteConcesiune.Size = new System.Drawing.Size(65, 20);
+            this.yearPickerContracteConcesiune.TabIndex = 1;
+            // 
+            // checkBoxFinalizatTabRapoarteContracteConcesiune
+            // 
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.AutoSize = true;
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.Location = new System.Drawing.Point(357, 56);
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.Name = "checkBoxFinalizatTabRapoarteContracteConcesiune";
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.Size = new System.Drawing.Size(129, 17);
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.TabIndex = 2;
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.Text = "Expira in anul selectat";
+            this.checkBoxFinalizatTabRapoarteContracteConcesiune.UseVisualStyleBackColor = true;
+            // 
+            // buttonAfisareContracteConcesiune
+            // 
+            this.buttonAfisareContracteConcesiune.Location = new System.Drawing.Point(357, 91);
+            this.buttonAfisareContracteConcesiune.Name = "buttonAfisareContracteConcesiune";
+            this.buttonAfisareContracteConcesiune.Size = new System.Drawing.Size(129, 23);
+            this.buttonAfisareContracteConcesiune.TabIndex = 3;
+            this.buttonAfisareContracteConcesiune.Text = "Afiseaza";
+            this.buttonAfisareContracteConcesiune.UseVisualStyleBackColor = true;
+            this.buttonAfisareContracteConcesiune.Click += new System.EventHandler(this.buttonAfisareContracteConcesiune_Click);
             this.tabPage3.Text = "Locuri de veci";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -1989,6 +2129,9 @@
             this.tabEvidentaDecedati.ResumeLayout(false);
             this.groupBoxDecedatiFaraApartinator.ResumeLayout(false);
             this.groupBoxDecedatiCuApartinator.ResumeLayout(false);
+            this.tabContracteConcesiune.ResumeLayout(false);
+            this.groupBoxContracteConcesiune.ResumeLayout(false);
+            this.groupBoxContracteConcesiune.PerformLayout();
             this.tabCereriAtribuire.ResumeLayout(false);
             this.grpStadiiSolutionare.ResumeLayout(false);
             this.grpEditareStadiiSolutionare.ResumeLayout(false);
@@ -2121,6 +2264,13 @@
         private System.Windows.Forms.GroupBox groupBoxDecedatiCuApartinator;
         private System.Windows.Forms.ListBox listBoxDecedatiFaraApartinator;
         private System.Windows.Forms.ListBox listBoxDecedatiCuApartinator;
+        private System.Windows.Forms.TabPage tabContracteConcesiune;
+        private System.Windows.Forms.GroupBox groupBoxContracteConcesiune;
+        private System.Windows.Forms.Label labelAnContracteConcesiune;
+        private System.Windows.Forms.ListBox listBoxContracteConcesiune;
+        private System.Windows.Forms.DateTimePicker yearPickerContracteConcesiune;
+        private System.Windows.Forms.CheckBox checkBoxFinalizatTabRapoarteContracteConcesiune;
+        private System.Windows.Forms.Button buttonAfisareContracteConcesiune;
         private System.Windows.Forms.GroupBox grpStadiiSolutionare;
         private System.Windows.Forms.GroupBox grpEditareStadiiSolutionare;
         private System.Windows.Forms.Button btnEditareStadiu;

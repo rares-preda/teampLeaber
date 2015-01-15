@@ -192,5 +192,23 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
                 LoadRegistruCimitirListBox();
             }
         }
+
+        internal async void GetContracteConcesiune(int an, bool finalizat)
+        {
+            List<EvidentaContracteConcesiuneModel> contracteConcesiune;
+            
+            if (!finalizat)
+            {
+                var request = new Networking.Requests.ContracteConcesiuneEliberateRequest(an);
+                contracteConcesiune = await request.Run();
+            }
+            else
+            {
+                var request = new Networking.Requests.ContracteConcesiuneExpirateRequest(an);
+                contracteConcesiune = await request.Run();
+            }
+
+            _view.SetContracteConcesiune(contracteConcesiune);
+        }
     }
 }
