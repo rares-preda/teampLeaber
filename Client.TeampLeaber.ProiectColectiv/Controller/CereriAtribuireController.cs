@@ -123,10 +123,10 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             StadiuSolutionareModel stadiu = _view.GetStadiuSolutionareSelectedItem();
             if (stadiu == null)
             {
-                ErrorHandling.ErrorHandling.Instance.HandleError("Stadiu de solutionare neselectata.");
+                ErrorHandling.ErrorHandling.Instance.HandleError("Stadiu de solutionare neselectat.");
                 return;
             }
-            stadiu.Descriere = _view.AdaugareStadiuSolutionareTextBox;
+            stadiu.Denumire = _view.EditareStadiuSolutionareTextBox;
             if (stadiu.IsValid())
             {
                 var request = new Networking.Requests.ModificareStadiuSolutionareRequest(stadiu);

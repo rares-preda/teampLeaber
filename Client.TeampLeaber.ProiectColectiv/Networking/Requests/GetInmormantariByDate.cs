@@ -1,27 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Models;
 using Client.TeampLeaber.ProiectColectiv.Utils;
+using Client.TeampLeaber.ProiectColectiv.Models;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class CereriAtribuireRequest : BaseRequest
+    public class GetInmormantariByDate : BaseRequest
     {
-        public async Task<List<CerereAtribuireModel>> Run()
+        private DateTime data;
+        private int mormantId;
+
+        public GetInmormantariByDate(DateTime d, int i)
+        {
+            data = d;
+            mormantId = i;
+        }
+        public async Task<List<RaportInmormantareModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.CereriAtribuirePath + "?guid=" + Guid.NewGuid());
+                string fullpath = Constants.InmormantarePath + "?Year=" +  data.Year + "&Month=" + data.Month + "Day=" +  data.Day + "&MormantId=" + mormantId;
+                response = await this.GetAsync(fullpath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<CerereAtribuireModel> cereri = await response.Content.ReadAsAsync<List<CerereAtribuireModel>>();
-                    return cereri;
+                    List<RaportInmormantareModel> value = await response.Content.ReadAsAsync<List<RaportInmormantareModel>>();
+                    return value;
                 }
                 else
                 {

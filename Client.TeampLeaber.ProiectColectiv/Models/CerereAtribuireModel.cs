@@ -13,6 +13,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public string NumarInfocet { get; set; }
         public DateTime DataCerere { get; set; }
         public StadiuSolutionareModel StadiuSolutionare { get; set; }
+        
+        public CerereAtribuireModel()
+        {
+
+        }
 
         public CerereAtribuireModel(int _id, int _numarCurent, string _numarInfocet, DateTime _dataCerere, StadiuSolutionareModel _stadiuSolutionare)
         {

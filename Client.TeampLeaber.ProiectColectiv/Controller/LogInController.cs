@@ -41,6 +41,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Controller
             ConcesionariController concesionarController = new ConcesionariController(mainForm);
             RaportController raportController = new RaportController(mainForm);
             CereriAtribuireController cereriAtribuireController = new CereriAtribuireController(mainForm);
+            LocuriDeVeciController locuriDeVeciController = new LocuriDeVeciController(mainForm);
             mainForm.Show();
             View.Hide();
         }

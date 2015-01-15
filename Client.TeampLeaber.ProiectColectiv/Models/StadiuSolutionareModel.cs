@@ -9,27 +9,32 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
     public class StadiuSolutionareModel
     {
         public int Id { get; set; }
-        public string Descriere { get; set; }
+        public string Denumire { get; set; }
+        
+        public StadiuSolutionareModel()
+        {
+
+        }
 
         public StadiuSolutionareModel(int _id, string _descriere)
         {
             Id = _id;
-            Descriere = _descriere;
+            Denumire = _descriere;
         }
 
         public StadiuSolutionareModel(string _descriere)
         {
-            Descriere = _descriere;
+            Denumire = _descriere;
         }
 
         public override string ToString()
         {
-            return Descriere;
+            return Denumire;
         }
 
         public bool IsValid()
         {
-            if (Descriere != "")
+            if (Denumire != String.Empty)
                 return true;
 
             ErrorHandling.ErrorHandling.Instance.HandleError("Stadiu de solutionare invalid.");

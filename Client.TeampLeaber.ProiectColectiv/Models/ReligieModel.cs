@@ -15,5 +15,15 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         {
             return Denumire;
         }
+
+        public bool IsValid()
+        {
+            if (String.IsNullOrEmpty(Denumire))
+            {
+                ErrorHandling.ErrorHandling.Instance.HandleError("Numele religiei este invalid.");
+                return false;
+            }
+            return true;
+        }
     }
 }

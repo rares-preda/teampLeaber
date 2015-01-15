@@ -1,40 +1,47 @@
-﻿using System;
+﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Models;
 using Client.TeampLeaber.ProiectColectiv.Utils;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class CereriAtribuireRequest : BaseRequest
+    public class PostReligionRequest : BaseRequest
     {
-        public async Task<List<CerereAtribuireModel>> Run()
+        private ReligieModel model;
+
+
+        public PostReligionRequest(ReligieModel model)
+        {
+            this.model = model;
+        }
+
+        public async Task<bool> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.CereriAtribuirePath + "?guid=" + Guid.NewGuid());
+                response = await this.PostAsJsonAsync(Constants.ReligiiPath, model);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
-                {
-                    List<CerereAtribuireModel> cereri = await response.Content.ReadAsAsync<List<CerereAtribuireModel>>();
-                    return cereri;
-                }
+                    return true;
                 else
                 {
                     ErrorModel error = await response.Content.ReadAsAsync<ErrorModel>();
                     ErrorHandling.ErrorHandling.Instance.HandleErrors(error.errors);
-                    return null;
+                    return false;
                 }
             }
             catch (Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
-                return null;
+                return false;
             }
         }
+
     }
 }
+

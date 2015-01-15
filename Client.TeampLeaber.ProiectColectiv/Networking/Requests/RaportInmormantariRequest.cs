@@ -23,7 +23,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
         {
             try
             {
-                response = await this.GetAsync(Constants.RaportInmormantariPath + "?year=" + this.an);
+                response = await this.GetAsync(Constants.RaportInmormantariPath + "?year=" + this.an + "&guid=" + Guid.NewGuid());
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {

@@ -10,9 +10,9 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 {
     public class DecedatFaraApartinatorModel
     {
-        public ActeModel AdeverintaInhumare { get; set; }
+        public ActModel AdeverintaInhumare { get; set; }
 
-        public ActeModel SolicitareIml { get; set; }
+        public ActModel SolicitareIml { get; set; }
 
         public string Cimitir { get; set; }
 

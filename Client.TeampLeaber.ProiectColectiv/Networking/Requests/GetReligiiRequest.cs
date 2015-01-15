@@ -1,27 +1,27 @@
-﻿using System;
+﻿using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Models;
-using Client.TeampLeaber.ProiectColectiv.Utils;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class CereriAtribuireRequest : BaseRequest
+    public class GetReligiiRequest : BaseRequest
     {
-        public async Task<List<CerereAtribuireModel>> Run()
+        public async Task<List<ReligieModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.CereriAtribuirePath + "?guid=" + Guid.NewGuid());
+                response = await this.GetAsync(Constants.ReligiiPath);
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<CerereAtribuireModel> cereri = await response.Content.ReadAsAsync<List<CerereAtribuireModel>>();
-                    return cereri;
+                    List<ReligieModel> religii = await response.Content.ReadAsAsync<List<ReligieModel>>();
+                    return religii;
                 }
                 else
                 {
@@ -30,7 +30,7 @@ namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
                     return null;
                 }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError(Constants.ErrorMessages.Unknown_error);
                 return null;
