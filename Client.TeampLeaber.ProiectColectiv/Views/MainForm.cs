@@ -18,6 +18,8 @@ namespace Client.TeampLeaber.ProiectColectiv
         private ConcesionariController concesionariController;
         private LocuriDeVeciController locuriDeVeciController;
         private MainController _mainController;
+        private CereriAtribuireController _cereriAtribuireController;
+
         public string CNPConcesionarTab1 { get; set; }
 
         public MainForm()
@@ -122,6 +124,11 @@ namespace Client.TeampLeaber.ProiectColectiv
         internal void SetRaportController(Controller.RaportController raportController)
         {
             this.raportController = raportController;
+        }
+
+        internal void SetCereriAtribuireController(Controller.CereriAtribuireController cereriAtribuireController)
+        {
+            this._cereriAtribuireController = cereriAtribuireController;
         }
 
         private void btnCautaConcesionar_Click(object sender, EventArgs e)
@@ -302,6 +309,7 @@ namespace Client.TeampLeaber.ProiectColectiv
             txtNumeConcesionar1.Visible = lblConcesionarNume.Visible = false;
             txtPrenumeConcesionar1.Visible = lblConcesionarPrenume.Visible = false;
             lblLocuriDisponibile.Visible = cmbMorminteDisponibile.Visible = false;
+            cmbMorminteDisponibile.Visible = false;
         }
 
         private void modificaDurataContractButtonTab1_Click(object sender, EventArgs e)
@@ -598,6 +606,175 @@ namespace Client.TeampLeaber.ProiectColectiv
                     listBoxDecedatiFaraApartinator.Items.Add(item.ToString());
                 }
             }
+        }
+
+        public string AdaugareNumarCurentTextBox
+        {
+            get { return txtNrCurent.Text; }
+        }
+
+        public string EditareNumarCurentTextBox
+        {
+            get { return txtNrCurentEdit.Text;  }
+            set { txtNrCurentEdit.Text = value; }
+        }
+
+        public string AdaugareNumarInfocetTextBox
+        {
+            get { return txtNrInfocet.Text; }
+        }
+
+        public string EditareNumarInfocetTextBox
+        {
+            get { return txtNrInfocetEdit.Text; }
+            set { txtNrInfocetEdit.Text = value; }
+        }
+
+        public Models.StadiuSolutionareModel AdaugareStadiuSolutionareComboBox
+        {
+            get { return cmbStadiuSolutionare.SelectedItem as Models.StadiuSolutionareModel; }
+        }
+
+        public void SetStadiiSolutionareComboBoxIndex(int index)
+        {
+            if (index >= 0 && index < cmbStadiuSolutionare.Items.Count)
+            {
+                cmbStadiuSolutionare.SelectedIndex = index;
+                cmbStadiuSolutionareEdit.SelectedIndex = index;
+            }
+        }
+
+        public void SetStadiiSolutionareItems(List<Models.StadiuSolutionareModel> stadii)
+        {
+            cmbStadiuSolutionare.Items.Clear();
+            cmbStadiuSolutionareEdit.Items.Clear();
+            lstStadiiSolutionare.Items.Clear();
+            if (stadii != null && stadii.Count > 0)
+            {
+                foreach (var item in stadii)
+                {
+                    cmbStadiuSolutionare.Items.Add(item);
+                    cmbStadiuSolutionareEdit.Items.Add(item);
+                    lstStadiiSolutionare.Items.Add(item);
+                }
+            }
+        }
+
+        public Models.StadiuSolutionareModel EditareStadiuSolutionareCombobox
+        {
+            get { return cmbStadiuSolutionareEdit.SelectedItem as Models.StadiuSolutionareModel; }
+            set { cmbStadiuSolutionareEdit.SelectedItem = value; }
+        }
+
+        public void SetCereriAtribuireList(List<Models.CerereAtribuireModel> cereri)
+        {
+            lstCereriAtribuire.Items.Clear();
+            if (cereri != null && cereri.Count > 0)
+            {
+                foreach (var item in cereri)
+                {
+                    lstCereriAtribuire.Items.Add(item);
+                }
+            }
+        }
+
+        public Models.CerereAtribuireModel GetCereriAtribuireSelectedItem()
+        {
+            return lstCereriAtribuire.SelectedItem as Models.CerereAtribuireModel;
+        }
+
+        public void SetGroupBoxEditareCereriAtribuireVisible(bool visible)
+        {
+            grpEditareCerere.Visible = visible;
+        }
+
+        public string AdaugareStadiuSolutionareTextBox
+        {
+            get { return txtDenumireStadiu.Text; }
+        }
+
+        public string EditareStadiuSolutionareTextBox
+        {
+            get { return txtDenumireStadiuSolutionare.Text; }
+            set { txtDenumireStadiuSolutionare.Text = value; }
+        }
+
+        public Models.StadiuSolutionareModel GetStadiuSolutionareSelectedItem()
+        {
+            return lstStadiiSolutionare.SelectedItem as Models.StadiuSolutionareModel;
+        }
+
+        public void SetGroupBoxEditareStadiuSolutionareVisible(bool visible)
+        {
+            grpEditareStadiiSolutionare.Visible = visible;
+        }
+
+        private void lstCereriAtribuire_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grpEditareCerere.Visible = lstCereriAtribuire.SelectedIndex >= 0;
+            if (lstCereriAtribuire.SelectedIndex >= 0)
+            {
+                Models.CerereAtribuireModel cerere = lstCereriAtribuire.SelectedItem as Models.CerereAtribuireModel;
+                EditareNumarCurentTextBox = cerere.NumarCurent.ToString();
+                EditareNumarInfocetTextBox = cerere.NumarInfocet;
+                foreach (var item in cmbStadiuSolutionareEdit.Items)
+                {
+                    var model = item as Models.StadiuSolutionareModel;
+                    if (model.Id == cerere.StadiuSolutionare.Id)
+                    {
+                        EditareStadiuSolutionareCombobox = model;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void lstStadiiSolutionare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grpEditareStadiiSolutionare.Visible = lstStadiiSolutionare.SelectedIndex >= 0;
+            if (lstStadiiSolutionare.SelectedIndex >= 0)
+                txtDenumireStadiu.Text = lstStadiiSolutionare.SelectedItem.ToString();
+        }
+
+        private void tab_Selected(object sender, TabControlEventArgs e)
+        {
+            _cereriAtribuireController.InitializeMainFormCereriTab();
+        }
+
+        private void btnAdaugaCerere_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.AdaugaCerereAtribuire();
+        }
+
+        public void ClearTextBoxesTabCereriAtribuire()
+        {
+            txtNrCurent.Text = txtNrCurentEdit.Text = txtNrInfocet.Text = txtNrInfocetEdit.Text
+                = txtDenumireStadiu.Text = txtDenumireStadiuSolutionare.Text = "";
+        }
+
+        private void btnStergeCerere_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.StergeCerereAtribuire();
+        }
+
+        private void btnModificaCerere_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.ModificaCerereAtribuire();
+        }
+
+        private void btnAdaugaStadiuSolutionare_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.AdaugaStadiuSolutionare();
+        }
+
+        private void btnStergeStadiuSolutionare_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.StergeStadiuSolutionare();
+        }
+
+        private void btnEditareStadiu_Click(object sender, EventArgs e)
+        {
+            _cereriAtribuireController.ModificaStadiuSolutionare();
         }
 
         internal void ClearAllDataAfterSuccess()
@@ -943,6 +1120,11 @@ namespace Client.TeampLeaber.ProiectColectiv
             {
                 ErrorHandling.ErrorHandling.Instance.HandleError("Nu ati selectat cimitirul in care doriti sa adaugati mormantul");
             }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

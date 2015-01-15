@@ -5,30 +5,23 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Client.TeampLeaber.ProiectColectiv.Utils;
 using Client.TeampLeaber.ProiectColectiv.Models;
+using Client.TeampLeaber.ProiectColectiv.Utils;
 
 namespace Client.TeampLeaber.ProiectColectiv.Networking.Requests
 {
-    public class RaportInmormantariRequest : BaseRequest
+    public class CereriAtribuireRequest : BaseRequest
     {
-        private int an;
-
-        public RaportInmormantariRequest(int an)
-        {
-            this.an = an;
-        }
-
-        public async Task<List<RaportInmormantareModel>> Run()
+        public async Task<List<CerereAtribuireModel>> Run()
         {
             try
             {
-                response = await this.GetAsync(Constants.RaportInmormantariPath + "?year=" + this.an + "&guid=" + Guid.NewGuid());
+                response = await this.GetAsync(Constants.CereriAtribuirePath + "?guid=" + Guid.NewGuid());
 
                 if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted) // 200
                 {
-                    List<RaportInmormantareModel> inmormantari = await response.Content.ReadAsAsync<List<RaportInmormantareModel>>();
-                    return inmormantari;
+                    List<CerereAtribuireModel> cereri = await response.Content.ReadAsAsync<List<CerereAtribuireModel>>();
+                    return cereri;
                 }
                 else
                 {

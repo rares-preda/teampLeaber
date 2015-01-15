@@ -15,6 +15,11 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
         public DecedatModel Decedat { get; set; }
         public DateTime Date { get; set; }
         public ReligieModel Religie { get; set; }
+        
+        public RaportInmormantareModel()
+        {
+
+        }
 
         public RaportInmormantareModel(int id, CimitirModel cimitir, ParcelaModel parcela, MormantModel mormant, DecedatModel decedat, DateTime date, ReligieModel religie)
         {
@@ -29,9 +34,24 @@ namespace Client.TeampLeaber.ProiectColectiv.Models
 
         public override string ToString()
         {
-            return "Persoana: " + this.Decedat.Cnp + " " + this.Decedat.Nume + " " + this.Decedat.Prenume +
-                "; Cimitir: " + Cimitir.Denumire + "; Parcela: " + Parcela.Denumire + "; Data inmormantarii: " +
-                Date.ToShortDateString() + "; Religie: " + Religie.Denumire;
+            string result = String.Empty;
+            if (Decedat != null)
+                result += "Persoana: " + Decedat.Cnp + " " + Decedat.Nume + " " + Decedat.Prenume + "; ";
+            else
+                result += "Necunoscut; ";
+            if (Cimitir != null)
+                result += "Cimitir: " + Cimitir.Denumire + "; ";
+            if (Parcela != null)
+                result += "Parcela: " + Parcela.Denumire + "; ";
+            if (Mormant != null)
+                result += "Mormant: " + Mormant.Numar + "; ";
+            if (Date != null)
+                result += "Data inmormantarii: " + Date.ToShortDateString() + "; ";
+            if (Religie != null)
+                result += "Religie: " + Religie.Denumire + "; ";
+
+            return result;
+            
         }
 
         public bool IsValid()
